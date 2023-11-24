@@ -1,0 +1,135 @@
+---
+layout: layouts/base.njk
+---
+<article class="article">
+	<figure class="photo">
+		{% image photo, photo_alt, "(min-width: 50em) 90vw, 100vw" %}
+	</figure>
+
+	<h1 class="article-title">{{ title }}</h1>
+
+	<div class="article-content">
+		{% if niepce.exif %}
+		{% set ExifData = photo | getExifData %}
+		{% if ExifData.cameraModel or ExifData.shutterSpeed or ExifData.fStop or ExifData.FocalLength or ExifData.ISO or ExifData.Date %}
+		<dl class="exif">
+			{% if ExifData.cameraModel %}
+			<div>
+				<dt>{% svg "camera", "exif-icon" %}<span class="visually-hidden">Camera:</span></dt>
+				<dd>{{ ExifData.cameraBrand }} {{ ExifData.cameraModel }}</dd>
+			</div>
+			{% endif %}
+			{% if ExifData.shutterSpeed or ExifData.fStop or ExifData.FocalLength or ExifData.ISO %}
+			<div>
+				<dt>{% svg "settings", "exif-icon exif-icon--settings" %}<span class="visually-hidden">Settings:</span></dt>
+				<dd>
+					{% if ExifData.shutterSpeed %}
+					<span title="Shutter speed">{{ ExifData.shutterSpeed }}<abbr title="second">s</abbr></span>
+					{% endif %}
+					{% if ExifData.fStop %}
+					<span title="Aperture">{{ ExifData.fStop }}</span>
+					{% endif %}
+					{% if ExifData.FocalLength %}
+					<span title="Focal length">{{ ExifData.FocalLength }}</span>
+					{% endif %}
+					{% if ExifData.ISO %}
+					<span>ISO {{ ExifData.ISO }}</span>
+					{% endif %}
+				</dd>
+			</div>
+			{% endif %}
+			{% if ExifData.Date %}
+				<div>
+					<dt>{% svg "date", "exif-icon" %}<span class="visually-hidden">Date:</span></dt>
+					<dd>{{ ExifData.Date | readableDate }}</dd>
+				</div>
+			{% endif %}
+		</dl>
+		{% endif %}
+		{% endif %}
+
+		{% if niepce.tags %}
+		<div class="tags">
+			{% svg "tags", "tags-icon" %}
+			{%- for tag in tags | filterTagList %}
+			{%- set tagUrl %}/tags/{{ tag | slugify }}/{% endset %}
+			<a href="{{ tagUrl }}" class="post-tag">{{ tag }}</a>{%- if not loop.last %}{% endif %}
+			{%- endfor %}
+		</div>
+		{% endif %}
+
+		{{ content | safe }}
+	</div>
+
+	{# Get the webmention count for the current page #}
+	{# {%- set currentPostMentionCount = webmentions | webmentionCountForPage -%} #}
+	{# Get the webmentions for the current page #}
+	{# {%- set currentPostMentions = webmentions | webmentionsForPage -%}
+	{%- if currentPostMentionCount > 0 %}
+	<hr>
+	<h2>WebMentions</h2>
+	<div class="wm-react">
+		{% if currentPostMentions.reposts.length >= 1 %}
+		<div class="wm-react-repost">
+			<span class="wm-react-label">Partages :</span>
+			<ul class="wm-react-list">
+				{% for mention in currentPostMentions.reposts %}
+				<li><a class="wm-react-avatar" href="{{ mention.author.url }}" title="{{ mention.author.name }}"><img loading="lazy" src="{{ mention.author.photo }}" alt="avatar de {{ mention.author.name }}"></a></li>
+			{% endfor %}
+			</ul>
+		</div>
+		{% endif %}
+		{% if currentPostMentions.likes.length >= 1 %}
+		<div class="wm-react-like">
+			<span class="wm-react-label">Likes :</span>
+			<ul class="wm-react-list">
+				{% for mention in currentPostMentions.likes %}
+				<li><a class="wm-react-avatar" href="{{ mention.author.url }}" title="{{ mention.author.name }}"><img loading="lazy" src="{{ mention.author.photo }}" alt="avatar de {{ mention.author.name }}"></a></li>
+			{% endfor %}
+			</ul>
+		</div>
+		{% endif %}
+		{% if currentPostMentions.comments.length >= 1 %}
+		<div class="wm-react-comments">
+			<span class="wm-react-label">Commentaires :</span>
+			<ul class="wm-react-comment">
+				{% for mention in currentPostMentions.comments %}
+				<li>
+					<a class="wm-react-avatar" href="{{ mention.author.url }}"><img loading="lazy" src="{{ mention.author.photo }}" alt="avatar de {{ mention.author.name }}"> {{ mention.author.name }}</a>
+					<div class="wm-react-comment-content">{{ mention.content.html | safe }}</div>
+				</li>
+			{% endfor %}
+			</ul>
+		</div>
+		{% endif %}
+	</div>
+	{%- endif %} #}
+
+	{%- if collections.posts %}
+	{%- set previousPost = collections.posts | getPreviousCollectionItem %}
+	{%- set nextPost = collections.posts | getNextCollectionItem %}
+	{%- if nextPost or previousPost %}
+	<hr>
+	<h2>Other related pictures</h2>
+	<ul class="footer-nav">
+		{%- if previousPost %}
+		<li class="footer-nav-prev">
+			<a href="{{ previousPost.url }}">
+				{% image "../"+previousPost.url+"/"+previousPost.data.photo , "" %}
+				<span class="post-title">{% if previousPost.data.title %}{{ previousPost.data.title }}{% else %}<code>{{ previousPost.url }}</code>{% endif %}</span>
+			</a>
+		</li>
+		{% endif %}
+		{%- if nextPost %}
+		<li class="footer-nav-next">
+			<a href="{{ nextPost.url }}">
+				{% image "../"+nextPost.url+"/"+nextPost.data.photo , "" %}
+				<span class="post-title">{% if nextPost.data.title %}{{ nextPost.data.title }}{% else %}<code>{{ nextPost.url }}</code>{% endif %}</span>
+			</a>
+		</li>
+		{% endif %}
+	</ul>
+	{%- endif %}
+	{%- endif %}
+
+</article>

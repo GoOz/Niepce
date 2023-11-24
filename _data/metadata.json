@@ -1,0 +1,12 @@
+{
+	"title": "Niepce",
+	"url": "https://portfolio.niepce.tld",
+	"language": "en",
+	"locale": "en_US",
+	"description": "Niepce's personal portfolio",
+	"author": {
+		"name": "Nicéphore Niépce",
+		"email": "nicephore@niepce.tld",
+		"url": "https://www.niepce.tld"
+	}
+}

@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="{{ metadata.language }}">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>{{ title or metadata.title }}</title>
+		<meta name="description" content="{{ description or metadata.description }}">
+		<link rel="alternate" href="/feeds/all.xml" type="application/atom+xml" title="{{ metadata.title }}">
+		{%- for tag in tags | filterTagList %}
+		<link rel="alternate" href="/feeds/{{ tag }}.xml" type="application/atom+xml" title="{{ metadata.title }} - {{ tag }}">
+		{% endfor %}
+		<meta name="generator" content="{{ eleventy.generator }}">
+		{%- css %}{% include "public/css/styles.css" %}{% endcss %}
+		<link rel="stylesheet" href="{% getBundleFileUrl "css" %}">
+		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+
+  	{# Opengraph #}
+  	{% if home %}
+  	<meta property="og:site_name" content="{{ metadata.title }}">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="{{ metadata.title }}">
+    <meta property="og:description" content="{{ metadata.description }}">
+    <meta property="og:url" content="{{ metadata.url }}">
+		{% if niepce.banner %}
+    <meta property="og:image" content="{{ metadata.url }}{{ niepce.banner}}">
+		{% endif %}
+    <meta property="og:locale" content="{{ metadata.locale }}">
+    <meta property="og:image:width" content="1000">
+    <meta property="og:image:height" content="483">
+  	{% endif %}
+  	{% if photo %}
+  	<meta property="og:site_name" content="{{ metadata.title }}">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="{{ title }}">
+    <meta property="og:url" content="{{ metadata.url }}{{ page.url | htmlBaseUrl}}">
+    {% ogPhoto "content/"+page.url+photo %}
+    <meta property="og:locale" content="{{ metadata.locale }}">
+    <meta property="article:published_time" content="{{ date | htmlDateString}}">
+    {%- for tag in tags | filterTagList %}
+		<meta property="article:tag" content="{{ tag }}">
+		{% endfor %}
+    <meta property="og:image:width" content="2000">
+    <meta property="og:image:height" content="1333">
+  	{% endif %}
+	</head>
+	<body>
+		{% svgsprite %}
+		<div class="skip">
+			<a href="#skip">Skip to main content</a>
+		</div>
+
+		<div class="main">
+			<header class="sidebar">
+				{% if nipece.logo %}
+				<a href="/" class="logo"><img src="/img/logo.svg" alt="{{ metadata.title }}"></a>
+				{% else %}
+				<a href="/" class="logo">{{ metadata.title }}</a>
+				{% endif %}
+				<button class="menu" type="button">
+					{% svg "burger" %}
+				</button>
+				<nav class="nav">
+					<h2 class="visually-hidden">Menu de navigation</h2>
+					<ul>
+					{%- for entry in collections.pages | eleventyNavigation %}
+						<li class="nav-item">
+							<a href="{{ entry.url }}"{% if entry.url == page.url %} aria-current="page"{% endif %}>{{ entry.title }}</a>
+						</li>
+					{%- endfor %}
+						<li class="nav-item">
+							Portfolio
+							<ul class="tags-list">
+							{% for tag in collections.posts | getAllTags | filterTagList %}
+								{% set tagUrl %}/tags/{{ tag | slugify }}/{% endset %}
+								<li><a href="{{ tagUrl }}"{% if tagUrl == page.url %} aria-current="page"{% endif %}>{{ tag }}</a></li>
+							{% endfor %}
+							</ul>
+						</li>
+						{% for item in niepce.links %}
+						<li class="nav-item">
+							<a href="{{ item.url }}">{{ item.label }}</a>
+						</li>
+						{% endfor %}
+					</ul>
+				</nav>
+				<ul class="network">
+					{% for social, url in niepce.socials %}
+					{% if url %}
+	        <li>
+	          <a class="icon-only" href="{{ url }}" aria-label="{{ social | capitalize }}">
+	            {% svg social, "network-icon" %}
+	          </a>
+	        </li>
+	      	{% endif %}
+	      	{% endfor %}
+	      </ul>
+			</header>
+
+			<main class="content" id="skip">
+				{{ content | safe }}
+			</main>
+		</div>
+		{% if niepce.grid === 'masonry' or niepce.grid_tags === 'masonry' %}
+		<script src="/js/magic-grid.min.js"></script>
+		{% endif %}
+		<script src="/js/script.js"></script>
+	</body>
+</html>
