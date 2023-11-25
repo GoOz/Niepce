@@ -56,7 +56,7 @@ The metadata displayed (if available) are:
 ### Display tags
 Display tags or not on post pages.
 
-If you tag your photo with only tag it may be not relevant to show it on the post page, in that case you can choose to hide it.
+If you tag your photo with only one tag it may be not relevant to show it on the post page, in that case you can choose to hide it.
 
 ### External links
 You have the ability to add any external links in the menu and even more, if you have social networks accounts, you'll be able to easily add your links.
@@ -190,9 +190,9 @@ Now that your website is up and running you can add your own content.\
 Any content you want to add needs to be in the `content` folder, if you take a look, there's already some stuff in it.
 
 The folders inside are posts examples and the `about.md` a standalone page example.\
-Feel free to trash those when you familiarized yourself with how to create posts and pages but you should not delete the other files (unless you know what you're doing.)
+Feel free to trash those when you familiarized yourself with how to create posts and pages **but you should not delete the other files** (unless you know what you're doing.)
 
-The only specific thing to know about post and pages are the data you set in the *frontmatter*, the data at the top of the readme files.
+The only specific thing to know about post and pages are the data you set in the *frontmatter*, the data at the top of the markdown files.
 
 ```
 ---
