@@ -18,7 +18,7 @@ module.exports = eleventyConfig => {
 		let formats = ["avif", "webp", "auto"];
 		let file = relativeToInputPath(this.page.inputPath, src);
 		let metadata = await eleventyImage(file, {
-			widths: [400, 812, 1200, 1400, "auto"],
+			widths: [640, 812, 1200, 1400, "auto"],
 			formats,
 			sharpOptions: {
 				animated: true

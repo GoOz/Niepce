@@ -6,16 +6,32 @@
 }
 
 /* Custom props */
+/* Colors */
+@media (prefers-color-scheme: light) {
+  :root {
+    --foreground: hsl(0 0% 20%);
+		--light-foreground: hsl(0 0% 30%);
+		--background: hsl(0 0% 95%);
+		--dark-background: hsl(0 0% 90%);
+		--border: hsl(0 0% 53%);
+		--overlay: hsla(0 0% 10% / .5);
+		--action-color: hsl(261, 68%, 66%);
+    color-scheme: light;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+		--foreground: hsl(0 0% 95%);
+		--light-foreground: hsl(0 0% 85%);
+		--background: hsl(0 0% 10%);
+		--dark-background: hsl(0 0% 15%);
+		--border: hsl(0 0% 47%);
+		--overlay: hsla(0 0% 90% / .5);
+		--action-color: hsl(261, 68%, 86%);
+    color-scheme: dark;
+  }
+}
 :root {
-	/* Colors */
-	--foreground: hsl(0 0% 20%);
-  --light-foreground: hsl(0 0% 30%);
-	--background: hsl(0 0% 95%);
-  --dark-background: hsl(0 0% 90%);
-  --border: hsl(0 0% 53%);
-  --overlay: hsla(0 0% 15% / .5);
-  --action-color: hsl(261, 68%, 66%);
-
 	/* Justified grid */
 	--justified-row-ratio: 0.2;
 	--justified-gap: .5rem;
