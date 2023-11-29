@@ -1,6 +1,7 @@
 const path = require("path");
 const ExifReader = require("exifreader");
 const eleventyImage = require("@11ty/eleventy-img");
+const svgContents = require("eleventy-plugin-svg-contents");
 
 module.exports = eleventyConfig => {
 	function relativeToInputPath(inputPath, relativeFilePath) {
@@ -36,15 +37,15 @@ module.exports = eleventyConfig => {
 	});
 
 	// OG Featured image
-	eleventyConfig.addAsyncShortcode("ogPhoto", async function(src) {
-		let metadata = await eleventyImage(src, {
+	eleventyConfig.addAsyncShortcode("ogPhoto", async function(src, baseUrl) {
+		let imagedata = await eleventyImage(src, {
 			widths: [600],
 			formats: ["jpeg"],
 			outputDir: path.join(eleventyConfig.dir.output, "img")
 		});
 
-		let data = metadata.jpeg[metadata.jpeg.length - 1];
-		return `<meta property="og:image" content="${data.url}">`;
+		let data = imagedata.jpeg[imagedata.jpeg.length - 1];
+		return `<meta property="og:image" content="${baseUrl+data.url}">`;
 	});
 
 	// EXIF Data
@@ -68,4 +69,6 @@ module.exports = eleventyConfig => {
 			callback(null, extractedValues);
 		}
 	);
+
+	eleventyConfig.addPlugin(svgContents);
 };

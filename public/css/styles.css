@@ -189,6 +189,13 @@ hr::after {
 	transform: translate(-50%, -50%);
 }
 
+figcaption {
+	text-align: center;
+	font-size: .8em;
+	font-style: italic;
+	color: var(--light-foreground);
+}
+
 /*=========================================
 *                Utilities                *
 =========================================*/
@@ -284,6 +291,13 @@ a.logo {
 	word-wrap: break-word;
 	color: var(--foreground);
 	margin-block-end: 1rem;
+}
+a.logo > :is(img, svg) {
+	width: 100%;
+	height: auto;
+}
+a.logo svg {
+	fill: var(--foreground);
 }
 
 .menu {
@@ -410,6 +424,8 @@ a.logo {
 	background-color: var(--overlay);
 	color: var(--background);
 	font-size: 1em;
+	text-align: center;
+	font-weight: bold;
 }
 :where(.grid:not(.monocolumn), .article) a:is(:hover, :focus-visible) .post-title {
 	opacity: 1;

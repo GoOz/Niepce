@@ -131,7 +131,8 @@ module.exports = {
 
 **Key** `logo`\
 **Value** `String`\
-*Path to your logo (any image format that can be displayed in a HTML `img` tag). It can be anywhere, even remote. If there's no logo provided then the title you provided in the `metadata.json` will be displayed instead.*
+*Path to your logo (any image format that can be displayed in a HTML `img` tag). It can be anywhere, even remote. If there's no logo provided then the title you provided in the `metadata.json` will be displayed instead.*\
+*If it's a SVG and you want it inlined so it's color change with the theme, add a suffix "-inline" to its filename (e.g. logo-inline.svg)*
 
 **Key** `banner`\
 **Value** `String`\
@@ -190,7 +191,7 @@ Now that your website is up and running you can add your own content.\
 Any content you want to add needs to be in the `content` folder, if you take a look, there's already some stuff in it.
 
 The folders inside are posts examples and the `about.md` a standalone page example.\
-Feel free to trash those when you familiarized yourself with how to create posts and pages **but you should not delete the other files** (unless you know what you're doing.)
+Feel free to trash those (except maybe `feeds` &  `sitemap`) when you familiarized yourself with how to create posts and pages **but you should not delete the other files** (unless you know what you're doing.)
 
 The only specific thing to know about post and pages are the data you set in the *frontmatter*, the data at the top of the markdown files.
 

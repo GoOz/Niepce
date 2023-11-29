@@ -12,6 +12,7 @@ module.exports = function(eleventyConfig) {
 		"./public/": "/",
 		"node_modules/magic-grid/dist/magic-grid.min.js": "js/magic-grid.min.js"
 	});
+	eleventyConfig.addPassthroughCopy("./content/**/*.jpg");
 
 	// Watch content images for the image pipeline.
 	eleventyConfig.addWatchTarget("content/**/*.{svg,webp,png,jpeg,jpg}");

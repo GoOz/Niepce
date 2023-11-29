@@ -34,7 +34,7 @@
     <meta property="og:type" content="article">
     <meta property="og:title" content="{{ title }}">
     <meta property="og:url" content="{{ metadata.url }}{{ page.url | htmlBaseUrl}}">
-    {% ogPhoto "content/"+page.url+photo %}
+    {% ogPhoto "content/"+page.url+photo, metadata.url %}
     <meta property="og:locale" content="{{ metadata.locale }}">
     <meta property="article:published_time" content="{{ date | htmlDateString}}">
     {%- for tag in tags | filterTagList %}
@@ -52,11 +52,17 @@
 
 		<div class="main">
 			<header class="sidebar">
-				{% if nipece.logo %}
-				<a href="/" class="logo"><img src="/img/logo.svg" alt="{{ metadata.title }}"></a>
-				{% else %}
-				<a href="/" class="logo">{{ metadata.title }}</a>
-				{% endif %}
+				<a href="/" class="logo">
+					{% if niepce.logo %}
+					{% if '-inline.svg' in niepce.logo %}
+					{{ niepce.logo | svgContents | safe }}
+					{% else %}
+					<img src="{{ niepce.logo }}" alt="{{ metadata.title }}">
+					{% endif %}
+					{% else %}
+					{{ metadata.title }}
+					{% endif %}
+				</a>
 				<button class="menu" type="button">
 					{% svg "burger" %}
 				</button>
