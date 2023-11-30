@@ -1,9 +1,14 @@
 <ol reversed class="grid{% if not home and niepce.grid_tags %} {{ niepce.grid_tags }}{% else %} {{ niepce.grid }}{% endif%}">
+{% if (home and niepce.grid === 'monocolumn') or (not home and niepce.grid_tags === 'monocolumn') %}
+{% set size = '100vw' %}
+{% else %}
+{% set size = '30vw' %}
+{% endif %}
 {% for post in postslist | reverse %}
 	<li class="post">
 		<a href="{{ post.url }}">
 			{% if post.data.photo %}
-			{% image "../content/"+post.url+"/"+post.data.photo , post.data.photo_alt %}
+			{% image "../content/"+post.url+"/"+post.data.photo , post.data.photo_alt, size %}
 			{% endif %}
 			<h2 class="post-title">{{ post.data.title }}</h2>
 			</a>

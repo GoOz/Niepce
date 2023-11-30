@@ -504,7 +504,7 @@ a.logo svg {
 	height: auto;
 	width: auto;
 	max-width: 100%;
-	max-height: calc(100dvh - var(--monocolumn-spacing) * 2);
+	max-height: calc(100dvh - var(--monocolumn-spacing) * 3);
 	transition: filter var(--transition);
 }
 .monocolumn a:is(:hover, :focus-visible) img {
