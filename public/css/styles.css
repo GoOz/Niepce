@@ -441,6 +441,9 @@ a.logo svg {
 .justified .post {
 	position: relative;
 }
+.justified .post img {
+	width: 100%;
+}
 .justified .post-title {
 	align-items: end;
 }
