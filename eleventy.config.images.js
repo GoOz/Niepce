@@ -73,7 +73,11 @@ module.exports = eleventyConfig => {
 			const file = relativeToInputPath(this.page.inputPath, image);
 			const exifData = await ExifReader.load(file);
 			const extractedValues = {
-				cameraBrand: exifData.Make?.description || "",
+				cameraBrand: exifData.Model?.description.includes(
+					exifData.Make?.description
+				)
+					? ""
+					: exifData.Make?.description,
 				cameraModel: exifData.Model?.description || undefined,
 				shutterSpeed: exifData.ExposureTime?.description || undefined,
 				FocalLength: exifData.FocalLength?.description || undefined,
