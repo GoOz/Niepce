@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
 	// Set the DOM as ready for JS
 	document.body.classList.add("js");
 
@@ -38,11 +38,9 @@ document.addEventListener("DOMContentLoaded", function() {
 			items.forEach((item) => {
 				let image = item.querySelector("img");
 
-				image.onload = () => {
-					let ratio = image.width / image.height;
-					item.style.width = justifyScale * ratio + "px";
-					item.style.flexGrow = ratio;
-				};
+				let ratio = image.getAttribute("width") / image.getAttribute("height");
+				item.style.width = justifyScale * ratio + "px";
+				item.style.flexGrow = ratio;
 			});
 		} else {
 			items.forEach((item) => {
@@ -63,21 +61,12 @@ document.addEventListener("DOMContentLoaded", function() {
 	const masonryGrid = document.querySelector(".masonry");
 
 	if (masonryGrid) {
-		const images = masonryGrid.querySelectorAll("img");
-
 		let magicGrid = new MagicGrid({
 			container: ".masonry",
 			static: true,
 			animate: true,
 			gutter: 8,
-			maxColumns: 4
 		});
-
-		images.forEach(item => {
-			item.onload = () => {
-				magicGrid.positionItems();
-			}
-		})
 		magicGrid.listen();
 	}
 });

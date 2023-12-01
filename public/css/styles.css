@@ -45,8 +45,7 @@
 	--monocolumn-spacing: 3rem;
 
 	/* Masonry grid */
-	--masonry-img-min-width: 15rem;
-	--masonry-img-max-width: 24%;
+	--masonry-img-width: 15rem;
 
 	/* Typography */
 	--h1-font-size: 1.7em;
@@ -312,7 +311,7 @@ a.logo svg {
 
 .menu svg {
 	display: block;
-	fill: var(--foreground);
+	stroke: var(--foreground);
 	width: 2rem;
 	height: 2rem;
 }
@@ -450,6 +449,7 @@ a.logo svg {
 @media (max-width: 28em) {
 	.justified {
 		flex-direction: column;
+		flex-wrap: nowrap;
 	}
 }
 
@@ -519,17 +519,13 @@ a.logo svg {
 }
 
 /* Masonry grid */
-.masonry {
-	display: flex;
-}
 .masonry .post {
-	min-width: var(--masonry-img-min-width);
-	max-width: var(--masonry-img-max-width);
+	width: var(--masonry-img-width);
 }
 
 @media (orientation: portrait), (max-width: 40em) {
-	.masonry .post {
-		max-width: 100%;
+	.masonry .post img {
+		width: 100%;
 	}
 }
 
