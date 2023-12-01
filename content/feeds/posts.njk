@@ -22,10 +22,12 @@ permalink: /feeds/posts.xml
 		<updated>{{ post.date | dateToRfc3339 }}</updated>
 		<id>{{ absolutePostUrl }}</id>
 		<content type="html">
+			<![CDATA[
 			{% if post.data.photo %}
-			<img src="{{ absolutePostUrl+post.data.photo }}" alt="{{ post.data.photo_alt }}">
+			{% feedPhoto "content/"+post.url+post.data.photo, post.data.photo_alt, metadata.url %}
 			{% endif %}
 			{{ post.templateContent | transformWithHtmlBase(absolutePostUrl, post.url) | safe }}
+			]]>
 		</content>
 	</entry>
 	{%- endfor %}

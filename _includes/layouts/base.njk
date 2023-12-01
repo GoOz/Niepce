@@ -6,9 +6,6 @@
 		<title>{{ title or metadata.title }}</title>
 		<meta name="description" content="{{ description or metadata.description }}">
 		<link rel="alternate" href="/feeds/posts.xml" type="application/atom+xml" title="{{ metadata.title }}">
-		{# {%- for tag in tags | filterTagList %}
-		<link rel="alternate" href="/feeds/{{ tag }}.xml" type="application/atom+xml" title="{{ metadata.title }} - {{ tag }}">
-		{% endfor %} #}
 		<meta name="generator" content="{{ eleventy.generator }}">
 		{%- css %}{% include "public/css/styles.css" %}{% endcss %}
 		<link rel="stylesheet" href="{% getBundleFileUrl "css" %}">
