@@ -206,8 +206,18 @@ tags:
 ---
 ```
 
-This is where you set the title, date of the post (not the photo), file of the photo (and it's alternative text) and the tags of the post.\
+This is where you set the title, date of the post (not the photo), file of the photo (and its alternative text) and the tags of the post.\
 That's about it.
+
+### Deployment
+By now you should have a running portfolio with your own content… but it's only local, on your computer.
+
+You need to find yourself a hosting provider who serves static files (which should be every provider actually) and have NodeJS (>=16) installed as well.
+
+Once this is done, you need to run `npm i && npm run build` to install the dependencies and build your site, then point the Apache config to the folder `_site`, this is where your portfolio is generated and what should be served. Everything else is just there to generated this folder.
+
+## Final words
+For those of you wondering, the name **Niepce** comes from [Nicéphore Niépce](https://en.wikipedia.org/wiki/Nic%C3%A9phore_Ni%C3%A9pce), one of the earliest pioneers of photography.
 
 If you face any problem of have any question, feel free to drop an [issue](https://github.com/GoOz/Niepce/issues).
 
