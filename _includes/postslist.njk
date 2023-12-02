@@ -2,7 +2,7 @@
 {% if (home and niepce.grid === 'monocolumn') or (not home and niepce.grid_tags === 'monocolumn') %}
 {% set size = '100vw' %}
 {% else %}
-{% set size = '320' %}
+{% set size = '320px' %}
 {% endif %}
 {% for post in postslist | reverse %}
 	<li class="post">
