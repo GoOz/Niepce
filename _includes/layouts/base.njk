@@ -88,6 +88,11 @@
 					</ul>
 				</nav>
 				<ul class="network">
+					<li>
+						<a class="icon-only" href="/feeds/posts.xml" title="RSS feed" aria-label="RSS feed">
+							{% svg "rss", "network-icon" %}
+						</a>
+					</li>
 					{% for social, url in niepce.socials %}
 					{% if url %}
 	        <li>
