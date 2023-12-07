@@ -1,11 +1,11 @@
 /*=========================================
 *            Custom properties            *
 =========================================*/
+/* Fonts */
 :root {
 	--font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", Oxygen, Cantarell, sans-serif;
 }
 
-/* Custom props */
 /* Colors */
 @media (prefers-color-scheme: light) {
   :root {
@@ -16,7 +16,6 @@
 		--border: hsl(0 0% 53%);
 		--overlay: hsla(0 0% 10% / .5);
 		--action-color: hsl(261, 68%, 66%);
-    color-scheme: light;
   }
 }
 @media (prefers-color-scheme: dark) {
@@ -28,10 +27,29 @@
 		--border: hsl(0 0% 47%);
 		--overlay: hsla(0 0% 90% / .5);
 		--action-color: hsl(261, 68%, 86%);
-    color-scheme: dark;
   }
 }
+[data-theme="light"] {
+	--foreground: hsl(0 0% 20%);
+	--light-foreground: hsl(0 0% 30%);
+	--background: hsl(0 0% 95%);
+	--dark-background: hsl(0 0% 90%);
+	--border: hsl(0 0% 53%);
+	--overlay: hsla(0 0% 10% / .5);
+	--action-color: hsl(261, 68%, 66%);
+}
+[data-theme="dark"] {
+	--foreground: hsl(0 0% 95%);
+	--light-foreground: hsl(0 0% 85%);
+	--background: hsl(0 0% 10%);
+	--dark-background: hsl(0 0% 15%);
+	--border: hsl(0 0% 47%);
+	--overlay: hsla(0 0% 90% / .5);
+	--action-color: hsl(261, 68%, 86%);
+}
+
 :root {
+	color-scheme: light dark;
 	/* Justified grid */
 	--justified-row-ratio: 0.2;
 	--justified-gap: .5rem;
