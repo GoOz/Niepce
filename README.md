@@ -8,6 +8,12 @@ It's a starter kit to help you build you own static portfolio website without ha
 
 It's ready to be build as it is but you'll have to set some things up to make it your own.
 
+## Demo
+
+Currently used on my own [portfolio](https://www.bloogart.com/) but this tool comes with several example pages so you can quickly serve locally and see it in action if you want to start playing with it immediately.
+
+_NB: Note that most of example pictures are from Unsplash.com and are credited in their own page._
+
 ## What kind of features to expect
 
 ### Dark and light theme
