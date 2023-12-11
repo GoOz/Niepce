@@ -5,10 +5,11 @@
 {% set size = '320px' %}
 {% endif %}
 {% for post in postslist | reverse %}
+	{% set loading = "eager" if loop.index < 20 else "lazy" %}
 	<li class="post">
 		<a href="{{ post.url }}">
 			{% if post.data.photo %}
-			{% image "../content/"+post.url+"/"+post.data.photo , post.data.photo_alt, size %}
+			{% image "../content/"+post.url+"/"+post.data.photo , post.data.photo_alt, size, loading %}
 			{% endif %}
 			<h2 class="post-title">{{ post.data.title }}</h2>
 			</a>

@@ -26,4 +26,4 @@ module.exports = {
 			url: "https://blog.foojin.com",
 		},
 	],
-};
+}

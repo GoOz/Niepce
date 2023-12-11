@@ -3,7 +3,7 @@ layout: layouts/page.njk
 eleventyNavigation:
   key: About
   order: 1
-override:tags: ['pages']
+override:tags: ["pages"]
 title: Hello, I'm the photographer
 ---
 
@@ -16,5 +16,3 @@ Exercitation, labore ea eu dolor. Eu, dolor elit minim. Minim nostrud nulla, cul
 Labore ea eu dolor elit minim nostrud nulla. Eu, dolor elit minim. Minim nostrud nulla, culpa eiusmod. Culpa eiusmod esse quis adipiscing, fugiat. Quis adipiscing fugiat nulla elit id voluptate elit.
 
 ---
-
-

@@ -1,25 +1,25 @@
-const path = require("path");
-const ExifReader = require("exifreader");
-const eleventyImage = require("@11ty/eleventy-img");
-const svgContents = require("eleventy-plugin-svg-contents");
+const path = require("path")
+const ExifReader = require("exifreader")
+const eleventyImage = require("@11ty/eleventy-img")
+const svgContents = require("eleventy-plugin-svg-contents")
 
-module.exports = eleventyConfig => {
+module.exports = (eleventyConfig) => {
 	function relativeToInputPath(inputPath, relativeFilePath) {
-		let split = inputPath.split("/");
-		split.pop();
+		let split = inputPath.split("/")
+		split.pop()
 
-		return path.resolve(split.join(path.sep), relativeFilePath);
+		return path.resolve(split.join(path.sep), relativeFilePath)
 	}
 
 	// Eleventy Image shortcode
 	// https://www.11ty.dev/docs/plugins/image/
 	eleventyConfig.addAsyncShortcode(
 		"image",
-		async function imageShortcode(src, alt, sizes) {
+		async function imageShortcode(src, alt, sizes, loading) {
 			// Full list of formats here: https://www.11ty.dev/docs/plugins/image/#output-formats
 			// Warning: Avif can be resource-intensive so take care!
-			let formats = ["avif", "webp", "auto"];
-			let file = relativeToInputPath(this.page.inputPath, src);
+			let formats = ["auto"]
+			let file = relativeToInputPath(this.page.inputPath, src)
 			let metadata = await eleventyImage(file, {
 				widths: [320, 640, 812, 1200, 1400, "auto"],
 				formats,
@@ -27,17 +27,17 @@ module.exports = eleventyConfig => {
 					animated: true,
 				},
 				outputDir: path.join(eleventyConfig.dir.output, "img"),
-			});
+			})
 
 			let imageAttributes = {
 				alt,
 				sizes: sizes || "100vw",
-				loading: "lazy",
+				loading: loading || "lazy",
 				decoding: "async",
-			};
-			return eleventyImage.generateHTML(metadata, imageAttributes);
-		}
-	);
+			}
+			return eleventyImage.generateHTML(metadata, imageAttributes)
+		},
+	)
 
 	// OG Featured image
 	eleventyConfig.addAsyncShortcode("ogPhoto", async function (src, baseUrl) {
@@ -45,11 +45,11 @@ module.exports = eleventyConfig => {
 			widths: [600],
 			formats: ["jpeg"],
 			outputDir: path.join(eleventyConfig.dir.output, "img"),
-		});
+		})
 
-		let data = imagedata.jpeg[imagedata.jpeg.length - 1];
-		return `<meta property="og:image" content="${baseUrl + data.url}">`;
-	});
+		let data = imagedata.jpeg[imagedata.jpeg.length - 1]
+		return `<meta property="og:image" content="${baseUrl + data.url}">`
+	})
 
 	// Feed image
 	eleventyConfig.addAsyncShortcode(
@@ -59,22 +59,22 @@ module.exports = eleventyConfig => {
 				widths: [600],
 				formats: ["jpeg"],
 				outputDir: path.join(eleventyConfig.dir.output, "img"),
-			});
+			})
 
-			let data = imagedata.jpeg[imagedata.jpeg.length - 1];
-			return `<img src="${baseUrl + data.url}" alt="${alt}" />`;
-		}
-	);
+			let data = imagedata.jpeg[imagedata.jpeg.length - 1]
+			return `<img src="${baseUrl + data.url}" alt="${alt}" />`
+		},
+	)
 
 	// EXIF Data
 	eleventyConfig.addNunjucksAsyncFilter(
 		"getExifData",
 		async function (image, callback) {
-			const file = relativeToInputPath(this.page.inputPath, image);
-			const exifData = await ExifReader.load(file);
+			const file = relativeToInputPath(this.page.inputPath, image)
+			const exifData = await ExifReader.load(file)
 			const extractedValues = {
 				cameraBrand: exifData.Model?.description.includes(
-					exifData.Make?.description
+					exifData.Make?.description,
 				)
 					? ""
 					: exifData.Make?.description,
@@ -87,10 +87,10 @@ module.exports = eleventyConfig => {
 					exifData.DateTimeOriginal?.description
 						.replace(":", "-")
 						.replace(":", "-") || undefined,
-			};
-			callback(null, extractedValues);
-		}
-	);
+			}
+			callback(null, extractedValues)
+		},
+	)
 
-	eleventyConfig.addPlugin(svgContents);
-};
+	eleventyConfig.addPlugin(svgContents)
+}
