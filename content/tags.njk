@@ -10,6 +10,7 @@ pagination:
     - tagList
   addAllPagesToCollections: true
 layout: layouts/home.njk
+category: true
 eleventyComputed:
   title: Tagged “{{ tag | capitalize }}”
 permalink: /tags/{{ tag | slugify }}/

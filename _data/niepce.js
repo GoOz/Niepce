@@ -21,6 +21,7 @@ module.exports = {
 		tumblr: "",
 	},
 	links: [
+		// Add external links in your navigation
 		{
 			label: "Blog",
 			url: "https://blog.foojin.com",

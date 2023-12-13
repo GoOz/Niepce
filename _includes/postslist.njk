@@ -1,5 +1,5 @@
-<ol reversed class="grid{% if not home and niepce.grid_tags %} {{ niepce.grid_tags }}{% else %} {{ niepce.grid }}{% endif%}">
-{% if (home and niepce.grid === 'monocolumn') or (not home and niepce.grid_tags === 'monocolumn') %}
+<ol reversed class="grid{% if category and niepce.grid_tags %} {{ niepce.grid_tags }}{% else %} {{ niepce.grid }}{% endif%}">
+{% if (home and niepce.grid === 'monocolumn') or (category and niepce.grid_tags === 'monocolumn') or (category and niepce.grid_tags === '' and niepce.grid === 'monocolumn') %}
 {% set size = '100vw' %}
 {% else %}
 {% set size = '320px' %}
