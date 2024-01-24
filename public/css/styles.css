@@ -272,6 +272,14 @@ a.icon-only > * {
 	outline: 2px solid var(--action-color);
 }
 
+.centered {
+	text-align: center;
+}
+
+.left-aligned {
+	text-align: center;
+}
+
 /*=========================================
 *              Main grid                *
 =========================================*/
@@ -296,7 +304,7 @@ a.icon-only > * {
 @media (orientation: portrait), (max-width: 40em) {
 	.main {
 		grid-template-columns: 1fr;
-		grid-template-rows: auto auto;
+		grid-template-rows: auto 1fr;
 		grid-template-areas:
 			"Sidebar"
 			"Content";
@@ -567,6 +575,7 @@ a.logo svg {
 .article-content {
 	max-width: 65ch;
 	margin: 0 auto;
+	padding-inline: 1rem;
 }
 .article-title {
 	text-align: center;

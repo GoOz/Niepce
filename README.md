@@ -230,6 +230,16 @@ tags:
 This is where you set the title, date of the post (not the photo), file of the photo (and its alternative text) and the tags of the post.\
 That's about it.
 
+### Customizing category pages
+
+By default category pages are just displaying every pictures tagged with those categories but you can add some kind of context or description.\
+To do so, you need to create a markdown file in the `_includes/tags/` folder and name it as the category
+name. For example, for a "Landscape" category, you'll need to create a `landscape.md` file.
+
+Now write, in markdown, whatever you need to write in that file.
+
+There is an example already in this starter kit, don't forget to remove it if you don't plan on using it.
+
 ### Deployment
 
 By now you should have a running portfolio with your own content… but it's only local, on your computer.

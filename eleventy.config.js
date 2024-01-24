@@ -1,5 +1,7 @@
 const { DateTime } = require("luxon")
+const fs = require("node:fs")
 const { EleventyHtmlBasePlugin } = require("@11ty/eleventy")
+const { EleventyRenderPlugin } = require("@11ty/eleventy")
 
 const pluginRss = require("@11ty/eleventy-plugin-rss")
 const pluginNavigation = require("@11ty/eleventy-navigation")
@@ -25,6 +27,7 @@ module.exports = function (eleventyConfig) {
 	eleventyConfig.addPlugin(pluginRss)
 	eleventyConfig.addPlugin(pluginNavigation)
 	eleventyConfig.addPlugin(EleventyHtmlBasePlugin)
+	eleventyConfig.addPlugin(EleventyRenderPlugin)
 	eleventyConfig.addPlugin(bundlerPlugin)
 
 	// Community plugins
@@ -59,6 +62,10 @@ module.exports = function (eleventyConfig) {
 		return (tags || []).filter(
 			(tag) => ["all", "nav", "post", "posts"].indexOf(tag) === -1,
 		)
+	})
+
+	eleventyConfig.addFilter("fsExists", function (filename) {
+		return fs.existsSync(filename)
 	})
 
 	return {
