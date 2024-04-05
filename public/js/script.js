@@ -14,8 +14,8 @@ menuButton.addEventListener("click", () => {
 })
 
 // Utils
-function checkMedia() {
-	isNarrow = window.matchMedia("(max-width:460px)").matches
+function checkMedia(size) {
+	isNarrow = window.matchMedia(`(max-width:${size}px)`).matches
 }
 
 // Grids
@@ -23,7 +23,7 @@ function checkMedia() {
 const justifiedGrid = document.querySelector(".justified")
 
 function updateJustified() {
-	checkMedia()
+	checkMedia(460)
 	const items = document.querySelectorAll(".post")
 
 	if (isNarrow) {
