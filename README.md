@@ -149,9 +149,11 @@ _Grid of choice for your tag pages. If undefined, the tag pages will display the
 _Choosing a specific theme will enforce it for everyone but choosing `auto` will display one or the other depending on the user preferences._
 
 **Key** `logo`\
-**Value** `String`\
-_Path to your logo (any image format that can be displayed in a HTML `img` tag). It can be anywhere, even remote. If there's no logo provided then the title you provided in the `metadata.json` will be displayed instead._\
-_If it's a SVG and you want it inlined so it's color change with the theme, add a suffix "-inline" to its filename (e.g. logo-inline.svg)_
+**Value** `String`
+
+- _If you want to use a binary file then set the path to your logo (any image format that can be displayed in a HTML `img` tag). It can be anywhere, even remote._
+- _If it's a SVG and you want it inlined in the DOM so its color can change with the theme, add a suffix "-inline" to its filename (e.g. logo-inline.svg), store it anywhere in the `public` folder and make sure the SVG doesn't have colors set on paths and that there's no conflicting `fill="none"` attributes._
+- _If there's no logo provided then the title you set in the `metadata.json` will be displayed instead._
 
 **Key** `banner`\
 **Value** `String`\
