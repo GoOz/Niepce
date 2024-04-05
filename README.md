@@ -151,13 +151,13 @@ _Choosing a specific theme will enforce it for everyone but choosing `auto` will
 **Key** `logo`\
 **Value** `String`
 
-- _If you want to use a binary file then set the path to your logo (any image format that can be displayed in a HTML `img` tag). It can be anywhere, even remote._
+- _If you want to use a binary file then set the path to your logo (any image format that can be displayed in a HTML `img` tag). It can be anywhere in the `public` folder or even remote._
 - _If it's a SVG and you want it inlined in the DOM so its color can change with the theme, add a suffix "-inline" to its filename (e.g. logo-inline.svg), store it anywhere in the `public` folder and make sure the SVG doesn't have colors set on paths and that there's no conflicting `fill="none"` attributes._
 - _If there's no logo provided then the title you set in the `metadata.json` will be displayed instead._
 
 **Key** `banner`\
 **Value** `String`\
-_Path to your site banner (any image format that can be displayed in a HTML `img` tag). It can be anywhere, even remote. This image will only be used in [OpenGraph](https://ogp.me/) tags unless you decide to use it somewhere else._
+_Path to your site banner (any image format that can be displayed in a HTML `img` tag). It can be anywhere in the `public` folder or even remote. This image will only be used in [OpenGraph](https://ogp.me/) tags unless you decide to use it somewhere else._
 
 **Key** `exif`\
 **Value** `boolean`\
@@ -206,15 +206,15 @@ Once the server tells you…
 
 It means you can open the http://localhost:8080/ URL in your browser.
 
-_N.B.: the first time you run the command it will take some time, it's normal. There's a few post examples with pictures already and the build needs to process those._
+_N.B.: the first time you run the command it will take some time, this is normal. There's a few post examples with pictures already and the build needs to process those._
 
-### Creating your own post and pages
+### Creating your own posts and pages
 
 Now that your website is up and running you can add your own content.\
 Any content you want to add needs to be in the `content` folder, if you take a look, there's already some stuff in it.
 
 The folders inside are posts examples and the `about.md` a standalone page example.\
-Feel free to trash those (except maybe `feeds` & `sitemap`) when you familiarized yourself with how to create posts and pages **but you should not delete the other files** (unless you know what you're doing.)
+Feel free to trash those (except maybe `feeds` & `sitemap` unless you know what you're doing) when you familiarized yourself with how to create posts and pages **but you should not delete the other files** (again, unless you know what you're doing).
 
 The only specific thing to know about post and pages are the data you set in the _frontmatter_, the data at the top of the markdown files.
 
@@ -248,7 +248,7 @@ By now you should have a running portfolio with your own content… but it's onl
 
 You need to find yourself a hosting provider who serves static files (which should be every provider actually) and have NodeJS (>=16) installed as well.
 
-Once this is done, you need to run `npm i && npm run build` to install the dependencies and build your site, then point the Apache config to the folder `_site`, this is where your portfolio is generated and what should be served. Everything else is just there to generated this folder.
+Once this is done, you need to run `npm i && npm run build` to install the dependencies and build your site, then point the Apache config to the folder `_site`, this is where your portfolio is generated and what should be served. Everything else is just there to generate this folder.
 
 ## Final words
 
