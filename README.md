@@ -255,3 +255,5 @@ Once this is done, you need to run `npm i && npm run build` to install the depen
 For those of you wondering, the name **Niepce** comes from [Nicéphore Niépce](https://en.wikipedia.org/wiki/Nic%C3%A9phore_Ni%C3%A9pce), one of the earliest pioneers of photography.
 
 If you face any problem of have any question, feel free to drop an [issue](https://github.com/GoOz/Niepce/issues).
+
+Credits to the photography in the social media preview goes to [Zalfa Imani](https://unsplash.com/fr/@zalfaimani).
