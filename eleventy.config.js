@@ -64,6 +64,13 @@ module.exports = function (eleventyConfig) {
 		)
 	})
 
+	eleventyConfig.addFilter(
+		"filterTagSeries",
+		function filterTagSeries(tags, series) {
+			return (tags || []).filter((tag) => series.indexOf(tag) === -1)
+		},
+	)
+
 	eleventyConfig.addFilter("fsExists", function (filename) {
 		return fs.existsSync(filename)
 	})

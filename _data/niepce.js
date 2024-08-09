@@ -27,4 +27,5 @@ module.exports = {
 			url: "https://blog.foojin.com",
 		},
 	],
+	series: [], // Add names of your series. e.g. ["foo", "bar"]
 }

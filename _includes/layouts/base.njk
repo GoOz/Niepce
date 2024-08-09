@@ -75,11 +75,20 @@
 						</li>
 					{%- endfor %}
 						<li class="nav-item">
-							Portfolio
+							Galleries
 							<ul class="tags-list">
-							{% for tag in collections.posts | getAllTags | filterTagList %}
+							{% for tag in collections.posts | getAllTags | filterTagList | filterTagSeries(niepce.series) %}
 								{% set tagUrl %}/tags/{{ tag | slugify }}/{% endset %}
 								<li><a href="{{ tagUrl }}"{% if tagUrl == page.url %} aria-current="page"{% endif %}>{{ tag }}</a></li>
+							{% endfor %}
+							</ul>
+						</li>
+						<li class="nav-item">
+							Series
+							<ul class="tags-list">
+							{% for item in niepce.series %}
+								{% set tagUrl %}/tags/{{ item | slugify }}/{% endset %}
+								<li><a href="{{ tagUrl }}"{% if tagUrl == page.url %} aria-current="page"{% endif %}>{{ item }}</a></li>
 							{% endfor %}
 							</ul>
 						</li>

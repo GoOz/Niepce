@@ -1,6 +1,6 @@
 {
 	"name": "Niepce",
-	"version": "0.1.0",
+	"version": "0.2.0",
 	"description": "11ty starter kit for a portfolio site",
 	"scripts": {
 		"build": "npx @11ty/eleventy",
