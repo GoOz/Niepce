@@ -2,7 +2,7 @@
 // Read the wiki https://github.com/GoOz/Niepce/Wiki for more informations
 module.exports = {
 	grid: "masonry", // grid of choice for the homepage: "justified" | "instagrid" | "masonry" | "monocolumn"
-	grid_tags: "justified", // If specified, override the grid option for the tags pages, same options as `grid`
+	grid_tags: "justified", // If specified, override the grid option for the tags pages (categories & series), same options as `grid`
 	theme: "auto", // Theme of choice: "light" | "dark" | "auto"
 	logo: "", // Path to your logo, if there is none, it will be replace by the title of the site. If it's a SVG and you want it inlined, add a suffix "-inline" to its filename (e.g. logo-inline.svg)
 	banner: "", // Path to the banner image for OpenGraph sharing card (relative to site's url)
@@ -27,5 +27,5 @@ module.exports = {
 			url: "https://blog.foojin.com",
 		},
 	],
-	series: [], // Add names of your series. e.g. ["foo", "bar"]
+	series: ["colorful"], // Add names of your series. e.g. ["foo", "bar"]
 }

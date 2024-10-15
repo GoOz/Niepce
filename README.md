@@ -133,6 +133,7 @@ module.exports = {
 			url: "https://blog.foojin.com",
 		},
 	],
+	series: ["Scotland", "Iceland"],
 }
 ```
 
@@ -142,7 +143,7 @@ _It's your grid choice for your home and tag pages._
 
 **Key** `grid_tags`\
 **Value** `masonry | justified | instagrid | monocolumn`\
-_Grid of choice for your tag pages. If undefined, the tag pages will display the same grid as the home page._
+_Grid of choice for your tag pages (categories & series). If undefined, the tag pages will display the same grid as the home page._
 
 **Key** `theme`\
 **Value** `light | dark | auto`\
@@ -175,6 +176,10 @@ _Note that if needed you can add an unlisted social network but if you want to d
 **Key** `links`\
 **Value** `Key (String): Value (String)`\
 _If you want to add external links in your menu that's the way to go, provide a new object in the array with a label and an URL._
+
+**Key** `series`\
+**Value** `Array`\
+_If you have collections of pictures on specific topics and you want them to have their own page, then apply to those pictures a specific tag and add that tag in the Array so it can be filtered from the generic tags and get a page in the series section._
 
 There you go, you're ready to build your portfolio.
 
