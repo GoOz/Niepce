@@ -832,6 +832,49 @@ a.logo svg {
 	margin-inline-end: 0.5rem;
 }
 
+.prints {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 1rem;
+
+	& .prints-count {
+		font-style: italic;
+		font-size: 0.8em;
+	}
+	& .prints-link {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.5rem;
+		background: transparent;
+		border: 2px solid var(--foreground);
+		padding: 0.25rem 0.5rem;
+		border-radius: 0.5rem;
+		color: var(--foreground);
+		font-size: 0.9em;
+		text-decoration: none;
+		transition:
+			color var(--transition),
+			background-color var(--transition),
+			border-color var(--transition);
+
+		& svg {
+			transition: fill var(--transition);
+		}
+
+		&:where(:hover, :focus-visible) {
+			--button-color: var(--action-color);
+			border-color: var(--button-color);
+			background-color: var(--button-color);
+			color: var(--dark-background);
+
+			& svg {
+				fill: var(--dark-background);
+			}
+		}
+	}
+}
+
 .article-content img {
 	margin: 0 auto;
 }

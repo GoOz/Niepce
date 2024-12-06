@@ -11,6 +11,7 @@ module.exports = {
 	banner: "", // Path to the banner image for OpenGraph sharing card (relative to site's url)
 	exif: true, // Will show exif metadata if they are available: boolean
 	tags: true, // Will show tags on posts: boolean
+	shop_link: "Buy a print",
 	socials: {
 		// Fill those with your social profile urls if you have accounts there
 		"500px": "",
