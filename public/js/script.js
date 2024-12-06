@@ -6,12 +6,27 @@ let isNarrow = false
 
 // Elements
 const menuButton = document.querySelector(".menu")
+const slideshowButton = document.querySelector(".playpause")
 const nav = document.querySelector(".nav")
+const slides = document.querySelectorAll(".slideshow > li")
 
 // Events
 menuButton.addEventListener("click", () => {
 	nav.classList.toggle("open")
 })
+if (slideshowButton) {
+	slideshowButton.addEventListener("click", (e) => {
+		const isPaused = slideshowButton.getAttribute("data-paused") === "true"
+		const newLabel = isPaused ? "Pause" : "Play"
+
+		document
+			.querySelector(".slideshow > li:first-of-type")
+			.classList.toggle("paused")
+
+		slideshowButton.setAttribute("aria-label", newLabel)
+		slideshowButton.setAttribute("data-paused", !isPaused + "")
+	})
+}
 
 // Utils
 function checkMedia(size) {
@@ -63,3 +78,14 @@ if (masonryGrid) {
 	})
 	magicGrid.listen()
 }
+
+// --- Splash slideshow ---
+window.addEventListener("DOMContentLoaded", (e) => {
+	if (!slides) return
+
+	slides.forEach((current) => {
+		current.addEventListener("animationend", (e) => {
+			e.target.parentNode.appendChild(e.target)
+		})
+	})
+})

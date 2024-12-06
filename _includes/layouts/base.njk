@@ -46,11 +46,13 @@
 	</head>
 	<body>
 		{% svgsprite %}
+		{% if not splashscreen %}
 		<div class="skip">
 			<a href="#skip">Skip to main content</a>
 		</div>
+		{% endif %}
 
-		<div class="main">
+		<div class="main{% if splashscreen and niepce.splash === 'true' %} splash{% endif %}">
 			<header class="sidebar">
 				<a href="/" class="logo">
 					{% if niepce.logo %}
@@ -74,6 +76,11 @@
 							<a href="{{ entry.url }}"{% if entry.url == page.url %} aria-current="page"{% endif %}>{{ entry.title }}</a>
 						</li>
 					{%- endfor %}
+						{% if niepce.splash === 'true' %}
+						<li class="nav-item">
+							<a href="/recent/"{% if page.url === '/recent/' %} aria-current="page"{% endif %}>Recent posts</a>
+						</li>
+						{% endif %}
 						<li class="nav-item">
 							Galleries
 							<ul class="tags-list">
@@ -99,6 +106,22 @@
 						{% endfor %}
 					</ul>
 				</nav>
+				{% if splashscreen and niepce.splash === 'true' %}
+				<div class="splash-cta">
+					{% if niepce.splash_line %}
+					<h2 class="splash-line">{{ niepce.splash_line }}</h2>
+					{% endif %}
+					{% if niepce.splash_link %}
+					<a class="splash-link" href="/recent/">{{ niepce.splash_link }}</a>
+					{% endif %}
+				</div>
+				{% endif %}
+				{% if splashscreen and niepce.splash === 'true' %}
+				<button type="button" data-paused="false" class="playpause" aria-label="Pause">
+					{% svg "play", "play-icon" %}
+					{% svg "pause", "pause-icon" %}
+				</button>
+				{% endif %}
 				<ul class="network">
 					<li>
 						<a class="icon-only" href="/feeds/posts.xml" title="RSS feed" aria-label="RSS feed">

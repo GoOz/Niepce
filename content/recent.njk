@@ -1,0 +1,10 @@
+---
+layout: layouts/base.njk
+eleventyExcludeFromCollections: true
+home: true
+permalink: /recent/
+---
+
+{% set postslist = collections.posts %}
+{% include "postslist.njk" %}
+

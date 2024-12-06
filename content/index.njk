@@ -1,10 +1,22 @@
 ---
-layout: layouts/home.njk
+layout: layouts/base.njk
 eleventyExcludeFromCollections: true
 home: true
+splashscreen: true
 eleventyNavigation:
 	key: Home
 	order: 1
 ---
-{% set postslist = collections.posts %}
-{% include "postslist.njk" %}
+{% if niepce.splash === 'true' %}
+	{% set postslist = collections.featured %}
+	<ul class="slideshow">
+		{%- for post in postslist -%}
+		{% if post.data.photo %}
+			<li>{% image "../content/"+post.url+"/"+post.data.photo , post.data.photo_alt, size, loading %}</li>
+		{% endif %}
+		{%- endfor -%}
+	</ul>
+{% else %}
+	{% set postslist = collections.posts %}
+	{% include "postslist.njk" %}
+{% endif %}

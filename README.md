@@ -10,7 +10,7 @@ It's ready to be build as it is but you'll have to set some things up to make it
 
 ## Demo
 
-Currently used on my own [portfolio](https://www.bloogart.com/) but this tool comes with several example pages so you can quickly serve locally and see it in action if you want to start playing with it immediately.
+Currently used on my own [portfolio](https://gooz.photography/) but this tool comes with several example pages so you can quickly serve locally and see it in action if you want to start playing with it immediately.
 
 _NB: Note that most of example pictures are from Unsplash.com and are credited in their own page._
 
@@ -27,6 +27,12 @@ You'll be able to choose between a dark theme, a light theme or let it be automa
 #### Light theme
 
 ![light theme](readme_assets/light-theme.png)
+
+#### Splash screen
+
+![Splash screen](readme_assets/splash-screen.png)
+
+You can choose to have a splash screen with a smooth slideshow of pictures of your choice.
 
 ### Choose your grid
 
@@ -109,6 +115,9 @@ Then it's time to choose your theme preferences, to do so open the `_data/niepce
 
 ```js
 module.exports = {
+	splash: "true",
+	splash_link: "Browse",
+	splash_line: "Take a look at my work…",
 	grid: "masonry",
 	grid_tags: "justified",
 	theme: "auto",
@@ -136,6 +145,19 @@ module.exports = {
 	series: ["Scotland", "Iceland"],
 }
 ```
+
+**Key** `splash`\
+**Value** `true | false`\
+_Choose to have a splash screen as your homepage. If `false`, the homepage will be the most recent posts page, otherwise the link on the splash screen will lead to the most recent posts page and it will appear in the navigation._\
+_Pictures in the slideshow will be the ones with the `featured: true` metadata._
+
+**Key** `splash_link`\
+**Value** `String`\
+_Label for the link on the splash screen. This link will lead to the most recent posts page._
+
+**Key** `splash_line`\
+**Value** `String`\
+_Welcome sentence to appear above the link to the most recent page. Leave it empty if you don't want to display any welcome sentence._
 
 **Key** `grid`\
 **Value** `masonry | justified | instagrid | monocolumn`\
@@ -231,10 +253,11 @@ photo: photo.jpg
 photo_alt: Portrait
 tags:
   - portrait
+featured: true
 ---
 ```
 
-This is where you set the title, date of the post (not the photo), file of the photo (and its alternative text) and the tags of the post.\
+This is where you set the title, date of the post (not the photo), file of the photo (and its alternative text), the tags of the post and set it as featured if you want the picture to appear in the splash screen slideshow.\
 That's about it.
 
 ### Customizing category pages

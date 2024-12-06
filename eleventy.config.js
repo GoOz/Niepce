@@ -71,6 +71,11 @@ module.exports = function (eleventyConfig) {
 		},
 	)
 
+	// Return all the featured posts
+	eleventyConfig.addCollection("featured", (collection) => {
+		return collection.getAll().filter((post) => post.data.featured)
+	})
+
 	eleventyConfig.addFilter("fsExists", function (filename) {
 		return fs.existsSync(filename)
 	})
