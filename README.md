@@ -81,6 +81,10 @@ Display tags or not on post pages.
 
 If you tag your photo with only one tag it may be not relevant to show it on the post page, in that case you can choose to hide it.
 
+### Selling prints
+
+Whether you have your own selling platform or you prefer to deal with it yourself by hand, you can add a link to buy a print of a picture and maintain your available stock.
+
 ### External links
 
 You have the ability to add any external links in the menu and even more, if you have social networks accounts, you'll be able to easily add your links.
@@ -125,6 +129,7 @@ module.exports = {
 	banner: "",
 	exif: true,
 	tags: true,
+	shop_link: "Buy a print",
 	socials: {
 		"500px": "",
 		behance: "",
@@ -188,7 +193,11 @@ _Display or not the exif metadata of your pictures on the post page. If `true` a
 
 **Key** `tags`\
 **Value** `boolean`\
-_Display or not the tags of the picture on the post page_
+_Display or not the tags of the picture on the post page._
+
+**Key** `shop_link`\
+**Value** `String`\
+_Label of the link to buy prints._
 
 **Key** `social`\
 **Value** `Key (String): Value (String)`\
@@ -243,7 +252,7 @@ Any content you want to add needs to be in the `content` folder, if you take a l
 The folders inside are posts examples and the `about.md` a standalone page example.\
 Feel free to trash those (except maybe `feeds` & `sitemap` unless you know what you're doing) when you familiarized yourself with how to create posts and pages **but you should not delete the other files** (again, unless you know what you're doing).
 
-The only specific thing to know about post and pages are the data you set in the _frontmatter_, the data at the top of the markdown files.
+The only specific thing to know about post and pages are the data you set in the _frontmatter_, the data at the top of the markdown files, like so:
 
 ```
 ---
@@ -251,14 +260,58 @@ title: Title of the post
 date: 2023-09-20
 photo: photo.jpg
 photo_alt: Portrait
-tags:
-  - portrait
+tags: [portrait, mary]
 featured: true
+print_max: 30
+print_current: 12
+print_show_max: true
+print_link: "../shop/"
 ---
 ```
 
-This is where you set the title, date of the post (not the photo), file of the photo (and its alternative text), the tags of the post and set it as featured if you want the picture to appear in the splash screen slideshow.\
-That's about it.
+In details:
+
+**Key** `title`\
+**Value** `String`\
+_The title of the post. It can be the title of your picture or something else._
+
+**Key** `date`\
+**Value** `String` (date in ISO date format: YEAR-MONTH-DAY)\
+_Publishing date of the post (not the capture date of the picture which should appear in the EXIF metadata)._
+
+**Key** `photo`\
+**Value** `String`\
+_Path and filename of your picture, relative to the markdown file of the post._
+
+**Key** `photo_alt`\
+**Value** `String`\
+_Alternative text of your picture, used for screenreader users and in case the picture doesn't load for some reason._
+
+**Key** `tags`\
+**Value** `String or Array`\
+_Categories where your picture should be filed. If you only have one you can just write it `tags: portrait` but if you have more then you'll need to write an array like so `tags: [portrait, mary]`._
+
+**Key** `featured`\
+**Value** `boolean`\
+_Pin your picture as featured, it will appear in the splash screen's slideshow if you enabled it. If not, it will do nothing._
+
+**Key** `print_max`\
+**Value** `Number`\
+_Maximum number of limited edition prints you would sell of that picture. Depending on the country ou live in it can vary. For example, it's 30 in France._
+
+**Key** `print_current`\
+**Value** `Number`\
+_Current number of prints sold. You'll need to update this number everytime you sell a print._
+
+**Key** `print_show_max`\
+**Value** `boolean`\
+_Displays the maximum number of prints you can make. Hidden by default._
+
+**Key** `print_link`\
+**Value** `String`\
+_URL to the page where the user can buy the print or to a page on your website explaining how to buy one. An exemple page (`shop.md`) exists to help you, remove it if you don't need it._
+
+And that's about it.
 
 ### Customizing category pages
 

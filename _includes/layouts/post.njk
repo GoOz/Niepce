@@ -60,6 +60,21 @@ layout: layouts/base.njk
 		</div>
 		{% endif %}
 
+		{% if print_current and print_max and print_link %}
+			<div class="prints">
+				{% if print_max - print_current  === 0 %}
+				<div class="prints-count">
+					All prints have been sold.
+				</div>
+				{% else %}
+				<div class="prints-count">
+					{{ print_max - print_current }}{% if print_show_max %} / {{print_max}}{% endif %} prints left for sale
+				</div>
+				<a class="prints-link" href="{{print_link}}">{% svg "shopping-basket", "exif-icon" %} {{niepce.shop_link}}</a>
+				{% endif %}
+			</div>
+		{% endif %}
+
 		{{ content | safe }}
 	</div>
 	{%- if collections.posts %}
