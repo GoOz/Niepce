@@ -4,15 +4,15 @@ eleventyExcludeFromCollections: true
 home: true
 splashscreen: true
 eleventyNavigation:
-	key: Home
-	order: 1
+  key: Home
+  order: 1
 ---
 {% if niepce.splash === 'true' %}
 	{% set postslist = collections.featured %}
 	<ul class="slideshow">
 		{%- for post in postslist -%}
 		{% if post.data.photo %}
-			<li>{% image "../content/"+post.url+"/"+post.data.photo , post.data.photo_alt, size, loading %}</li>
+			<li><img src="/{{ post.url }}/{{ post.data.photo }}" alt="{{ post.data.photo_alt }}" sizes="(min-width: 50em) 50vw, 100vw"></li>
 		{% endif %}
 		{%- endfor -%}
 	</ul>

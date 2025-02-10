@@ -10,7 +10,8 @@ It's ready to be build as it is but you'll have to set some things up to make it
 
 ## Demo
 
-Currently used on my own [portfolio](https://gooz.photography/) but this tool comes with several example pages so you can quickly serve locally and see it in action if you want to start playing with it immediately.
+You can take a look at the [demo website](https://gooz.github.io/Niepce/) to see a dummy example or you can look at my own [portfolio](https://gooz.photography/) which is using Niepce.  
+Niepce comes with several example pages so you can as well quickly serve locally and see it in action if you want to start playing with it immediately.
 
 _NB: Note that most of example pictures are from Unsplash.com and are credited in their own page._
 
@@ -118,7 +119,7 @@ You'll want to edit it all with your own information.
 Then it's time to choose your theme preferences, to do so open the `_data/niepce.js` file and edit it as you see fit.
 
 ```js
-module.exports = {
+export default {
 	splash: "true",
 	splash_link: "Browse",
 	splash_line: "Take a look at my work…",

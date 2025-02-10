@@ -18,18 +18,25 @@
 
   	{# Opengraph #}
   	{% if photo %}
-  	<meta property="og:site_name" content="{{ metadata.title }}">
-    <meta property="og:type" content="article">
-    <meta property="og:title" content="{{ title }}">
-    <meta property="og:url" content="{{ metadata.url }}{{ page.url | htmlBaseUrl}}">
-		{% ogPhoto "content/"+page.url+photo, metadata.url %}
-    <meta property="og:locale" content="{{ metadata.locale }}">
-    <meta property="article:published_time" content="{{ date | htmlDateString}}">
-    {%- for tag in tags | filterTagList %}
-		<meta property="article:tag" content="{{ tag }}">
+		<meta property="og:site_name" content="{{ metadata.title }}" />
+		<meta property="og:type" content="article" />
+		<meta property="og:title" content="{{ title }}" />
+		<meta property="og:description" content="{{ page.content }}" />
+		<meta
+			property="og:url"
+			content="{{ metadata.url }}{{ page.url | htmlBaseUrl }}"
+		/>
+		<meta property="og:image" content="{{ photo | getOGImageURL | absoluteUrl(metadata.url) }}" />
+		<meta property="og:locale" content="{{metadata.locale}}" />
+		<meta
+			property="article:published_time"
+			content="{{ date | htmlDateString }}"
+		/>
+		{%- for tag in tags | filterTagList %}
+		<meta property="article:tag" content="{{ tag }}" />
 		{% endfor %}
-    <meta property="og:image:width" content="2000">
-    <meta property="og:image:height" content="1333">
+		<meta property="og:image:width" content="2000" />
+		<meta property="og:image:height" content="1333" />
   	{% else %}
 		<meta property="og:site_name" content="{{ metadata.title }}">
     <meta property="og:type" content="website">
@@ -84,7 +91,7 @@
 						<li class="nav-item">
 							Galleries
 							<ul class="tags-list">
-							{% for tag in collections.posts | getAllTags | filterTagList | filterTagSeries(niepce.series) %}
+							{% for tag in collections | getKeys | filterTagList | filterTagSeries(niepce.series) %}
 								{% set tagUrl %}/tags/{{ tag | slugify }}/{% endset %}
 								<li><a href="{{ tagUrl }}"{% if tagUrl == page.url %} aria-current="page"{% endif %}>{{ tag }}</a></li>
 							{% endfor %}

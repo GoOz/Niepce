@@ -7,7 +7,7 @@ override:tags: ["pages"]
 title: Hello, I'm the photographer
 ---
 
-![My portrait](https://i.pravatar.cc/300)
+<img eleventy:ignore alt="My portrait" src="https://i.pravatar.cc/300" width="300" height="300">
 
 ## About me
 
