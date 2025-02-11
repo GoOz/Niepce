@@ -1,0 +1,553 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:base="en">
+	<title>Niepce</title>
+	<subtitle>Niepce&#39;s personal portfolio</subtitle>
+	<link href="https://portfolio.niepce.tld/feeds/posts.xml" rel="self" />
+	<link href="https://portfolio.niepce.tld/" />
+	<updated>2023-09-28T00:00:00Z</updated>
+	<id>https://portfolio.niepce.tld</id>
+	<author>
+		<name>Nicéphore Niépce</name>
+		<email>nicephore@niepce.tld</email>
+	</author>
+	
+	<entry>
+		<title>Portrait 4</title>
+		<link href="https://portfolio.niepce.tld/portrait-4/" />
+		<updated>2023-09-28T00:00:00Z</updated>
+		<id>https://portfolio.niepce.tld/portrait-4/</id>
+		<content type="html">
+			<![CDATA[
+			
+			<img src="https://portfolio.niepce.tld/img/v0tl5-1um3-600.jpeg" alt="Portrait 4" />
+			
+			<p>Credits: <a href="https://unsplash.com/fr/photos/uomo-che-indossa-una-camicia-bianca-con-scollo-a-v-iFgRcqHznqg">Unsplash</a></p>
+
+			]]>
+		</content>
+	</entry>
+	
+	<entry>
+		<title>Misc 5</title>
+		<link href="https://portfolio.niepce.tld/misc-5/" />
+		<updated>2023-09-28T00:00:00Z</updated>
+		<id>https://portfolio.niepce.tld/misc-5/</id>
+		<content type="html">
+			<![CDATA[
+			
+			<img src="https://portfolio.niepce.tld/img/5B6TiX9YTp-600.jpeg" alt="Misc 5" />
+			
+			<p>Credits: <a href="https://unsplash.com/fr/photos/un-gros-plan-dun-arriere-plan-colore-dysl7LZ7bSM">Unsplash</a></p>
+
+			]]>
+		</content>
+	</entry>
+	
+	<entry>
+		<title>Landscape 3</title>
+		<link href="https://portfolio.niepce.tld/landscape-3/" />
+		<updated>2023-09-25T00:00:00Z</updated>
+		<id>https://portfolio.niepce.tld/landscape-3/</id>
+		<content type="html">
+			<![CDATA[
+			
+			<img src="https://portfolio.niepce.tld/img/E9cL9TNxJj-600.jpeg" alt="landscape 3" />
+			
+			<p>Credit: <a href="https://unsplash.com/fr/photos/trois-bateaux-en-bois-marron-sur-leau-du-lac-bleu-pris-pendant-la-journee-T7K4aEPoGGk">Unsplash</a></p>
+
+			]]>
+		</content>
+	</entry>
+	
+	<entry>
+		<title>Misc 1</title>
+		<link href="https://portfolio.niepce.tld/misc-1/" />
+		<updated>2023-09-21T00:00:00Z</updated>
+		<id>https://portfolio.niepce.tld/misc-1/</id>
+		<content type="html">
+			<![CDATA[
+			
+			<img src="https://portfolio.niepce.tld/img/KNs3C6M5KZ-600.jpeg" alt="Misc 1" />
+			
+			<p>Credits: <a href="https://unsplash.com/fr/photos/carlino-coperto-con-una-coperta-sul-copriletto-2Ts5HnA67k8">Unsplash</a></p>
+
+			]]>
+		</content>
+	</entry>
+	
+	<entry>
+		<title>Portrait 2 with markdown content</title>
+		<link href="https://portfolio.niepce.tld/portrait-2-markdown/" />
+		<updated>2023-09-20T00:00:00Z</updated>
+		<id>https://portfolio.niepce.tld/portrait-2-markdown/</id>
+		<content type="html">
+			<![CDATA[
+			
+			<img src="https://portfolio.niepce.tld/img/vRZlYjjfE5-600.jpeg" alt="Portrait 2" />
+			
+			<p>This is a intro paragraph, this is usually used as an excerpt for feeds or opengragh descriptions.<br>
+Credits: <a href="https://unsplash.com/fr/photos/donna-in-piedi-vicino-al-cancello-dacciaio-blu-O3ymvT7Wf9U">Unsplash</a></p>
+<hr>
+<h1>Headers</h1>
+<h1>h1 Heading</h1>
+<h2>h2 Heading</h2>
+<h3>h3 Heading</h3>
+<h4>h4 Heading</h4>
+<h5>h5 Heading</h5>
+<h6>h6 Heading</h6>
+<hr>
+<h1>Emphasis</h1>
+<p>Emphasis, aka italics, with <em>asterisks</em> or <em>underscores</em>.</p>
+<p>Strong emphasis, aka bold, with <strong>asterisks</strong> or <strong>underscores</strong>.</p>
+<p>Combined emphasis with <strong>asterisks and <em>underscores</em></strong>.</p>
+<p>Strikethrough uses two tildes. <s>Scratch this.</s></p>
+<p><strong>This is bold text</strong></p>
+<p><strong>This is bold text</strong></p>
+<p><em>This is italic text</em></p>
+<p><em>This is italic text</em></p>
+<p><s>Strikethrough</s></p>
+<hr>
+<h1>Lists</h1>
+<ol>
+<li>
+<p>First ordered list item</p>
+</li>
+<li>
+<p>Another item</p>
+<ul>
+<li>Unordered sub-list.</li>
+</ul>
+</li>
+<li>
+<p>Actual numbers don't matter, just that it's a number</p>
+<ol>
+<li>Ordered sub-list</li>
+</ol>
+</li>
+<li>
+<p>And another item.</p>
+<p>You can have properly indented paragraphs within list items. Notice the blank line above, and the leading spaces.</p>
+<p>To have a line break, you will need to use two trailing spaces.<br>
+Note that this line is separate, but within the same paragraph.</p>
+</li>
+</ol>
+<ul>
+<li>Unordered list can use asterisks</li>
+</ul>
+<ul>
+<li>Or minuses</li>
+</ul>
+<ul>
+<li>Or pluses</li>
+</ul>
+<ol>
+<li>Make my changes
+<ol>
+<li>Fix bug</li>
+<li>Improve formatting
+<ul>
+<li>Make the headings bigger</li>
+</ul>
+</li>
+</ol>
+</li>
+<li>Push my commits to GitHub</li>
+<li>Open a pull request
+<ul>
+<li>Describe my changes</li>
+<li>Mention all the members of my team
+<ul>
+<li>Ask for feedback</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<ul>
+<li>Create a list by starting a line with <code>+</code>, <code>-</code>, or <code>*</code></li>
+<li>Sub-lists are made by indenting 2 spaces:
+<ul>
+<li>Marker character change forces new list start:
+<ul>
+<li>Ac tristique libero volutpat at</li>
+</ul>
+<ul>
+<li>Facilisis in pretium nisl aliquet</li>
+</ul>
+<ul>
+<li>Nulla volutpat aliquam velit</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Very easy!</li>
+</ul>
+<hr>
+<h1>Links</h1>
+<p><a href="https://www.google.com">I'm an inline-style link</a></p>
+<p><a href="https://www.google.com" title="Google's Homepage">I'm an inline-style link with title</a></p>
+<p><a href="https://www.mozilla.org">I'm a reference-style link</a></p>
+<p><a href="https://portfolio.niepce.tld/blob/master/LICENSE">I'm a relative reference to a repository file</a></p>
+<p><a href="http://slashdot.org">You can use numbers for reference-style link definitions</a></p>
+<p>Or leave it empty and use the <a href="http://www.reddit.com">link text itself</a>.</p>
+<p>URLs and URLs in angle brackets will automatically get turned into links.
+http://www.example.com or <a href="http://www.example.com">http://www.example.com</a> and sometimes
+example.com (but not on Github, for example).</p>
+<p>Some text to show that the reference links can follow later.</p>
+<hr>
+<h1>Images</h1>
+<p>Here's our logo (hover to see the title text):</p>
+<p>Inline-style:<br>
+<img src="https://picsum.photos/200/300" alt="alt text" title="Placeholder image"></p>
+<p>Reference-style:<br>
+Like links, Images also have a footnote style syntax</p>
+<p><img src="https://picsum.photos/500/300" alt="Alt text" title="Placeholder image"></p>
+<p>With a reference later in the document defining the URL location.</p>
+<hr>
+<h1>Tables</h1>
+<p>Colons can be used to align columns.</p>
+<table>
+<thead>
+<tr>
+<th>Tables</th>
+<th style="text-align:center">Are</th>
+<th style="text-align:right">Cool</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>col 3 is</td>
+<td style="text-align:center">right-aligned</td>
+<td style="text-align:right">$1600</td>
+</tr>
+<tr>
+<td>col 2 is</td>
+<td style="text-align:center">centered</td>
+<td style="text-align:right">$12</td>
+</tr>
+<tr>
+<td>zebra stripes</td>
+<td style="text-align:center">are neat</td>
+<td style="text-align:right">$1</td>
+</tr>
+</tbody>
+</table>
+<p>There must be at least 3 dashes separating each header cell.
+The outer pipes (|) are optional, and you don't need to make the
+raw Markdown line up prettily. You can also use inline Markdown.</p>
+<table>
+<thead>
+<tr>
+<th>Markdown</th>
+<th>Less</th>
+<th>Pretty</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>Still</em></td>
+<td><code>renders</code></td>
+<td><strong>nicely</strong></td>
+</tr>
+<tr>
+<td>1</td>
+<td>2</td>
+<td>3</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>First Header</th>
+<th>Second Header</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Content Cell</td>
+<td>Content Cell</td>
+</tr>
+<tr>
+<td>Content Cell</td>
+<td>Content Cell</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>git status</td>
+<td>List all new or modified files</td>
+</tr>
+<tr>
+<td>git diff</td>
+<td>Show file differences that haven't been staged</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>git status</code></td>
+<td>List all <em>new or modified</em> files</td>
+</tr>
+<tr>
+<td><code>git diff</code></td>
+<td>Show file differences that <strong>haven't been</strong> staged</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Left-aligned</th>
+<th style="text-align:center">Center-aligned</th>
+<th style="text-align:right">Right-aligned</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">git status</td>
+<td style="text-align:center">git status</td>
+<td style="text-align:right">git status</td>
+</tr>
+<tr>
+<td style="text-align:left">git diff</td>
+<td style="text-align:center">git diff</td>
+<td style="text-align:right">git diff</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Character</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Backtick</td>
+<td>`</td>
+</tr>
+<tr>
+<td>Pipe</td>
+<td>|</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h1>Blockquotes</h1>
+<blockquote>
+<p>Blockquotes are very handy in email to emulate reply text.
+This line is part of the same quote.</p>
+</blockquote>
+<p>Quote break.</p>
+<blockquote>
+<p>This is a very long line that will still be quoted properly when it wraps. Oh boy let's keep writing to make sure this is long enough to actually wrap for everyone. Oh, you can <em>put</em> <strong>Markdown</strong> into a blockquote.</p>
+</blockquote>
+<blockquote>
+<p>Blockquotes can also be nested...</p>
+<blockquote>
+<p>...by using additional greater-than signs right next to each other...</p>
+<blockquote>
+<p>...or with spaces between arrows.</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<hr>
+<h1>Inline HTML</h1>
+<dl>
+  <dt>Definition list</dt>
+  <dd>Is something people use sometimes.</dd>
+  <dt>Markdown in HTML</dt>
+  <dd>Does *not* work **very** well. Use HTML <em>tags</em>.</dd>
+</dl>
+<hr>
+<h1>Horizontal Rules</h1>
+<p>Three or more...</p>
+<hr>
+<p>Hyphens</p>
+<hr>
+<p>Asterisks</p>
+<hr>
+<p>Underscores</p>
+<hr>
+
+			]]>
+		</content>
+	</entry>
+	
+	<entry>
+		<title>Landscape 5</title>
+		<link href="https://portfolio.niepce.tld/landscape-5/" />
+		<updated>2023-09-18T00:00:00Z</updated>
+		<id>https://portfolio.niepce.tld/landscape-5/</id>
+		<content type="html">
+			<![CDATA[
+			
+			<img src="https://portfolio.niepce.tld/img/1vNfrMJvBI-600.jpeg" alt="landscape 5" />
+			
+			<p>Credits: <a href="https://unsplash.com/fr/photos/specchio-dacqua-circondato-da-alberi-NRQV-hBF10M">Unsplash</a></p>
+
+			]]>
+		</content>
+	</entry>
+	
+	<entry>
+		<title>Portrait 3</title>
+		<link href="https://portfolio.niepce.tld/portrait-3/" />
+		<updated>2023-09-17T00:00:00Z</updated>
+		<id>https://portfolio.niepce.tld/portrait-3/</id>
+		<content type="html">
+			<![CDATA[
+			
+			<img src="https://portfolio.niepce.tld/img/y7e5ikfMHE-600.jpeg" alt="Portrait 3" />
+			
+			<p>Credits: <a href="https://unsplash.com/fr/photos/uomo-che-indossa-una-camicia-nera-aoEwuEH7YAs">Unsplash</a></p>
+
+			]]>
+		</content>
+	</entry>
+	
+	<entry>
+		<title>Misc 4</title>
+		<link href="https://portfolio.niepce.tld/misc-4/" />
+		<updated>2023-09-16T00:00:00Z</updated>
+		<id>https://portfolio.niepce.tld/misc-4/</id>
+		<content type="html">
+			<![CDATA[
+			
+			<img src="https://portfolio.niepce.tld/img/baWrVbQ8qm-600.jpeg" alt="Misc 4" />
+			
+			<p>Credits: <a href="https://unsplash.com/fr/photos/un-groupe-de-bougies-allumees-assises-les-unes-a-cote-des-autres-F9oJWM639mU">Unsplash</a></p>
+
+			]]>
+		</content>
+	</entry>
+	
+	<entry>
+		<title>Landscape 4</title>
+		<link href="https://portfolio.niepce.tld/landscape-4/" />
+		<updated>2023-09-13T00:00:00Z</updated>
+		<id>https://portfolio.niepce.tld/landscape-4/</id>
+		<content type="html">
+			<![CDATA[
+			
+			<img src="https://portfolio.niepce.tld/img/uo6geui056-600.jpeg" alt="landscape 4" />
+			
+			<p>Credits: <a href="https://unsplash.com/fr/photos/maison-brune-pres-dun-plan-deau-zAjdgNXsMeg">Unsplash</a></p>
+
+			]]>
+		</content>
+	</entry>
+	
+	<entry>
+		<title>Misc 3</title>
+		<link href="https://portfolio.niepce.tld/misc-3/" />
+		<updated>2023-09-12T00:00:00Z</updated>
+		<id>https://portfolio.niepce.tld/misc-3/</id>
+		<content type="html">
+			<![CDATA[
+			
+			<img src="https://portfolio.niepce.tld/img/CRG0YaWT7S-600.jpeg" alt="Misc 3" />
+			
+			<p>Credits: <a href="https://unsplash.com/fr/photos/figurina-animale-in-legno-marrone-su-tavola-di-legno-marrone-4AmLEKgmBm4">Unsplash</a></p>
+
+			]]>
+		</content>
+	</entry>
+	
+	<entry>
+		<title>Landscape 2</title>
+		<link href="https://portfolio.niepce.tld/landscape-2/" />
+		<updated>2023-09-09T00:00:00Z</updated>
+		<id>https://portfolio.niepce.tld/landscape-2/</id>
+		<content type="html">
+			<![CDATA[
+			
+			<img src="https://portfolio.niepce.tld/img/ZqLR8vU_az-600.jpeg" alt="landscape 2" />
+			
+			<p>Credits: <a href="https://unsplash.com/fr/photos/ripresa-aerea-della-foresta-2Hzmz15wGik">Unsplash</a></p>
+
+			]]>
+		</content>
+	</entry>
+	
+	<entry>
+		<title>Misc 2</title>
+		<link href="https://portfolio.niepce.tld/misc-2/" />
+		<updated>2023-09-08T00:00:00Z</updated>
+		<id>https://portfolio.niepce.tld/misc-2/</id>
+		<content type="html">
+			<![CDATA[
+			
+			<img src="https://portfolio.niepce.tld/img/109FzdNhW1-600.jpeg" alt="Misc 2" />
+			
+			<p>Credits: <a href="https://unsplash.com/fr/photos/foto-della-candela-gel-a-bordo-accanto-al-cuscino-u_z0X-yrJIE">Unsplash</a></p>
+
+			]]>
+		</content>
+	</entry>
+	
+	<entry>
+		<title>Portrait 5</title>
+		<link href="https://portfolio.niepce.tld/portrait-5/" />
+		<updated>2023-09-05T00:00:00Z</updated>
+		<id>https://portfolio.niepce.tld/portrait-5/</id>
+		<content type="html">
+			<![CDATA[
+			
+			<img src="https://portfolio.niepce.tld/img/15VOpKmBpf-600.jpeg" alt="Portrait 5" />
+			
+			<p>Credits: <a href="https://unsplash.com/fr/photos/donna-sorridente-che-indossa-un-top-con-colletto-gessato-bianco-e-nero-QXevDflbl8A">Unsplash</a></p>
+
+			]]>
+		</content>
+	</entry>
+	
+	<entry>
+		<title>Portrait 1</title>
+		<link href="https://portfolio.niepce.tld/portrait-1/" />
+		<updated>2023-09-01T00:00:00Z</updated>
+		<id>https://portfolio.niepce.tld/portrait-1/</id>
+		<content type="html">
+			<![CDATA[
+			
+			<img src="https://portfolio.niepce.tld/img/CXcF9DKmzt-600.jpeg" alt="Portrait 1" />
+			
+			<p>Credits: <a href="https://unsplash.com/fr/photos/donna-che-fissa-direttamente-la-fotocamera-vicino-al-muro-rosa-bqe0J0b26RQ">Unsplash</a></p>
+
+			]]>
+		</content>
+	</entry>
+	
+	<entry>
+		<title>Landscape 1</title>
+		<link href="https://portfolio.niepce.tld/landscape-1/" />
+		<updated>2023-09-01T00:00:00Z</updated>
+		<id>https://portfolio.niepce.tld/landscape-1/</id>
+		<content type="html">
+			<![CDATA[
+			
+			<img src="https://portfolio.niepce.tld/img/dsBo4o6SzR-600.jpeg" alt="landscape 1" />
+			
+			
+			]]>
+		</content>
+	</entry>
+</feed>
+
