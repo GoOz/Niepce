@@ -2,8 +2,8 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:base="en">
 	<title>Niepce</title>
 	<subtitle>Niepce&#39;s personal portfolio</subtitle>
-	<link href="https://portfolio.niepce.tld/feeds/posts.xml" rel="self" />
-	<link href="https://portfolio.niepce.tld/" />
+	<link href="https://portfolio.niepce.tld/Niepce/feeds/posts.xml" rel="self" />
+	<link href="https://portfolio.niepce.tld/Niepce/" />
 	<updated>2023-09-28T00:00:00Z</updated>
 	<id>https://portfolio.niepce.tld</id>
 	<author>
@@ -13,9 +13,9 @@
 	
 	<entry>
 		<title>Portrait 4</title>
-		<link href="https://portfolio.niepce.tld/portrait-4/" />
+		<link href="https://portfolio.niepce.tld/Niepce/portrait-4/" />
 		<updated>2023-09-28T00:00:00Z</updated>
-		<id>https://portfolio.niepce.tld/portrait-4/</id>
+		<id>https://portfolio.niepce.tld/Niepce/portrait-4/</id>
 		<content type="html">
 			<![CDATA[
 			
@@ -29,9 +29,9 @@
 	
 	<entry>
 		<title>Misc 5</title>
-		<link href="https://portfolio.niepce.tld/misc-5/" />
+		<link href="https://portfolio.niepce.tld/Niepce/misc-5/" />
 		<updated>2023-09-28T00:00:00Z</updated>
-		<id>https://portfolio.niepce.tld/misc-5/</id>
+		<id>https://portfolio.niepce.tld/Niepce/misc-5/</id>
 		<content type="html">
 			<![CDATA[
 			
@@ -45,9 +45,9 @@
 	
 	<entry>
 		<title>Landscape 3</title>
-		<link href="https://portfolio.niepce.tld/landscape-3/" />
+		<link href="https://portfolio.niepce.tld/Niepce/landscape-3/" />
 		<updated>2023-09-25T00:00:00Z</updated>
-		<id>https://portfolio.niepce.tld/landscape-3/</id>
+		<id>https://portfolio.niepce.tld/Niepce/landscape-3/</id>
 		<content type="html">
 			<![CDATA[
 			
@@ -61,9 +61,9 @@
 	
 	<entry>
 		<title>Misc 1</title>
-		<link href="https://portfolio.niepce.tld/misc-1/" />
+		<link href="https://portfolio.niepce.tld/Niepce/misc-1/" />
 		<updated>2023-09-21T00:00:00Z</updated>
-		<id>https://portfolio.niepce.tld/misc-1/</id>
+		<id>https://portfolio.niepce.tld/Niepce/misc-1/</id>
 		<content type="html">
 			<![CDATA[
 			
@@ -77,9 +77,9 @@
 	
 	<entry>
 		<title>Portrait 2 with markdown content</title>
-		<link href="https://portfolio.niepce.tld/portrait-2-markdown/" />
+		<link href="https://portfolio.niepce.tld/Niepce/portrait-2-markdown/" />
 		<updated>2023-09-20T00:00:00Z</updated>
-		<id>https://portfolio.niepce.tld/portrait-2-markdown/</id>
+		<id>https://portfolio.niepce.tld/Niepce/portrait-2-markdown/</id>
 		<content type="html">
 			<![CDATA[
 			
@@ -187,7 +187,7 @@ Note that this line is separate, but within the same paragraph.</p>
 <p><a href="https://www.google.com">I'm an inline-style link</a></p>
 <p><a href="https://www.google.com" title="Google's Homepage">I'm an inline-style link with title</a></p>
 <p><a href="https://www.mozilla.org">I'm a reference-style link</a></p>
-<p><a href="https://portfolio.niepce.tld/blob/master/LICENSE">I'm a relative reference to a repository file</a></p>
+<p><a href="https://portfolio.niepce.tld/Niepce/blob/master/LICENSE">I'm a relative reference to a repository file</a></p>
 <p><a href="http://slashdot.org">You can use numbers for reference-style link definitions</a></p>
 <p>Or leave it empty and use the <a href="http://www.reddit.com">link text itself</a>.</p>
 <p>URLs and URLs in angle brackets will automatically get turned into links.
@@ -393,9 +393,9 @@ This line is part of the same quote.</p>
 	
 	<entry>
 		<title>Landscape 5</title>
-		<link href="https://portfolio.niepce.tld/landscape-5/" />
+		<link href="https://portfolio.niepce.tld/Niepce/landscape-5/" />
 		<updated>2023-09-18T00:00:00Z</updated>
-		<id>https://portfolio.niepce.tld/landscape-5/</id>
+		<id>https://portfolio.niepce.tld/Niepce/landscape-5/</id>
 		<content type="html">
 			<![CDATA[
 			
@@ -409,9 +409,9 @@ This line is part of the same quote.</p>
 	
 	<entry>
 		<title>Portrait 3</title>
-		<link href="https://portfolio.niepce.tld/portrait-3/" />
+		<link href="https://portfolio.niepce.tld/Niepce/portrait-3/" />
 		<updated>2023-09-17T00:00:00Z</updated>
-		<id>https://portfolio.niepce.tld/portrait-3/</id>
+		<id>https://portfolio.niepce.tld/Niepce/portrait-3/</id>
 		<content type="html">
 			<![CDATA[
 			
@@ -425,9 +425,9 @@ This line is part of the same quote.</p>
 	
 	<entry>
 		<title>Misc 4</title>
-		<link href="https://portfolio.niepce.tld/misc-4/" />
+		<link href="https://portfolio.niepce.tld/Niepce/misc-4/" />
 		<updated>2023-09-16T00:00:00Z</updated>
-		<id>https://portfolio.niepce.tld/misc-4/</id>
+		<id>https://portfolio.niepce.tld/Niepce/misc-4/</id>
 		<content type="html">
 			<![CDATA[
 			
@@ -441,9 +441,9 @@ This line is part of the same quote.</p>
 	
 	<entry>
 		<title>Landscape 4</title>
-		<link href="https://portfolio.niepce.tld/landscape-4/" />
+		<link href="https://portfolio.niepce.tld/Niepce/landscape-4/" />
 		<updated>2023-09-13T00:00:00Z</updated>
-		<id>https://portfolio.niepce.tld/landscape-4/</id>
+		<id>https://portfolio.niepce.tld/Niepce/landscape-4/</id>
 		<content type="html">
 			<![CDATA[
 			
@@ -457,9 +457,9 @@ This line is part of the same quote.</p>
 	
 	<entry>
 		<title>Misc 3</title>
-		<link href="https://portfolio.niepce.tld/misc-3/" />
+		<link href="https://portfolio.niepce.tld/Niepce/misc-3/" />
 		<updated>2023-09-12T00:00:00Z</updated>
-		<id>https://portfolio.niepce.tld/misc-3/</id>
+		<id>https://portfolio.niepce.tld/Niepce/misc-3/</id>
 		<content type="html">
 			<![CDATA[
 			
@@ -473,9 +473,9 @@ This line is part of the same quote.</p>
 	
 	<entry>
 		<title>Landscape 2</title>
-		<link href="https://portfolio.niepce.tld/landscape-2/" />
+		<link href="https://portfolio.niepce.tld/Niepce/landscape-2/" />
 		<updated>2023-09-09T00:00:00Z</updated>
-		<id>https://portfolio.niepce.tld/landscape-2/</id>
+		<id>https://portfolio.niepce.tld/Niepce/landscape-2/</id>
 		<content type="html">
 			<![CDATA[
 			
@@ -489,9 +489,9 @@ This line is part of the same quote.</p>
 	
 	<entry>
 		<title>Misc 2</title>
-		<link href="https://portfolio.niepce.tld/misc-2/" />
+		<link href="https://portfolio.niepce.tld/Niepce/misc-2/" />
 		<updated>2023-09-08T00:00:00Z</updated>
-		<id>https://portfolio.niepce.tld/misc-2/</id>
+		<id>https://portfolio.niepce.tld/Niepce/misc-2/</id>
 		<content type="html">
 			<![CDATA[
 			
@@ -505,9 +505,9 @@ This line is part of the same quote.</p>
 	
 	<entry>
 		<title>Portrait 5</title>
-		<link href="https://portfolio.niepce.tld/portrait-5/" />
+		<link href="https://portfolio.niepce.tld/Niepce/portrait-5/" />
 		<updated>2023-09-05T00:00:00Z</updated>
-		<id>https://portfolio.niepce.tld/portrait-5/</id>
+		<id>https://portfolio.niepce.tld/Niepce/portrait-5/</id>
 		<content type="html">
 			<![CDATA[
 			
@@ -521,9 +521,9 @@ This line is part of the same quote.</p>
 	
 	<entry>
 		<title>Portrait 1</title>
-		<link href="https://portfolio.niepce.tld/portrait-1/" />
+		<link href="https://portfolio.niepce.tld/Niepce/portrait-1/" />
 		<updated>2023-09-01T00:00:00Z</updated>
-		<id>https://portfolio.niepce.tld/portrait-1/</id>
+		<id>https://portfolio.niepce.tld/Niepce/portrait-1/</id>
 		<content type="html">
 			<![CDATA[
 			
@@ -537,9 +537,9 @@ This line is part of the same quote.</p>
 	
 	<entry>
 		<title>Landscape 1</title>
-		<link href="https://portfolio.niepce.tld/landscape-1/" />
+		<link href="https://portfolio.niepce.tld/Niepce/landscape-1/" />
 		<updated>2023-09-01T00:00:00Z</updated>
-		<id>https://portfolio.niepce.tld/landscape-1/</id>
+		<id>https://portfolio.niepce.tld/Niepce/landscape-1/</id>
 		<content type="html">
 			<![CDATA[
 			
