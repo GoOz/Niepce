@@ -84,6 +84,7 @@
 
 	/* Misc */
 	--transition: 300ms ease-in-out;
+	--animation-duration: 1.5s;
 	--networkIconSize: 1.5rem;
 	--footer-nav-gap: 1rem;
 }
@@ -98,6 +99,16 @@
 	to {
 		opacity: 0;
 	}
+}
+@keyframes fadeInUp {
+  0% {
+    transform: translateY(5%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
 }
 
 /*=========================================
@@ -404,7 +415,9 @@ a.icon-only > * {
 	list-style: none;
 
 	& img {
+		min-height: 100%;
 		object-fit: cover;
+		object-position: center;
 	}
 	& > li {
 		position: absolute;
@@ -502,6 +515,7 @@ a.logo {
 a.logo > :is(img, svg) {
 	width: 100%;
 	height: auto;
+	max-height: 5rem;
 }
 a.logo svg {
 	fill: var(--foreground);
@@ -536,29 +550,37 @@ a.logo svg {
 	padding: 0;
 	list-style: none;
 }
-.nav ul ul {
+.nav .tags-list {
 	padding-inline: 1rem;
-	font-size: 0.9em;
+	font-size: 0.8em;
 }
 .nav-item {
 	margin-block-end: 1rem;
+	font-size: .8em;
+	text-transform: uppercase;
+	letter-spacing: .125rem;
 }
 .nav-item a {
 	display: block;
 	color: inherit;
 	text-decoration: none;
-	transition: color var(--transition);
 	border-block-end: 1px solid transparent;
+	text-indent: 0;
+	transition: color var(--transition), text-indent var(--transition);
 }
-.nav ul ul a {
+.tags-list a {
+	display: block;
+	padding-block: .125rem;
 	color: var(--light-foreground);
 }
-.nav a:is(:hover, :focus-visible) {
+.nav-item a:is(:hover, :focus-visible) {
 	color: var(--action-color);
 	opacity: 1;
+	text-indent: .5rem;
 }
 .nav-item a[aria-current] {
 	border-block-end: 1px solid var(--border);
+	color: var(--action-color);
 }
 
 .network {
@@ -620,6 +642,11 @@ a.logo svg {
 	padding: 0;
 	margin: 0;
 	list-style: none;
+}
+.animated .grid img {
+	animation-name: fader;
+	animation-duration: var(--animation-duration);
+	animation-direction: reverse;
 }
 
 :where(.grid:not(.monocolumn), .article) .post-title {
@@ -685,6 +712,7 @@ a.logo svg {
 	aspect-ratio: 1;
 	object-fit: cover;
 	transition: transform var(--transition);
+	object-position: center;
 }
 .instagrid a:is(:hover, :focus-visible) img {
 	transform: scale(var(--ig-transform-scale));
@@ -698,19 +726,16 @@ a.logo svg {
 
 /* Monocolumn grid */
 .monocolumn {
-	padding: var(--monocolumn-spacing) 0;
+	height: 100dvh;
+	overflow: auto;
+	scroll-snap-type: y mandatory;
 }
 .monocolumn .post {
 	display: flex;
 	flex-direction: column;
-	margin-block-end: var(--monocolumn-spacing);
-}
-.monocolumn .post::after {
-	content: "";
-	display: block;
-	width: min(60%, 20rem);
-	margin: var(--monocolumn-spacing) auto 0;
-	border-top: 1px solid var(--foreground);
+	scroll-snap-align: center;
+	scroll-snap-stop: normal;
+	padding: var(--monocolumn-spacing) 0;
 }
 .monocolumn .post a {
 	display: block;
@@ -730,6 +755,18 @@ a.logo svg {
 .monocolumn .post-title {
 	text-align: center;
 	margin-block-end: 0;
+}
+
+@media (orientation: portrait), (max-width: 40em) {
+	.monocolumn {
+		height: calc(100dvh - 9rem);
+	}
+	.monocolumn .post {
+		padding-block-start: 0;
+	}
+	.monocolumn .post img {
+		max-height: calc(100dvh - var(--monocolumn-spacing) * 3);
+	}
 }
 
 /* Masonry grid */
@@ -758,6 +795,7 @@ a.logo svg {
 	margin-block: 1rem;
 }
 .article-content img {
+	margin: 0 auto;
 	width: auto;
 }
 
@@ -771,6 +809,9 @@ a.logo svg {
 	width: auto;
 	height: auto;
 	margin: 0 auto;
+}
+.animated .photo img {
+	animation: var(--animation-duration) fadeInUp;
 }
 
 .exif {
@@ -875,12 +916,8 @@ a.logo svg {
 	}
 }
 
-.article-content img {
-	margin: 0 auto;
-}
-
 /*=========================================
-*                Article                  *
+*                Footer                   *
 =========================================*/
 .footer-nav {
 	display: flex;
@@ -903,10 +940,17 @@ a.logo svg {
 	clip-path: polygon(0 0, 80% 0%, 100% 50%, 80% 100%, 0 100%);
 	margin-block-start: auto;
 }
+.footer-nav :is(a, picture) {
+	display: block;
+	height: 100%;
+	width: 100%;
+}
 .footer-nav img {
 	width: 100%;
 	height: 100%;
+	max-height: none;
 	object-fit: cover;
+	object-position: center;
 }
 @media (orientation: portrait), (max-width: 40em) {
 	.footer-nav > * {

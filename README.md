@@ -4,7 +4,7 @@ An Eleventy Starter kit for a portfolio site.
 
 ## What is Niepce?
 
-It's a starter kit to help you build you own static portfolio website without having to do everything from scratch yourself.
+It's a starter kit to help you build you own static portfolio/art gallery website without having to do everything from scratch yourself.
 
 It's ready to be build as it is but you'll have to set some things up to make it your own.
 
@@ -125,6 +125,7 @@ module.exports = {
 	grid: "masonry",
 	grid_tags: "justified",
 	theme: "auto",
+	animations: "true",
 	logo: "",
 	banner: "",
 	exif: true,
@@ -175,6 +176,10 @@ _Grid of choice for your tag pages (categories & series). If undefined, the tag 
 **Key** `theme`\
 **Value** `light | dark | auto`\
 _Choosing a specific theme will enforce it for everyone but choosing `auto` will display one or the other depending on the user preferences._
+
+**Key** `animations`\
+**Value** `true | false`\
+_Displays small and smooth animations on images when pages load._
 
 **Key** `logo`\
 **Value** `String`
@@ -297,7 +302,7 @@ _Pin your picture as featured, it will appear in the splash screen's slideshow i
 
 **Key** `print_max`\
 **Value** `Number`\
-_Maximum number of limited edition prints you would sell of that picture. Depending on the country ou live in it can vary. For example, it's 30 in France._
+_Maximum number of limited edition prints you would sell of that picture. Depending on the country you live in it can vary. For example, it's 30 in France._
 
 **Key** `print_current`\
 **Value** `Number`\
@@ -327,9 +332,9 @@ There is an example already in this starter kit, don't forget to remove it if yo
 
 By now you should have a running portfolio with your own content… but it's only local, on your computer.
 
-You need to find yourself a hosting provider who serves static files (which should be every provider actually) and have NodeJS (>=16) installed as well.
+You need to find yourself a hosting provider who serves static files (which should be every provider actually) and have **NodeJS (>=18)** installed as well. Upload everything there.
 
-Once this is done, you need to run `npm i && npm run build` to install the dependencies and build your site, then point the Apache config to the folder `_site`, this is where your portfolio is generated and what should be served. Everything else is just there to generate this folder.
+Once this is done, you need to run `npm i && npm run build` to install the dependencies and build your site, then point the Apache config to the folder `_site`, this is where your portfolio is generated and what should be served by the webserver. Everything else is just there to generate this folder.
 
 ## Final words
 
