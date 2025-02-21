@@ -44,7 +44,7 @@
     <meta property="og:image:height" content="483">
 		{% endif %}
 	</head>
-	<body>
+	<body class="{% if niepce.animations === 'true' %}animated{% endif %}">
 		{% svgsprite %}
 		{% if not splashscreen %}
 		<div class="skip">

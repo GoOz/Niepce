@@ -9,6 +9,8 @@ const menuButton = document.querySelector(".menu")
 const slideshowButton = document.querySelector(".playpause")
 const nav = document.querySelector(".nav")
 const slides = document.querySelectorAll(".slideshow > li")
+const prevPost = document.querySelector(".footer-nav-prev a")
+const nextPost = document.querySelector(".footer-nav-next a")
 
 // Events
 menuButton.addEventListener("click", () => {
@@ -25,6 +27,13 @@ if (slideshowButton) {
 
 		slideshowButton.setAttribute("aria-label", newLabel)
 		slideshowButton.setAttribute("data-paused", !isPaused + "")
+	})
+}
+
+if (nextPost || prevPost) {
+	document.addEventListener("keyup", (e) => {
+		if (prevPost && e.key === "ArrowLeft") prevPost.click()
+		if (nextPost && e.key === "ArrowRight") nextPost.click()
 	})
 }
 
