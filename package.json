@@ -1,14 +1,17 @@
 {
 	"name": "Niepce",
-	"version": "0.3.0",
+	"version": "1.0.0",
 	"description": "11ty starter kit for a portfolio site",
+	"type": "module",
 	"scripts": {
 		"build": "npx @11ty/eleventy",
 		"build-ghpages": "npx @11ty/eleventy --pathprefix=/Niepce/",
+		"build-nocolor": "cross-env NODE_DISABLE_COLORS=1 npx @11ty/eleventy",
 		"start": "npx @11ty/eleventy --serve --quiet",
 		"start-ghpages": "npx @11ty/eleventy --pathprefix=/eNiepce/ --serve --quiet",
-		"debug": "DEBUG=Eleventy* npx @11ty/eleventy",
-		"debugstart": "DEBUG=Eleventy* npx @11ty/eleventy --serve --quiet"
+		"debug": "cross-env DEBUG=Eleventy* npx @11ty/eleventy",
+		"debugstart": "cross-env DEBUG=Eleventy* npx @11ty/eleventy --serve --quiet",
+		"benchmark": "cross-env DEBUG=Eleventy:Benchmark* npx @11ty/eleventy"
 	},
 	"repository": {
 		"type": "git",
@@ -21,25 +24,26 @@
 	},
 	"license": "MIT",
 	"engines": {
-		"node": ">=16"
+		"node": ">=18"
 	},
 	"bugs": {
 		"url": "https://github.com/GoOz/Niepce/issues"
 	},
 	"homepage": "https://github.com/GoOz/Niepce#readme",
 	"devDependencies": {
-		"@11ty/eleventy": "2.0.1",
-		"@11ty/eleventy-img": "^2.0.1",
+		"@11ty/eleventy": "^3.0.0",
+		"@11ty/eleventy-img": "^6.0.1",
 		"@11ty/eleventy-navigation": "^0.3.5",
-		"@11ty/eleventy-plugin-bundle": "^1.0.4",
-		"@11ty/eleventy-plugin-rss": "^1.2.0",
+		"@11ty/eleventy-plugin-rss": "^2.0.3",
 		"eleventy-plugin-svg-contents": "^0.7.0",
 		"eleventy-plugin-svg-sprite": "^2.4.2",
-		"exifreader": "^4.17.0",
-		"luxon": "^3.2.1",
-		"prettier": "3.1.1"
+		"exifreader": "^4.26.1",
+		"luxon": "^3.5.0",
+		"prettier": "^3.5.0",
+		"zod": "^3.23.8",
+		"zod-validation-error": "^3.3.1"
 	},
 	"dependencies": {
-		"magic-grid": "^3.2.4"
+		"magic-grid": "^3.4.7"
 	}
 }

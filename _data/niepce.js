@@ -1,6 +1,6 @@
 // Niepce's config file
 // Read the wiki https://github.com/GoOz/Niepce/Wiki for more informations
-module.exports = {
+export default {
 	splash: "true", // Enable splash screen instead of homepage : "true" | "false"
 	splash_link: "Browse", // Label of the link to enter your website
 	splash_line: "Take a look at my work…", // Short welcome sentence. Leave empty if you don't want it to appear.

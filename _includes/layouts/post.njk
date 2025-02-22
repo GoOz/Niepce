@@ -4,7 +4,7 @@ layout: layouts/base.njk
 <article class="article">
 	{% if photo %}
 	<figure class="photo">
-		{% image photo, photo_alt, "(min-width: 50em) 90vw, 100vw" %}
+		<img src={{ photo }} alt="{{photo_alt}}"
 	</figure>
 	{% endif %}
 
@@ -87,7 +87,7 @@ layout: layouts/base.njk
 		{%- if previousPost %}
 		<li class="footer-nav-prev">
 			<a href="{{ previousPost.url }}">
-				{% image "../"+previousPost.url+"/"+previousPost.data.photo , "" %}
+				<img eleventy:ignore src="{{ previousPost | getPhotoURL }}" alt="{{ previousPost.data.photo_alt }}">
 				<span class="post-title">{% if previousPost.data.title %}{{ previousPost.data.title }}{% else %}<code>{{ previousPost.url }}</code>{% endif %}</span>
 			</a>
 		</li>
@@ -95,7 +95,7 @@ layout: layouts/base.njk
 		{%- if nextPost %}
 		<li class="footer-nav-next">
 			<a href="{{ nextPost.url }}">
-				{% image "../"+nextPost.url+"/"+nextPost.data.photo , "" %}
+				<img eleventy:ignore src="{{ nextPost | getPhotoURL }}" alt="{{ nextPost.data.photo_alt }}">
 				<span class="post-title">{% if nextPost.data.title %}{{ nextPost.data.title }}{% else %}<code>{{ nextPost.url }}</code>{% endif %}</span>
 			</a>
 		</li>
