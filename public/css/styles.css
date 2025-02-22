@@ -711,8 +711,8 @@ a.logo svg {
 	width: fit-content;
 	aspect-ratio: 1;
 	object-fit: cover;
-	transition: transform var(--transition);
 	object-position: center;
+	transition: transform var(--transition);
 }
 .instagrid a:is(:hover, :focus-visible) img {
 	transform: scale(var(--ig-transform-scale));
@@ -726,9 +726,10 @@ a.logo svg {
 
 /* Monocolumn grid */
 .monocolumn {
-	height: 100dvh;
+	height: auto;
 	overflow: auto;
 	scroll-snap-type: y mandatory;
+	flex-basis: 100%;
 }
 .monocolumn .post {
 	display: flex;
@@ -756,16 +757,25 @@ a.logo svg {
 	text-align: center;
 	margin-block-end: 0;
 }
+.content:has(.monocolumn) {
+	height: 100dvh;
+	display: flex;
+	flex-direction: column;
+}
 
 @media (orientation: portrait), (max-width: 40em) {
+	.content:has(.monocolumn) {
+		height: auto;
+		display: block;
+	}
 	.monocolumn {
-		height: calc(100dvh - 9rem);
+		height: auto;
 	}
 	.monocolumn .post {
 		padding-block-start: 0;
 	}
 	.monocolumn .post img {
-		max-height: calc(100dvh - var(--monocolumn-spacing) * 3);
+		max-height: none;
 	}
 }
 
