@@ -3,6 +3,7 @@ title: Misc 1
 date: 2023-09-21
 photo: photo.jpg
 photo_alt: Misc 1
+tw: Cuteness
 tags:
   - misc
 print_max: 30

@@ -300,6 +300,10 @@ _Categories where your picture should be filed. If you only have one you can jus
 **Value** `boolean`\
 _Pin your picture as featured, it will appear in the splash screen's slideshow if you enabled it. If not, it will do nothing._
 
+**Key** `tw`\
+**Value** `String`\
+_Flag your picture with a trigger warning (NSFW, nudity, food…). The picture will be blurred on every list views and the reason will be displayed. Though, it's important to notice that the picture on the dedicated page will not be blurred and the reason will not be displayed. Same thing with the images in the RSS feed._
+
 **Key** `print_max`\
 **Value** `Number`\
 _Maximum number of limited edition prints you would sell of that picture. Depending on the country you live in it can vary. For example, it's 30 in France._
