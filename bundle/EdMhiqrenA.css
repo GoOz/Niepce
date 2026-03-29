@@ -540,7 +540,9 @@ a.logo svg {
 
 .nav {
 	box-sizing: border-box;
-	margin-block-end: auto;
+	flex-basis: 100%;
+	display: flex;
+	flex-direction: column;
 }
 .nav > ul {
 	padding-block-start: 1rem;
@@ -605,6 +607,11 @@ a.logo svg {
 .network a:is(:hover, :focus-visible) .network-icon {
 	fill: var(--action-color);
 }
+.footer {
+	font-size: .8em;
+	font-style: italic;
+	margin-block-start: auto;
+}
 
 @media (orientation: portrait), (max-width: 40em) {
 	.js {
@@ -649,6 +656,15 @@ a.logo svg {
 	animation-direction: reverse;
 }
 
+/* Post tw & title */
+.tw img {
+	filter: blur(.5rem);
+}
+:where(.grid:not(.monocolumn), .article) .tw {
+	display: block;
+	overflow: hidden;
+	border-radius: 0;
+}
 :where(.grid:not(.monocolumn), .article) .post-title {
 	position: absolute;
 	inset: 0;
@@ -664,6 +680,20 @@ a.logo svg {
 	font-size: 1em;
 	text-align: center;
 	font-weight: bold;
+}
+:where(.grid:not(.monocolumn), .article) .post-tw {
+	position: absolute;
+	inset-block-start: .5rem;
+	inset-inline-start: .5rem;
+	z-index: 1;
+	padding: 0 .5rem;
+	color: var(--foreground);
+	background-color: var(--splash-overlay);
+	border-radius: .5rem;
+	font-size: .8em;
+	text-align: center;
+	font-weight: bold;
+	font-style: italic;
 }
 :where(.grid:not(.monocolumn), .article)
 	a:is(:hover, :focus-visible)
@@ -736,7 +766,7 @@ a.logo svg {
 	flex-direction: column;
 	scroll-snap-align: center;
 	scroll-snap-stop: normal;
-	padding: var(--monocolumn-spacing) 0;
+	padding: 0 0 var(--monocolumn-spacing) 0;
 }
 .monocolumn .post a {
 	display: block;
@@ -750,12 +780,19 @@ a.logo svg {
 	max-height: calc(100dvh - var(--monocolumn-spacing) * 3);
 	transition: filter var(--transition);
 }
-.monocolumn a:is(:hover, :focus-visible) img {
+.monocolumn a:not(.tw):is(:hover, :focus-visible) img {
 	filter: grayscale(80%);
 }
 .monocolumn .post-title {
 	text-align: center;
 	margin-block-end: 0;
+}
+.monocolumn .post-tw {
+	margin-block-end: -1rem;
+	text-align: center;
+	font-size: .8em;
+	font-style: italic;
+	font-weight: bold;
 }
 .content:has(.monocolumn) {
 	height: 100dvh;
