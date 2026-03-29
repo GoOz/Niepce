@@ -540,7 +540,9 @@ a.logo svg {
 
 .nav {
 	box-sizing: border-box;
-	margin-block-end: auto;
+	flex-basis: 100%;
+	display: flex;
+	flex-direction: column;
 }
 .nav > ul {
 	padding-block-start: 1rem;
@@ -604,6 +606,11 @@ a.logo svg {
 }
 .network a:is(:hover, :focus-visible) .network-icon {
 	fill: var(--action-color);
+}
+.footer {
+	font-size: .8em;
+	font-style: italic;
+	margin-block-start: auto;
 }
 
 @media (orientation: portrait), (max-width: 40em) {

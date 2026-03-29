@@ -142,6 +142,7 @@ module.exports = {
 		pixelfed: "https://pixelfed.social/i/web/profile/422334934806983747",
 		tumblr: "",
 	},
+	footer: "© Niepce",
 	links: [
 		{
 			label: "Blog",
@@ -203,6 +204,10 @@ _Display or not the tags of the picture on the post page._
 **Key** `shop_link`\
 **Value** `String`\
 _Label of the link to buy prints._
+
+**Key** `footer`\
+**Value** `String`\
+_Short footer informations, typically for licensing._\ _Note that it must be a string only, it cannot contains HTML or markdown formatting._
 
 **Key** `social`\
 **Value** `Key (String): Value (String)`\
