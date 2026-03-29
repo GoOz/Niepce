@@ -142,6 +142,7 @@ module.exports = {
 		pixelfed: "https://pixelfed.social/i/web/profile/422334934806983747",
 		tumblr: "",
 	},
+	footer: "© Niepce",
 	links: [
 		{
 			label: "Blog",
@@ -203,6 +204,10 @@ _Display or not the tags of the picture on the post page._
 **Key** `shop_link`\
 **Value** `String`\
 _Label of the link to buy prints._
+
+**Key** `footer`\
+**Value** `String`\
+_Short footer informations, typically for licensing._\ _Note that it must be a string only, it cannot contains HTML or markdown formatting._
 
 **Key** `social`\
 **Value** `Key (String): Value (String)`\
@@ -299,6 +304,10 @@ _Categories where your picture should be filed. If you only have one you can jus
 **Key** `featured`\
 **Value** `boolean`\
 _Pin your picture as featured, it will appear in the splash screen's slideshow if you enabled it. If not, it will do nothing._
+
+**Key** `tw`\
+**Value** `String`\
+_Flag your picture with a trigger warning (NSFW, nudity, food…). The picture will be blurred on every list views and the reason will be displayed. Though, it's important to notice that the picture on the dedicated page will not be blurred and the reason will not be displayed. Same thing with the images in the RSS feed._
 
 **Key** `print_max`\
 **Value** `Number`\

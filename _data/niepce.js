@@ -25,6 +25,7 @@ module.exports = {
 		pixelfed: "https://pixelfed.social/i/web/profile/422334934806983747",
 		tumblr: "",
 	},
+	footer: "© Niepce", // Add footer text, typically licensing information
 	links: [
 		// Add external links in your navigation
 		{
