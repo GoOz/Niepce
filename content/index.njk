@@ -8,9 +8,9 @@ eleventyNavigation:
   order: 1
 ---
 {% if niepce.splash === 'true' %}
-	{% set postslist = collections.featured %}
+	{% set featured = collections.featured %}
 	<ul class="slideshow">
-		{%- for post in postslist -%}
+		{%- for post in featured -%}
 		{% if post.data.photo %}
 			<li><img src="/{{ post.url }}/{{ post.data.photo }}" alt="{{ post.data.photo_alt }}" sizes="(min-width: 50em) 50vw, 100vw"></li>
 		{% endif %}

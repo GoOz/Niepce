@@ -1,21 +1,20 @@
 ---
-# Metadata comes from _data/metadata.json
 permalink: /feeds/posts.xml
 ---
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom" xml:base="{{ metadata.language }}">
-	<title>{{ metadata.title }}</title>
-	<subtitle>{{ metadata.description }}</subtitle>
-	<link href="{{ permalink | htmlBaseUrl(metadata.url) }}" rel="self" />
-	<link href="{{ metadata.url | addPathPrefixToFullUrl }}" />
+<feed xmlns="http://www.w3.org/2005/Atom" xml:base="{{ niepce.language }}">
+	<title>{{ niepce.title }}</title>
+	<subtitle>{{ niepce.description }}</subtitle>
+	<link href="{{ permalink | htmlBaseUrl(niepce.url) }}" rel="self" />
+	<link href="{{ niepce.url | addPathPrefixToFullUrl }}" />
 	<updated>{{ collections.posts | getNewestCollectionItemDate | dateToRfc3339 }}</updated>
-	<id>{{ metadata.url }}</id>
+	<id>{{ niepce.url }}</id>
 	<author>
-		<name>{{ metadata.author.name }}</name>
-		<email>{{ metadata.author.email }}</email>
+		<name>{{ niepce.author.name }}</name>
+		<email>{{ niepce.author.email }}</email>
 	</author>
 	{%- for post in collections.posts | reverse %}
-	{% set absolutePostUrl %}{{ post.url | htmlBaseUrl(metadata.url) }}{% endset %}
+	{% set absolutePostUrl %}{{ post.url | htmlBaseUrl(niepce.url) }}{% endset %}
 	<entry>
 		<title>{{ post.data.title }}</title>
 		<link href="{{ absolutePostUrl }}" />
