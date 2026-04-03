@@ -6,17 +6,19 @@ splashscreen: true
 eleventyNavigation:
   key: Home
   order: 1
+permalink: /
 ---
 {% if niepce.splash === 'true' %}
 	{% set featured = collections.featured %}
 	<ul class="slideshow">
 		{%- for post in featured -%}
 		{% if post.data.photo %}
-			<li><img src="/{{ post.url }}/{{ post.data.photo }}" alt="{{ post.data.photo_alt }}" sizes="(min-width: 50em) 50vw, 100vw"></li>
+      <li><img eleventy:ignore src="{{ post | getPhotoInfos('url') }}" alt="{{ post.data.photo_alt }}" sizes="(min-width: 50em) 50vw, 100vw"></li>
 		{% endif %}
 		{%- endfor -%}
 	</ul>
 {% else %}
-	{% set postslist = collections.posts %}
+	{% set postslist = collections.post %}
 	{% include "postslist.njk" %}
 {% endif %}
+

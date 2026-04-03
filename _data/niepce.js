@@ -26,15 +26,16 @@ export default {
 	grid_tags: "justified",
 
 	// THEME OPTIONS
+  optional_pages: {
+    categories: true,
+    serieslist: true,
+    archives: true
+  },
 	animations: "true",
 	logo: "", // Path to your logo. If it's a SVG and you want it inlined, add a suffix "-inline" to its filename (e.g. logo-inline.svg)
-	footer: "© Niepce",
 	exif: true,
 	tags: true,
 	shop_link: "Buy a print",
-
-	// SERIES
-	series: ["colorful"],
 
 	// SOCIAL NETWORKS
 	social_banner: "", // Path relative to site's url (must be 1000x483)

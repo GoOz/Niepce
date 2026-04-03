@@ -77,33 +77,32 @@
 					{% svg "burger" %}
 				</button>
 				<nav class="nav">
-					<h2 class="visually-hidden">Menu de navigation</h2>
 					<ul>
-					{%- for entry in collections.pages | eleventyNavigation %}
+            {# Pages entries #}
+            {%- for entry in collections.pages | eleventyNavigation %}
+            <li class="nav-item">
+              <a href="{{ entry.url }}"{% if entry.url == page.url %} aria-current="page"{% endif %}>{{ entry.title }}</a>
+            </li>
+            {%- endfor %}
 						<li class="nav-item">
-							<a href="{{ entry.url }}"{% if entry.url == page.url %} aria-current="page"{% endif %}>{{ entry.title }}</a>
-						</li>
-					{%- endfor %}
-						{% if niepce.splash === 'true' %}
-						<li class="nav-item">
-							<a href="/recent/"{% if page.url === '/recent/' %} aria-current="page"{% endif %}>Recent posts</a>
-						</li>
-						{% endif %}
-						<li class="nav-item">
-							Galleries
+              {% if niepce.optional_pages.categories %}<a href="/categories/">{% endif %}
+                Categories
+              {% if niepce.optional_pages.categories %}</a>{% endif %}
 							<ul class="tags-list">
-							{% for tag in collections | getKeys | filterTagList | filterTagSeries(niepce.series) %}
-								{% set tagUrl %}/tags/{{ tag | slugify }}/{% endset %}
+							{% for tag in collections | getKeys | filterTagList %}
+								{% set tagUrl %}/category/{{ tag | slugify }}/{% endset %}
 								<li><a href="{{ tagUrl }}"{% if tagUrl == page.url %} aria-current="page"{% endif %}>{{ tag }}</a></li>
 							{% endfor %}
 							</ul>
 						</li>
 						<li class="nav-item">
-							Series
+							{% if niepce.optional_pages.serieslist %}<a href="/series/">{% endif %}
+                Series
+              {% if niepce.optional_pages.serieslist %}</a>{% endif %}
 							<ul class="tags-list">
-							{% for item in niepce.series %}
-								{% set tagUrl %}/tags/{{ item | slugify }}/{% endset %}
-								<li><a href="{{ tagUrl }}"{% if tagUrl == page.url %} aria-current="page"{% endif %}>{{ item }}</a></li>
+							{% for item in collections.serieslist %}
+								{% set seriesUrl %}/series/{{ item | slugify }}/{% endset %}
+								<li><a href="{{ seriesUrl }}"{% if seriesUrl == page.url %} aria-current="page"{% endif %}>{{ item }}</a></li>
 							{% endfor %}
 							</ul>
 						</li>
@@ -113,7 +112,12 @@
 						</li>
 						{% endfor %}
 					</ul>
-					<div class="footer">{{ niepce.footer }}</div>
+					<div class="footer">
+            {%- set footer = "./content/pages/include_footer.md" -%}
+            {% if footer | fsExists %}
+              {% renderFile footer %}
+            {% endif %}
+          </div>
 				</nav>
 				{% if splashscreen and niepce.splash === 'true' %}
 				<div class="splash-cta">
@@ -121,7 +125,7 @@
 					<h2 class="splash-line">{{ niepce.splash_line }}</h2>
 					{% endif %}
 					{% if niepce.splash_link %}
-					<a class="splash-link" href="/recent/">{{ niepce.splash_link }}</a>
+					<a class="splash-link" href="/archives/">{{ niepce.splash_link }}</a>
 					{% endif %}
 				</div>
 				{% endif %}

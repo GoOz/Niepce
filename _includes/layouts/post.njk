@@ -77,9 +77,9 @@ layout: layouts/base.njk
 
 		{{ content | safe }}
 	</div>
-	{%- if collections.posts %}
-	{%- set previousPost = collections.posts | getPreviousCollectionItem %}
-	{%- set nextPost = collections.posts | getNextCollectionItem %}
+	{%- if collections.post %}
+	{%- set previousPost = collections.post | getPreviousCollectionItem %}
+	{%- set nextPost = collections.post | getNextCollectionItem %}
 	{%- if nextPost or previousPost %}
 	<hr>
 	<h2>Other related pictures</h2>
@@ -87,7 +87,7 @@ layout: layouts/base.njk
 		{%- if previousPost %}
 		<li class="footer-nav-prev">
 			<a href="{{ previousPost.url }}">
-				<img eleventy:ignore src="{{ previousPost | getPhotoURL }}" alt="{{ previousPost.data.photo_alt }}">
+				<img eleventy:ignore src="{{ previousPost | getPhotoInfos('url') }}" alt="{{ previousPost.data.photo_alt }}">
 				<span class="post-title">{% if previousPost.data.title %}{{ previousPost.data.title }}{% else %}<code>{{ previousPost.url }}</code>{% endif %}</span>
 			</a>
 		</li>
@@ -95,7 +95,7 @@ layout: layouts/base.njk
 		{%- if nextPost %}
 		<li class="footer-nav-next">
 			<a href="{{ nextPost.url }}">
-				<img eleventy:ignore src="{{ nextPost | getPhotoURL }}" alt="{{ nextPost.data.photo_alt }}">
+				<img eleventy:ignore src="{{ nextPost | getPhotoInfos('url') }}" alt="{{ nextPost.data.photo_alt }}">
 				<span class="post-title">{% if nextPost.data.title %}{{ nextPost.data.title }}{% else %}<code>{{ nextPost.url }}</code>{% endif %}</span>
 			</a>
 		</li>

@@ -5,6 +5,7 @@ eleventyNavigation:
   order: 1
 override:tags: ["pages"]
 title: Hello, I'm the photographer
+permalink: /about/
 ---
 
 <img eleventy:ignore alt="My portrait" src="https://i.pravatar.cc/300" width="300" height="300">

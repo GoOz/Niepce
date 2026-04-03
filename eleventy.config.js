@@ -1,5 +1,4 @@
 import path from "path"
-import fs from "node:fs"
 
 import {
 	InputPathToUrlTransformPlugin,
@@ -8,13 +7,15 @@ import {
 } from "@11ty/eleventy"
 import rssPlugin from "@11ty/eleventy-plugin-rss";
 import pluginNavigation from "@11ty/eleventy-navigation"
-import { eleventyImageTransformPlugin } from "@11ty/eleventy-img"
+import { eleventyImageTransformPlugin, Image } from "@11ty/eleventy-img"
 
 import pluginFilters from "./_config/filters.js"
+import niepce from './_data/niepce.js'
 
 import svgSprite from "eleventy-plugin-svg-sprite"
 import ExifReader from "exifreader"
 import svgContents from "eleventy-plugin-svg-contents"
+
 
 export default async function (eleventyConfig) {
 	// PassThroughCopy
@@ -22,7 +23,6 @@ export default async function (eleventyConfig) {
 		"./public/": "/",
 		"node_modules/magic-grid/dist/magic-grid.min.js": "js/magic-grid.min.js",
 	})
-	eleventyConfig.addPassthroughCopy("./content/**/photo.jpg")
 
 	// Watch content images for the image pipeline.
 	eleventyConfig.addWatchTarget("content/**/*.{svg,webp,png,jpg,jpeg,gif}")
@@ -43,7 +43,6 @@ export default async function (eleventyConfig) {
 
 	eleventyConfig.addPlugin(rssPlugin)
 
-	// Image optimization: https://www.11ty.dev/docs/plugins/image/#eleventy-transform
 	eleventyConfig.addPlugin(eleventyImageTransformPlugin, {
 		// Output formats for each image.
 		formats: ["auto"],
@@ -51,7 +50,6 @@ export default async function (eleventyConfig) {
 		failOnError: false,
 		htmlOptions: {
 			imgAttributes: {
-				// e.g. <img loading decoding> assigned on the HTML tag will override these values.
 				sizes: "(min-width: 50em) 90vw, 100vw",
 				loading: "lazy",
 				decoding: "async",
@@ -90,24 +88,53 @@ export default async function (eleventyConfig) {
 		},
 	)
 
-	eleventyConfig.addPlugin(svgContents)
-
 	// Filters
 	eleventyConfig.addPlugin(pluginFilters)
 
 	// Community plugins
+	eleventyConfig.addPlugin(svgContents)
 	eleventyConfig.addPlugin(svgSprite, {
 		path: "./public/img/sprite",
 	})
 
+  // Collections
 	// Return all the featured posts
 	eleventyConfig.addCollection("featured", (collection) => {
 		return collection.getAll().filter((post) => post.data.featured)
 	})
 
-	eleventyConfig.addFilter("fsExists", function (filename) {
-		return fs.existsSync(filename)
+    // Return all the pictures flagged as part of a series
+	eleventyConfig.addCollection("series", (collection) => {
+		return collection.getAll().filter((post) => post.data.series)
 	})
+
+    // Return all the series types
+	eleventyConfig.addCollection("serieslist", (collection) => {
+    let results = []
+    const series = collection.getAll().filter((post) => post.data.series)
+    series.forEach((item) => {
+        if (!results.includes(item.data.series)) {
+            results.push(item.data.series);
+        }
+    })
+    return results
+	})
+
+  // Miscellaneous
+  // Exclude unchecked optional pages from build
+  const pages = niepce.optional_pages
+  for (const page in pages) {
+    if (pages[page] === false) {
+      eleventyConfig.ignores.add(`content/pages/${page}.md`);
+    } else {
+      eleventyConfig.ignores.delete(`content/pages/${page}.md`);
+    }
+  }
+  // Exclude includes, category & series content markdown
+  eleventyConfig.ignores.add("**/include_*.md");
+  eleventyConfig.ignores.add("**/category_*.md");
+  eleventyConfig.ignores.add("**/series_*.md");
+  console.log(eleventyConfig.ignores)
 }
 
 export const config = {
@@ -128,17 +155,6 @@ export const config = {
 		data: "../_data", // default: "_data"
 		output: "_site",
 	},
-
-	// -----------------------------------------------------------------
-	// Optional items:
-	// -----------------------------------------------------------------
-
-	// If your site deploys to a subdirectory, change `pathPrefix`.
-	// Read more: https://www.11ty.dev/docs/config/#deploy-to-a-subdirectory-with-a-path-prefix
-
-	// When paired with the HTML <base> plugin https://www.11ty.dev/docs/plugins/html-base/
-	// it will transform any absolute URLs in your HTML to include this
-	// folder name and does **not** affect where things go in the output folder.
 
 	pathPrefix: "/",
 }

@@ -1,0 +1,25 @@
+---
+pagination:
+  data: collections.serieslist
+  size: 1
+  alias: series
+  addAllPagesToCollections: true
+eleventyExcludeFromCollections: true
+layout: layouts/base.njk
+category: true
+eleventyComputed:
+  title: Series {{ series | capitalize }}
+permalink: /series/{{ series | slugify }}/
+---
+<h1 class="article-title">{{ series | capitalize}}</h1>
+
+<div class="article-content centered">
+	{%- set description = "./content/pages/series_" + series | slugify + ".md" -%}
+	{% if description | fsExists %}
+		{% renderFile description %}
+	{% endif %}
+</div>
+
+{% set postslist = collections.series %}
+{% include "postslist.njk" %}
+

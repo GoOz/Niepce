@@ -5,6 +5,7 @@ eleventyNavigation:
   order: 2
 override:tags: ["pages"]
 title: Support my work and buy some prints
+permalink: /shop/
 ---
 
 ---

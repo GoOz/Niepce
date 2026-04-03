@@ -4,7 +4,7 @@
 	<li class="post">
 		<a href="{{ post.url }}" {% if post.data.tw %}class="tw"{% endif %}>
 			{% if post.data.photo %}
-			<img eleventy:ignore src="{{ post | getPhotoURL }}" alt="{{ post.data.photo_alt }}" width="{{ post | getPhotoWidth }}" height="{{ post | getPhotoHeight }}">
+			<img eleventy:ignore src="{{ post | getPhotoInfos('url') }}" alt="{{ post.data.photo_alt }}" width="{{ post | getPhotoInfos('width') }}" height="{{ post | getPhotoInfos('height') }}">
 			{% endif %}
 			{% if post.data.tw %}
 			<div class="post-tw"><abbr title="Trigger warning">TW:</abbr> {{ post.data.tw }}</div>
