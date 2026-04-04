@@ -10,6 +10,7 @@ category: true
 eleventyComputed:
   title: Series {{ series | capitalize }}
 permalink: /series/{{ series | slugify }}/
+grid: justified
 ---
 <h1 class="article-title">{{ series | capitalize}}</h1>
 
@@ -20,6 +21,6 @@ permalink: /series/{{ series | slugify }}/
 	{% endif %}
 </div>
 
-{% set postslist = collections.series %}
-{% include "postslist.njk" %}
+{% set posts = collections.series %}
+{% include "get_posts.njk" %}
 

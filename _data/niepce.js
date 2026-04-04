@@ -1,5 +1,5 @@
 // Niepce's configuration
-// Read the wiki https://github.com/GoOz/Niepce/Wiki for more informations on the options
+// Read the wiki https://github.com/GoOz/Niepce/Wiki for more informations
 
 export default {
 	// WEBSITE INFORMATIONS
@@ -15,7 +15,7 @@ export default {
 	},
 
 	// SPLASH SCREEN
-	splash: "true",
+	splash: "false",
 	splash_link: "Browse",
 	splash_line: "Take a look at my work…",
 
@@ -23,7 +23,6 @@ export default {
 	theme: "niepce",
 	theme_variant: "auto", // "light" | "dark" | "auto"
 	grid: "masonry", // "justified" | "instagrid" | "masonry" | "monocolumn"
-	grid_tags: "justified",
 
 	// THEME OPTIONS
   optional_pages: {
@@ -31,16 +30,16 @@ export default {
     serieslist: true,
     archives: true
   },
-	animations: "true",
-	logo: "", // Path to your logo. If it's a SVG and you want it inlined, add a suffix "-inline" to its filename (e.g. logo-inline.svg)
+	animations: true,
+	logo: "",
+  categories_nav: true,
 	exif: true,
 	tags: true,
 	shop_link: "Buy a print",
 
 	// SOCIAL NETWORKS
-	social_banner: "", // Path relative to site's url (must be 1000x483)
+	social_banner: "",
 	socials: {
-		// Fill those with your social profile urls if you have accounts there
 		"500px": "",
 		behance: "",
 		deviantart: "",

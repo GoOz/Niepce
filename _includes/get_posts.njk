@@ -1,6 +1,8 @@
-<ol reversed class="grid{% if category and niepce.grid_tags %} {{ niepce.grid_tags }}{% else %} {{ niepce.grid }}{% endif %}">
-{% for post in postslist | reverse %}
+<ol reversed class="grid{% if grid %} {{ grid }}{% else %} {{ niepce.grid }}{% endif %}">
+{% set loops = iteration if iteration else posts.length %}
+{% for post in posts | reverse %}
 	{% set loading = "eager" if loop.index < 20 else "lazy" %}
+  {% if loop.index0 < loops %}
 	<li class="post">
 		<a href="{{ post.url }}" {% if post.data.tw %}class="tw"{% endif %}>
 			{% if post.data.photo %}
@@ -12,5 +14,6 @@
 			<h2 class="post-title">{{ post.data.title }}</h2>
 		</a>
 	</li>
+  {% endif %}
 {% endfor %}
 </ol>

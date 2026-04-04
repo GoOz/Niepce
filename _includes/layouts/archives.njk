@@ -4,6 +4,6 @@ layout: layouts/base.njk
 
 {{ content | safe }}
 
-{% set postslist = collections.post %}
-{% include "postslist.njk" %}
+{% set posts = collections.post %}
+{% include "get_posts.njk" %}
 

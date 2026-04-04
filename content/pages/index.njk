@@ -17,8 +17,17 @@ permalink: /
 		{% endif %}
 		{%- endfor -%}
 	</ul>
-{% else %}
-	{% set postslist = collections.post %}
-	{% include "postslist.njk" %}
 {% endif %}
+
+  ## Last 5 posts
+  {% set iteration = 5 %}
+  {% set posts = collections.post %}
+  {% include "get_posts.njk" %}
+
+	## Categories
+	{% include "get_categories.njk" %}
+
+  ## Series
+  {% set posts = collections.series %}
+  {% include "get_series.njk" %}
 

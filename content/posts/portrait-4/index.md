@@ -5,6 +5,7 @@ photo: photo.jpg
 photo_alt: Portrait 4
 tags:
   - portrait
+series: Smile
 ---
 
 Credits: [Unsplash](https://unsplash.com/fr/photos/uomo-che-indossa-una-camicia-bianca-con-scollo-a-v-iFgRcqHznqg)

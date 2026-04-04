@@ -1,0 +1,13 @@
+<ul>
+  {% for tag in collections | getKeys | filterTagList %}
+  <li>
+    {% if covers[tag] %}
+      {% set coverPost = collections[tag] | findByFileSlug(covers[tag]) %}
+    {% else %}
+      {% set coverPost = collections[tag].at(-1) %}
+    {% endif %}
+    <img eleventy:ignore src="{{ coverPost | getPhotoInfos('url') }}" alt="">
+    {{ tag }}
+  </li>
+  {% endfor %}
+</ul>

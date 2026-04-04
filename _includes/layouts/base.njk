@@ -12,7 +12,7 @@
 		<link rel="stylesheet" href="{% getBundleFileUrl "css" %}">
 		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-		{% if (home and niepce.grid === 'masonry') or (category and niepce.grid_tags === 'masonry') or (category and niepce.grid_tags === '' and niepce.grid === 'masonry') %}
+		{% if (niepce.grid === 'masonry') or (grid === 'masonry') %}
 		<script src="/js/magic-grid.min.js" defer fetchpriority="high"></script>
 		{% endif %}
 		<script src="/js/script.js" defer fetchpriority="high"></script>
@@ -52,7 +52,7 @@
     <meta property="og:locale" content="{{ niepce.locale }}">
 		{% endif %}
 	</head>
-	<body class="{% if niepce.animations === 'true' %}animated{% endif %}">
+	<body class="{% if niepce.animations %}animated{% endif %}">
 		{% svgsprite %}
 		{% if not splashscreen %}
 		<div class="skip">
@@ -84,28 +84,32 @@
               <a href="{{ entry.url }}"{% if entry.url == page.url %} aria-current="page"{% endif %}>{{ entry.title }}</a>
             </li>
             {%- endfor %}
+            {% if niepce.categories_nav %}
 						<li class="nav-item">
-              {% if niepce.optional_pages.categories %}<a href="/categories/">{% endif %}
-                Categories
+            {% if niepce.optional_pages.categories %}<a href="/categories/">{% endif %}
+              Categories
               {% if niepce.optional_pages.categories %}</a>{% endif %}
-							<ul class="tags-list">
-							{% for tag in collections | getKeys | filterTagList %}
-								{% set tagUrl %}/category/{{ tag | slugify }}/{% endset %}
-								<li><a href="{{ tagUrl }}"{% if tagUrl == page.url %} aria-current="page"{% endif %}>{{ tag }}</a></li>
-							{% endfor %}
-							</ul>
-						</li>
+              <ul class="tags-list">
+                {% for tag in collections | getKeys | filterTagList %}
+                {% set tagUrl %}/category/{{ tag | slugify }}/{% endset %}
+                <li><a href="{{ tagUrl }}"{% if tagUrl == page.url %} aria-current="page"{% endif %}>{{ tag }}</a></li>
+                {% endfor %}
+              </ul>
+            </li>
+            {% endif %}
+            {% if collections.serieslist.length > 0 %}
 						<li class="nav-item">
-							{% if niepce.optional_pages.serieslist %}<a href="/series/">{% endif %}
-                Series
+              {% if niepce.optional_pages.serieslist %}<a href="/series/">{% endif %}
+              Series
               {% if niepce.optional_pages.serieslist %}</a>{% endif %}
-							<ul class="tags-list">
-							{% for item in collections.serieslist %}
-								{% set seriesUrl %}/series/{{ item | slugify }}/{% endset %}
-								<li><a href="{{ seriesUrl }}"{% if seriesUrl == page.url %} aria-current="page"{% endif %}>{{ item }}</a></li>
-							{% endfor %}
-							</ul>
-						</li>
+              <ul class="tags-list">
+                {% for item in collections.serieslist %}
+                {% set seriesUrl %}/series/{{ item | slugify }}/{% endset %}
+                <li><a href="{{ seriesUrl }}"{% if seriesUrl == page.url %} aria-current="page"{% endif %}>{{ item }}</a></li>
+                {% endfor %}
+              </ul>
+            </li>
+            {% endif %}
 						{% for item in niepce.links %}
 						<li class="nav-item">
 							<a href="{{ item.url }}">{{ item.label }}</a>

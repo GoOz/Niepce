@@ -17,6 +17,7 @@ category: true
 eleventyComputed:
   title: Tagged “{{ tag | capitalize }}”
 permalink: /category/{{ tag | slugify }}/
+grid: instagrid
 ---
 <h1 class="article-title">{{ tag | capitalize}}</h1>
 
@@ -27,5 +28,5 @@ permalink: /category/{{ tag | slugify }}/
 	{% endif %}
 </div>
 
-{% set postslist = collections[ tag ] %}
-{% include "postslist.njk" %}
+{% set posts = collections[ tag ] %}
+{% include "get_posts.njk" %}

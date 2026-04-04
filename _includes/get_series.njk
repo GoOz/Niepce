@@ -1,0 +1,14 @@
+<ul>
+  {% for series in collections.serieslist %}
+  {% set postsSeries = posts | filterBySeries(series) %}
+  <li>
+    {% if covers[series] %}
+      {% set coverPost = postsSeries | findByFileSlug(covers[series])  %}
+    {% else %}
+      {% set coverPost = postsSeries.at(-1) %}
+    {% endif %}
+    <img eleventy:ignore src="{{ coverPost | getPhotoInfos('url') }}" alt="">
+    {{ series }}
+  </li>
+  {% endfor %}
+</ul>

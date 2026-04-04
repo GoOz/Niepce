@@ -31,10 +31,6 @@ export default async function (eleventyConfig) {
 		toFileDirectory: "dist",
 	})
 
-	eleventyConfig.addBundle("js", {
-		toFileDirectory: "dist",
-	})
-
 	// Official plugins
 	eleventyConfig.addPlugin(pluginNavigation)
 	eleventyConfig.addPlugin(HtmlBasePlugin)
@@ -134,13 +130,12 @@ export default async function (eleventyConfig) {
   eleventyConfig.ignores.add("**/include_*.md");
   eleventyConfig.ignores.add("**/category_*.md");
   eleventyConfig.ignores.add("**/series_*.md");
-  console.log(eleventyConfig.ignores)
 }
 
 export const config = {
 	// Control which files Eleventy will process
 	// e.g.: *.md, *.njk, *.html, *.liquid
-	templateFormats: ["md", "njk", "html", "liquid", "11ty.js"],
+	templateFormats: ["md", "njk", "html"],
 
 	// Pre-process *.md files with: (default: `liquid`)
 	markdownTemplateEngine: "njk",

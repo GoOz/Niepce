@@ -76,4 +76,12 @@ export default function (eleventyConfig) {
 	}
 
 	eleventyConfig.addFilter("getPhotoInfos", getPhotoInfos)
+
+  eleventyConfig.addFilter("findByFileSlug", (collection = [], slug = "") => {
+    return collection.find((post) => post.fileSlug === slug)
+  })
+
+  eleventyConfig.addFilter("filterBySeries", (collection = [], series) => {
+    return collection.filter((post) => post.data.series === series)
+  })
 }
