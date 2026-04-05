@@ -7,5 +7,5 @@ layout: layouts/base.njk
 	{{ content | safe }}
 </div>
 
-{% set posts = collections.post %}
-{% include "get_categories.njk" %}
+{% set posts = collections[category] %}
+{% include "get_posts.njk" %}

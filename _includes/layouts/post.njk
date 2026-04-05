@@ -13,51 +13,41 @@ layout: layouts/base.njk
 	<div class="article-content">
 		{% if photo and niepce.exif %}
 		{% set ExifData = photo | getExifData %}
-		{% if ExifData.cameraModel or ExifData.shutterSpeed or ExifData.fStop or ExifData.FocalLength or ExifData.ISO or ExifData.Date %}
-		<dl class="exif">
-			{% if ExifData.cameraModel %}
-			<div>
-				<dt>{% svg "camera", "exif-icon" %}<span class="visually-hidden">Camera:</span></dt>
-				<dd>{{ ExifData.cameraBrand }} {{ ExifData.cameraModel }}</dd>
-			</div>
-			{% endif %}
-			{% if ExifData.shutterSpeed or ExifData.fStop or ExifData.FocalLength or ExifData.ISO %}
-			<div>
-				<dt>{% svg "settings", "exif-icon exif-icon--settings" %}<span class="visually-hidden">Settings:</span></dt>
-				<dd>
-					{% if ExifData.shutterSpeed %}
-					<span title="Shutter speed">{{ ExifData.shutterSpeed }}<abbr title="second">s</abbr></span>
-					{% endif %}
-					{% if ExifData.fStop %}
-					<span title="Aperture">{{ ExifData.fStop }}</span>
-					{% endif %}
-					{% if ExifData.FocalLength %}
-					<span title="Focal length">{{ ExifData.FocalLength }}</span>
-					{% endif %}
-					{% if ExifData.ISO %}
-					<span>ISO {{ ExifData.ISO }}</span>
-					{% endif %}
-				</dd>
-			</div>
-			{% endif %}
-			{% if ExifData.Date %}
-				<div>
-					<dt>{% svg "date", "exif-icon" %}<span class="visually-hidden">Date:</span></dt>
-					<dd>{{ ExifData.Date | readableDate }}</dd>
-				</div>
-			{% endif %}
-		</dl>
-		{% endif %}
-		{% endif %}
-
-		{% if niepce.tags %}
-		<div class="tags">
-			{% svg "tags", "tags-icon" %}
-			{%- for tag in tags | filterTagList %}
-			{%- set tagUrl %}/tags/{{ tag | slugify }}/{% endset %}
-			<a href="{{ tagUrl }}" class="post-tag">{{ tag }}</a>{%- if not loop.last %}{% endif %}
-			{%- endfor %}
-		</div>
+      {% if ExifData.cameraModel or ExifData.shutterSpeed or ExifData.fStop or ExifData.FocalLength or ExifData.ISO or ExifData.Date %}
+      <dl class="exif">
+        {% if ExifData.cameraModel %}
+        <div>
+          <dt>{% svg "camera", "exif-icon" %}<span class="visually-hidden">Camera:</span></dt>
+          <dd>{{ ExifData.cameraBrand }} {{ ExifData.cameraModel }}</dd>
+        </div>
+        {% endif %}
+        {% if ExifData.shutterSpeed or ExifData.fStop or ExifData.FocalLength or ExifData.ISO %}
+        <div>
+          <dt>{% svg "settings", "exif-icon exif-icon--settings" %}<span class="visually-hidden">Settings:</span></dt>
+          <dd>
+            {% if ExifData.shutterSpeed %}
+            <span title="Shutter speed">{{ ExifData.shutterSpeed }}<abbr title="second">s</abbr></span>
+            {% endif %}
+            {% if ExifData.fStop %}
+            <span title="Aperture">{{ ExifData.fStop }}</span>
+            {% endif %}
+            {% if ExifData.FocalLength %}
+            <span title="Focal length">{{ ExifData.FocalLength }}</span>
+            {% endif %}
+            {% if ExifData.ISO %}
+            <span>ISO {{ ExifData.ISO }}</span>
+            {% endif %}
+          </dd>
+        </div>
+        {% endif %}
+        {% if ExifData.Date %}
+          <div>
+            <dt>{% svg "date", "exif-icon" %}<span class="visually-hidden">Date:</span></dt>
+            <dd>{{ ExifData.Date | readableDate }}</dd>
+          </div>
+        {% endif %}
+      </dl>
+      {% endif %}
 		{% endif %}
 
 		{% if print_current and print_max and print_link %}
@@ -82,7 +72,7 @@ layout: layouts/base.njk
 	{%- set nextPost = collections.post | getNextCollectionItem %}
 	{%- if nextPost or previousPost %}
 	<hr>
-	<h2>Other related pictures</h2>
+	<h2>Other pictures</h2>
 	<ul class="footer-nav">
 		{%- if previousPost %}
 		<li class="footer-nav-prev">

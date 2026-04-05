@@ -9,6 +9,7 @@ const menuButton = document.querySelector(".menu")
 const slideshowButton = document.querySelector(".playpause")
 const nav = document.querySelector(".nav")
 const slides = document.querySelectorAll(".slideshow > li")
+const splashExit = document.querySelector(".splash-link")
 const prevPost = document.querySelector(".footer-nav-prev a")
 const nextPost = document.querySelector(".footer-nav-next a")
 
@@ -30,12 +31,20 @@ if (slideshowButton) {
 	})
 }
 
-if (nextPost || prevPost) {
-	document.addEventListener("keyup", (e) => {
-		if (prevPost && e.key === "ArrowLeft") prevPost.click()
-		if (nextPost && e.key === "ArrowRight") nextPost.click()
-	})
+if (splashExit) {
+  const page = document.querySelector('.main.splash')
+  const wrapper = document.querySelector('.splash-wrapper')
+  splashExit.addEventListener("click", (e) => {
+    page.classList.remove('splash')
+    wrapper.remove()
+  })
 }
+  if (nextPost || prevPost) {
+    document.addEventListener("keyup", (e) => {
+      if (prevPost && e.key === "ArrowLeft") prevPost.click()
+      if (nextPost && e.key === "ArrowRight") nextPost.click()
+    })
+  }
 
 // Utils
 function checkMedia(size) {

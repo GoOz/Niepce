@@ -8,4 +8,4 @@ title: All my pictures
 permalink: /archives/
 ---
 
-## All my pictures so far…
+**All my pictures so far…**

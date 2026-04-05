@@ -10,15 +10,15 @@ permalink: /shop/
 
 ---
 
-All my prints available for sale comes in three different size :
+All my prints available for sale come in three different sizes :
 
-- A4: **150€**
-- A3 : **100€**
-- A2 : **50€**
+- 20x24 in: **150€**
+- 12x15 in : **100€**
+- 10x12 in : **50€**
 
-_(Frame not included)_
+_Note that the frame is not included_
 
-Once you made your choice, make your order by email <a href="mailto:photographer@niepce.tld">photographer@niepce.tld</a> and specify which photographs in which size you wish to purchase.  
+Once you made your choice, make your order by <a href="/contact/">contacting me</a> and specify which photographs in which size you wish to purchase.  
 I'll respond quickly.
 
 Thank you very much!

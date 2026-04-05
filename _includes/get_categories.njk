@@ -1,13 +1,18 @@
-<ul>
-  {% for tag in collections | getKeys | filterTagList %}
-  <li>
-    {% if covers[tag] %}
-      {% set coverPost = collections[tag] | findByFileSlug(covers[tag]) %}
-    {% else %}
-      {% set coverPost = collections[tag].at(-1) %}
-    {% endif %}
-    <img eleventy:ignore src="{{ coverPost | getPhotoInfos('url') }}" alt="">
-    {{ tag }}
+<ul class="categories">
+  {% for category in collections.categorylist %}
+  {% set postsCategory = posts | filterByCategory(category) %}
+  <li class="category">
+    <a href="/category/{{ category | slugify }}/">
+      {% if covers[category] %}
+        {% set coverPost = postsCategory | findByFileSlug(covers[category]) %}
+      {% else %}
+        {% set coverPost = postsCategory.at(-1) %}
+      {% endif %}
+      <div class="category-cover">
+        <img eleventy:ignore src="{{ coverPost | getPhotoInfos('url') }}" alt="">
+      </div>
+      <h2>{{ category }}</h2>
+    </a>
   </li>
   {% endfor %}
 </ul>

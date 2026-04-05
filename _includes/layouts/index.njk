@@ -1,0 +1,64 @@
+---
+layout: layouts/base.njk
+home: true
+eleventyNavigation:
+  key: Home
+  order: 1
+permalink: /
+---
+{% if niepce.splash === 'true' %}
+	{% set featured = collections.featured %}
+	<div class="splash-wrapper">
+    <ul class="slideshow">
+      {%- for post in featured -%}
+      {% if post.data.photo %}
+          <li><img eleventy:ignore src="{{ post | getPhotoInfos('url') }}" alt="{{ post.data.photo_alt }}" sizes="(min-width: 50em) 50vw, 100vw"></li>
+      {% endif %}
+      {%- endfor -%}
+    </ul>
+      <div class="splash-cta">
+        {% if niepce.splash_line %}
+        <h2 class="splash-line">{{ niepce.splash_line }}</h2>
+        {% endif %}
+        {% if niepce.splash_link %}
+        <button class="splash-link">{{ niepce.splash_link }}</button>
+        {% endif %}
+      </div>
+      <button type="button" data-paused="false" class="playpause" aria-label="Pause">
+        {% svg "play", "play-icon" %}
+        {% svg "pause", "pause-icon" %}
+      </button>
+  </div>
+{% endif %}
+
+<div class="article-content">
+  {{ content | safe }}
+</div>
+
+<div class="block">
+  <h2 class="centered">Last {{ niepce.last_items }} posts</h2>
+  {% set iteration = niepce.last_items %}
+  {% set posts = collections.post %}
+  {% include "get_posts.njk" %}
+  {% if niepce.ignored_pages.archives === false %}
+  <div class="centered">
+    <em>See all photographs in the <a href="/archives/">archives</a></em>
+  </div>
+  {% endif %}
+</div>
+
+<hr>
+
+<div class="block">
+  <h2 class="centered">Categories</h2>
+  {% include "get_categories.njk" %}
+</div>
+
+<hr>
+
+<div class="block">
+  <h2 class="centered">Series</h2>
+  {% set posts = collections.series %}
+  {% include "get_series.njk" %}
+</div>
+

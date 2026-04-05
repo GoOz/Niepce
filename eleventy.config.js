@@ -99,37 +99,52 @@ export default async function (eleventyConfig) {
 		return collection.getAll().filter((post) => post.data.featured)
 	})
 
-    // Return all the pictures flagged as part of a series
+  // Return all the pictures flagged as part of a category
+	eleventyConfig.addCollection("category", (collection) => {
+		return collection.getAll().filter((post) => post.data.category)
+	})
+
+  // Return all the pictures flagged as part of a series
 	eleventyConfig.addCollection("series", (collection) => {
 		return collection.getAll().filter((post) => post.data.series)
 	})
 
-    // Return all the series types
+  // Return all the categories types
+	eleventyConfig.addCollection("categorylist", (collection) => {
+    let results = []
+    const category = collection.getAll().filter((post) => post.data.category)
+    category.forEach((item) => {
+        if (!results.includes(item.data.category)) {
+            results.push(item.data.category);
+        }
+    })
+    return results
+	})
+
+  // Return all the series types
 	eleventyConfig.addCollection("serieslist", (collection) => {
     let results = []
-    const series = collection.getAll().filter((post) => post.data.series)
+    const series = collection.getAll().filter((post) => post.data.seriesName)
     series.forEach((item) => {
-        if (!results.includes(item.data.series)) {
-            results.push(item.data.series);
+        if (!results.includes(item.data.seriesName)) {
+          results.push(item.data.seriesName)
         }
     })
     return results
 	})
 
   // Miscellaneous
-  // Exclude unchecked optional pages from build
-  const pages = niepce.optional_pages
+  // Exclude ignored pages from build for better performance
+  const pages = niepce.ignored_pages
   for (const page in pages) {
-    if (pages[page] === false) {
+    if (pages[page] === true) {
       eleventyConfig.ignores.add(`content/pages/${page}.md`);
     } else {
       eleventyConfig.ignores.delete(`content/pages/${page}.md`);
     }
   }
-  // Exclude includes, category & series content markdown
+  // Exclude includes content markdown
   eleventyConfig.ignores.add("**/include_*.md");
-  eleventyConfig.ignores.add("**/category_*.md");
-  eleventyConfig.ignores.add("**/series_*.md");
 }
 
 export const config = {

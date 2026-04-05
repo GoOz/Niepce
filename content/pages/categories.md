@@ -1,11 +1,12 @@
 ---
 layout: layouts/category_list.njk
-eleventyExcludeFromCollections: true
 title: All the different categories to browse
+eleventyNavigation:
+  key: Categories
+  order: 4
 permalink: /categories/
 covers:
   portrait: portrait-1
-  misc: misc-2
 ---
 
-## Choose you category
+**Choose you category**

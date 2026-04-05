@@ -2,6 +2,7 @@ import { DateTime } from "luxon"
 import path from "path"
 import fs from "node:fs"
 import Image from "@11ty/eleventy-img"
+import niepce from "../_data/niepce.js"
 
 export default function (eleventyConfig) {
 	eleventyConfig.addFilter("readableDate", (date) => {
@@ -84,4 +85,9 @@ export default function (eleventyConfig) {
   eleventyConfig.addFilter("filterBySeries", (collection = [], series) => {
     return collection.filter((post) => post.data.series === series)
   })
+
+  eleventyConfig.addFilter("filterByCategory", (collection = [], category) => {
+    return collection.filter((post) => post.data.tags.includes(category))
+  })
+
 }

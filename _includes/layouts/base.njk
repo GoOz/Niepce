@@ -54,13 +54,11 @@
 	</head>
 	<body class="{% if niepce.animations %}animated{% endif %}">
 		{% svgsprite %}
-		{% if not splashscreen %}
 		<div class="skip">
 			<a href="#skip">Skip to main content</a>
 		</div>
-		{% endif %}
 
-		<div class="main{% if splashscreen and niepce.splash === 'true' %} splash{% endif %}">
+		<div class="main{% if home and niepce.splash === 'true' %} splash{% endif %}">
 			<header class="sidebar">
 				<a href="/" class="logo">
 					{% if niepce.logo %}
@@ -77,68 +75,27 @@
 					{% svg "burger" %}
 				</button>
 				<nav class="nav">
-					<ul>
-            {# Pages entries #}
-            {%- for entry in collections.pages | eleventyNavigation %}
-            <li class="nav-item">
-              <a href="{{ entry.url }}"{% if entry.url == page.url %} aria-current="page"{% endif %}>{{ entry.title }}</a>
-            </li>
-            {%- endfor %}
-            {% if niepce.categories_nav %}
-						<li class="nav-item">
-            {% if niepce.optional_pages.categories %}<a href="/categories/">{% endif %}
-              Categories
-              {% if niepce.optional_pages.categories %}</a>{% endif %}
-              <ul class="tags-list">
-                {% for tag in collections | getKeys | filterTagList %}
-                {% set tagUrl %}/category/{{ tag | slugify }}/{% endset %}
-                <li><a href="{{ tagUrl }}"{% if tagUrl == page.url %} aria-current="page"{% endif %}>{{ tag }}</a></li>
-                {% endfor %}
-              </ul>
-            </li>
-            {% endif %}
-            {% if collections.serieslist.length > 0 %}
-						<li class="nav-item">
-              {% if niepce.optional_pages.serieslist %}<a href="/series/">{% endif %}
-              Series
-              {% if niepce.optional_pages.serieslist %}</a>{% endif %}
-              <ul class="tags-list">
-                {% for item in collections.serieslist %}
-                {% set seriesUrl %}/series/{{ item | slugify }}/{% endset %}
-                <li><a href="{{ seriesUrl }}"{% if seriesUrl == page.url %} aria-current="page"{% endif %}>{{ item }}</a></li>
-                {% endfor %}
-              </ul>
-            </li>
-            {% endif %}
-						{% for item in niepce.links %}
-						<li class="nav-item">
-							<a href="{{ item.url }}">{{ item.label }}</a>
-						</li>
-						{% endfor %}
-					</ul>
-					<div class="footer">
-            {%- set footer = "./content/pages/include_footer.md" -%}
-            {% if footer | fsExists %}
-              {% renderFile footer %}
-            {% endif %}
+          {% set navPages = collections.all | eleventyNavigation %}
+          {% macro renderNavListItem(entry) -%}
+          <li class="nav-item">
+            <a href="{{ entry.url }}" {% if entry.url == page.url %} aria-current="page"{% endif %}>{{ entry.title }}</a>
+          {%- if entry.children.length -%}
+            <ul class="tags-list">
+              {%- for child in entry.children %}{{ renderNavListItem(child) }}{% endfor -%}
+            </ul>
+          {%- endif -%}
+          </li>
+          {%- endmacro %}
+          <ul>
+          {%- for entry in navPages %}{{ renderNavListItem(entry) }}{%- endfor -%}
+          </ul>
+          {%- set footer = "./content/pages/include_footer.md" -%}
+          {% if footer | fsExists %}
+          <div class="footer">
+            {% renderFile footer %}
           </div>
+          {% endif %}
 				</nav>
-				{% if splashscreen and niepce.splash === 'true' %}
-				<div class="splash-cta">
-					{% if niepce.splash_line %}
-					<h2 class="splash-line">{{ niepce.splash_line }}</h2>
-					{% endif %}
-					{% if niepce.splash_link %}
-					<a class="splash-link" href="/archives/">{{ niepce.splash_link }}</a>
-					{% endif %}
-				</div>
-				{% endif %}
-				{% if splashscreen and niepce.splash === 'true' %}
-				<button type="button" data-paused="false" class="playpause" aria-label="Pause">
-					{% svg "play", "play-icon" %}
-					{% svg "pause", "pause-icon" %}
-				</button>
-				{% endif %}
 				<ul class="network">
 					<li>
 						<a class="icon-only" href="/feeds/posts.xml" title="RSS feed" aria-label="RSS feed">

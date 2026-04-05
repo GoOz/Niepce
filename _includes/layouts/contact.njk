@@ -1,0 +1,31 @@
+---
+layout: layouts/base.njk
+---
+
+<article class="article">
+	<h1 class="article-title">{{ title }}</h1>
+
+	<div class="article-content narrow">{{ content | safe }}</div>
+
+  <hr>
+
+  <form class="contact" action="{{ niepce.form_url }}" method="POST">
+    <input type="hidden" name="_next" value="{{ niepce.form_sent_page }}" />
+    <div>
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" placeholder="Nicéphore Niépce" required />
+    </div>
+    <div>
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" placeholder="nicephore@niepce.fr" required />
+    </div>
+    <div>
+      <label for="message">Message</label>
+      <textarea id="message" name="message" placeholder="Hello there!" required></textarea>
+    </div>
+    <div class="centered">
+      <button type="submit">Send</button>
+    </div>
+  </form>
+
+</article>
