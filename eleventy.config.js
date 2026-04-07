@@ -1,5 +1,3 @@
-import path from "path"
-
 import {
 	InputPathToUrlTransformPlugin,
 	HtmlBasePlugin,
@@ -15,13 +13,20 @@ import niepce from './_data/niepce.js'
 import svgSprite from "eleventy-plugin-svg-sprite"
 import svgContents from "eleventy-plugin-svg-contents"
 
+import MarkdownItGitHubAlerts from "markdown-it-github-alerts"
 
 export default async function (eleventyConfig) {
 	// PassThroughCopy
 	eleventyConfig.addPassthroughCopy({
-		"./public/": "/",
-		"node_modules/magic-grid/dist/magic-grid.min.js": "js/magic-grid.min.js",
-	})
+    "./public/": "/",
+    "node_modules/magic-grid/dist/magic-grid.min.js": "js/magic-grid.min.js",
+    "node_modules/markdown-it-github-alerts/styles/github-colors-light.css":
+      "css/github-colors-light.css",
+    "node_modules/markdown-it-github-alerts/styles/github-colors-dark-media.css":
+      "css/github-colors-dark-media.css",
+    "node_modules/markdown-it-github-alerts/styles/github-base.css":
+      "css/github-base.css",
+  })
 
 	// Watch content images for the image pipeline.
 	eleventyConfig.addWatchTarget("content/**/*.{svg,webp,png,jpg,jpeg,gif}")
@@ -54,6 +59,11 @@ export default async function (eleventyConfig) {
 			animated: true,
 		},
 	})
+
+  // Markdown
+  eleventyConfig.amendLibrary("md", (mdLib) =>
+    mdLib.use(MarkdownItGitHubAlerts),
+  )
 
 	// Filters
 	eleventyConfig.addPlugin(pluginFilters)

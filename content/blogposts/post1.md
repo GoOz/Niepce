@@ -7,6 +7,9 @@ First of all, during the service, although the weather was fine, and we might ha
 
 Three or four colliers alongside were pouring their cargoes of coal into her port-holes. Beside the 'Great Eastern,' these three-mast ships looked like barges; their chimneys did not even reach the first line of light-ports in her hull; the yards of their gallant-sails did not come up to her bulwarks. The giant could have hoisted these ships on its davits like shore-boats.
 
+> [!TIP]
+> Hello, I'm a tip!
+
 The 'Great Eastern' draws 30 feet of water with a cargo of 28,500 tons, and with a light cargo, from 20 to 30 feet. She is capable of receiving 10,000 passengers, so that out of the 373 principal districts in France, 274 are less populated than this floating sub-prefecture with its average number of passengers.
 
 I heard the irregular roaring of the screw, and the wheels beating the water, sometimes entirely immersed, and at others striking the empty air; by all these signs I concluded that the wind had freshened, and the steam-ship was no longer indifferent to the billows.

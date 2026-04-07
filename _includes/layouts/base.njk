@@ -8,7 +8,13 @@
 		<link rel="alternate" href="/feeds/posts.xml" type="application/atom+xml" title="{{ niepce.title }}">
 		<meta name="generator" content="{{ eleventy.generator }}">
 		{% set theme %}public/css/{{ niepce.theme }}.css{% endset %}
-		{%- css %}{% include theme %}{% endcss %}
+		{%- css %}
+      @import url(../css/github-colors-light.css);
+      @import url(../css/github-colors-dark-media.css);
+      @import url(../css/github-base.css);
+
+      {% include theme %}
+    {% endcss %}
 		<link rel="stylesheet" href="{% getBundleFileUrl "css" %}">
 		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
