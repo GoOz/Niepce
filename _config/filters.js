@@ -50,26 +50,45 @@ export default function (eleventyConfig) {
 
 	eleventyConfig.addFilter("getOGImageURL", getOGImageURL)
 
-	async function getPhotoInfos(post, request) {
-		const inputDir = path.dirname(post.inputPath)
-		const imagePath = path.resolve(inputDir, post.data.photo)
-		const outputDir = path.dirname(post.outputPath)
-		const urlPath = post.url
+	// async function getPhotoInfos(post, request) {
+	// 	const inputDir = path.dirname(post.inputPath)
+	// 	const imagePath = path.resolve(inputDir, post.data.photo)
+	// 	const outputDir = path.dirname(post.outputPath)
+	// 	const urlPath = post.url
 
-		const stats = await Image(imagePath, {
-			widths: [812], // Width
-			formats: ["jpg"],
-			outputDir: outputDir, // Output directory
-			urlPath: urlPath, // Public URL path
-			filenameFormat: function (hash, width, format) {
-				return `${hash}-${width}.${format}`
-			},
-		})
+	// 	const stats = await Image(imagePath, {
+	// 		widths: [812], // Width
+	// 		formats: ["jpg"],
+	// 		outputDir: outputDir, // Output directory
+	// 		urlPath: urlPath, // Public URL path
+	// 		filenameFormat: function (hash, width, format) {
+	// 			return `${hash}-${width}.${format}`
+	// 		},
+	// 	})
 
-		return stats.jpeg[0][request] // Returns requested information
-	}
+	// 	return stats.jpeg[0][request] // Returns requested information
+	// }
 
-	eleventyConfig.addAsyncFilter("getPhotoInfos", getPhotoInfos)
+  function getPhotoInfos(post, request) {
+    const inputDir = path.dirname(post.inputPath)
+    const imagePath = path.resolve(inputDir, post.data.photo)
+    const outputDir = path.dirname(post.outputPath)
+    const urlPath = post.url
+    const options = {
+      widths: [812], // Width
+      formats: ["jpg"],
+      outputDir: outputDir, // Output directory
+      urlPath: urlPath, // Public URL path
+      filenameFormat: function (hash, src, width, format) {
+        return `${hash}-${width}.${format}`
+      },
+    }
+    Image(imagePath, options)
+    const stats = Image.statsSync(imagePath, options)
+    return stats.jpeg[0][request] // Returns requested information
+  }
+
+  eleventyConfig.addFilter("getPhotoInfos", getPhotoInfos)
 
   eleventyConfig.addFilter("findByFileSlug", (collection = [], slug = "") => {
     return collection.find((post) => post.fileSlug === slug)

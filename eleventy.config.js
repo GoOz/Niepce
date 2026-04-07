@@ -57,7 +57,7 @@ export default async function (eleventyConfig) {
 	})
 
 	// EXIF Data
-	eleventyConfig.addNunjucksAsyncFilter(
+	eleventyConfig.addFilter(
 		"getExifData",
 		async function (image, callback) {
 			const inputDir = path.dirname(this.page.inputPath)
@@ -80,7 +80,7 @@ export default async function (eleventyConfig) {
 						.replace(":", "-")
 						.replace(" ", "T") || undefined,
 			}
-			callback(null, extractedValues)
+			return extractedValues
 		},
 	)
 

@@ -1,6 +1,6 @@
 <ol reversed class="grid{% if grid %} {{ grid }}{% else %} {{ niepce.grid }}{% endif %}">
 {% set loops = iteration if iteration else posts.length %}
-{% asyncAll post in posts | reverse %}
+{% for post in posts | reverse %}
 {% set loading = "eager" if loop.index < 20 else "lazy" %}
 {% if loop.index0 < loops %}
   <li class="post">
@@ -15,5 +15,5 @@
 		</a>
 	</li>
   {% endif %}
-{% endall %}
+{% endfor %}
 </ol>
