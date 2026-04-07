@@ -1,6 +1,8 @@
 import { DateTime } from "luxon"
 import path from "path"
 import fs from "node:fs"
+
+import ExifReader from "exifreader"
 import Image from "@11ty/eleventy-img"
 
 export default function (eleventyConfig) {
@@ -47,27 +49,33 @@ export default function (eleventyConfig) {
 
 		return stats.jpeg[0].url // Return the URL of the processed image
 	}
-
 	eleventyConfig.addFilter("getOGImageURL", getOGImageURL)
 
-	// async function getPhotoInfos(post, request) {
-	// 	const inputDir = path.dirname(post.inputPath)
-	// 	const imagePath = path.resolve(inputDir, post.data.photo)
-	// 	const outputDir = path.dirname(post.outputPath)
-	// 	const urlPath = post.url
-
-	// 	const stats = await Image(imagePath, {
-	// 		widths: [812], // Width
-	// 		formats: ["jpg"],
-	// 		outputDir: outputDir, // Output directory
-	// 		urlPath: urlPath, // Public URL path
-	// 		filenameFormat: function (hash, width, format) {
-	// 			return `${hash}-${width}.${format}`
-	// 		},
-	// 	})
-
-	// 	return stats.jpeg[0][request] // Returns requested information
-	// }
+	// EXIF Data
+  async function getExifData(image) {
+    const inputDir = path.dirname(this.page.inputPath)
+    const imagePath = path.resolve(inputDir, image)
+    const exifData = await ExifReader.load(imagePath)
+    const extractedValues = {
+      cameraBrand: exifData.Model?.description.includes(
+        exifData.Make?.description,
+      )
+        ? ""
+        : exifData.Make?.description,
+      cameraModel: exifData.Model?.description || undefined,
+      shutterSpeed: exifData.ExposureTime?.description || undefined,
+      FocalLength: exifData.FocalLength?.description || undefined,
+      fStop: exifData.FNumber?.description.replace("f", "ƒ") || undefined,
+      ISO: exifData.ISOSpeedRatings?.description || undefined,
+      Date:
+        exifData.DateTime?.description
+          .replace(":", "-")
+          .replace(":", "-")
+          .replace(" ", "T") || undefined,
+    }
+    return extractedValues
+  }
+  eleventyConfig.addFilter("getExifData", getExifData)
 
   function getPhotoInfos(post, request) {
     const inputDir = path.dirname(post.inputPath)
@@ -87,7 +95,6 @@ export default function (eleventyConfig) {
     const stats = Image.statsSync(imagePath, options)
     return stats.jpeg[0][request] // Returns requested information
   }
-
   eleventyConfig.addFilter("getPhotoInfos", getPhotoInfos)
 
   eleventyConfig.addFilter("findByFileSlug", (collection = [], slug = "") => {

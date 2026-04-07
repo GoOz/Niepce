@@ -24,7 +24,7 @@ export default {
   // THEME
   theme: "niepce",
   theme_variant: "auto", // "light" | "dark" | "auto"
-  grid: "masonry", // "justified" | "instagrid" | "masonry" | "monocolumn"
+  grid: "monocolumn", // "justified" | "instagrid" | "masonry" | "monocolumn"
 
   // THEME OPTIONS
   ignored_pages: {
@@ -39,7 +39,7 @@ export default {
     },
     categories: true,
     series: true,
-    blogpost: {
+    blogposts: {
       enabled: true,
       nb_items: 3
     }
@@ -48,8 +48,7 @@ export default {
   logo: "",
   exif: true,
   shop_link: "Buy a print",
-  form_url:
-    "https://api.postcatch.io/submit/d8389c77-e28e-4878-b318-6616d4ea199a",
+  form_url: "",
   form_sent_page: "/thank-you/",
 
   // SOCIAL NETWORKS

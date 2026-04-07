@@ -1,52 +1,47 @@
 # Migration guide
 
-## From `0.3.0` to `1.0.0`
+## From any previous version to `1.0.0`
 
-All dependencies have been upgraded to their last version with `1.0.0` and it is for the best.
-But a few breaking changes have emerged.
+> [!CAUTION]
+> **This major version is breaking a lot of things but your posts should be safe.**
 
-### Migrating to ESM
-Because of ECMAScript Module, JS files must be compabitle with me and…
-```js
-module.exports = {
-[…]
-}
+If you did some custom changes on your side, note them or backup the files even because it's most likely that you won't able to add them back easily.
+
+### Step 1: Backup your content and settings
+So backup your `content` folder first!  
+Then it is also strongly suggested to backup as well your `_data/` folder. You won't use as is but it will be convenient to keep your previous config files somewhere. Just in case.
+
+### Step 2: Install the new version
+Now the most straightforward way would be to install everything as a new instance and then apply your content so do that.  
+So do that and get rid of everything there was before.
+
+### Step 3: Re-apply your previous content
+#### Configuration file
+Next you'll notice that before we had two files in the `_data` folder: `metadata.json` and `niepce.js`, now both have been merged into one which is named cleverly named `niepce.js`.  
+
+Open the file and re-apply what was in your previous files that you just backed up.  
+Fair warning, you will find some new keys and others renamed, moved or even removed. Do your best.
+
+#### Content
+Then, for the content, if you look at the new architecture you'll see something like that:
+
 ```
-must be replaced by…
-```js
-export default {
-[…]
-}
+content/
+├─ pages/
+├─ posts/
+├─ blogposts/
 ```
-List of files needing change:
-- `content/content.11tydata.js`
-- `content/feeds/feed.11tydata.js`
-- `_data/niepce.js`
+The `pages` folder is for independant pages (like text only pages or list pages)  
+The `posts` folder is for picture posts  
+The `blogposts` folder is for… well blog posts which is one of the new features (so you shouldn't have anything to do there)  
 
-### Updating YAML Parser
-The new YAML parser failed to parse one file.  
-In the file `content/index.njk`, you'll need to replace tabs by spaces before `key` and `order`
-```yaml
----
-layout: layouts/base.njk
-eleventyExcludeFromCollections: true
-home: true
-splashscreen: true
-eleventyNavigation:
-  key: Home
-  order: 1
----
-```
+Dispatch the content you backed up in those folder, where it belongs.
 
-### Upgrading eleventy-img
-This 11ty plugins has ben upgraded and it doesn't need and support the shortcode `{% Image %}` anymore.  
+> [!CAUTION]
+> Don't forget to empty the `posts` folder **except** the `posts.11tydata.js`, it needs to stay there, and as for the `pages` folder it would be best if you don't removed any files there but you should take a look at the [wiki](https://github.com/GoOz/Niepce/wiki) for more informations.
 
-Everywhere `{% image %}` is used (mostly in `_includes` and `content`) it must be replaced by a markdowm image `![alternative text](url-of-the-photo)` or a HTML img tag <img src="url-of-the-photo" alt="alternative text">
-
-### Migration tips
-Depending on the amount of changes you made on your own instance, migration could be more or less tricky but I strongly suggest to backup your instance, get the new version of **Niepce** in and apply to it the changes you made (like your content and config files mostly).
-
-Whatever the way you choose to migrate, run locally your instance to double check everything works fine. You'll see in the terminal any quirks that may happen and you'll know what to fix (hopefully).
+If all went well you should be able to run the server and see the changes before your eyes.  
+You'll see in the terminal any quirks that may happen and you'll know what to fix (hopefully).
 
 Good luck ☜(ﾟヮﾟ☜)
 

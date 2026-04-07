@@ -1,13 +1,16 @@
 ---
 layout: layouts/base.njk
 ---
-<article class="article">
-  <h1 class="article-title">{{ title }}</h1>
+<h1 class="article-title blogposts-title">
+  {{ title }}
+  <a class="icon-only" href="/feeds/blogposts.xml" title="RSS feed" aria-label="RSS feed">
+    {% svg "rss", "network-icon" %}
+  </a>
+</h1>
 
-  <div class="article-content centered">
-    {{ content | safe }}
-  </div>
+<div class="article-content centered">
+  {{ content | safe }}
+</div>
 
-  {% set posts = collections.blogpost %}
-  {% include "get_blogposts.njk" %}
-</article>
+{% set posts = collections.blogpost %}
+{% include "get_blogposts.njk" %}

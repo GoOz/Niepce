@@ -13,7 +13,6 @@ import pluginFilters from "./_config/filters.js"
 import niepce from './_data/niepce.js'
 
 import svgSprite from "eleventy-plugin-svg-sprite"
-import ExifReader from "exifreader"
 import svgContents from "eleventy-plugin-svg-contents"
 
 
@@ -55,34 +54,6 @@ export default async function (eleventyConfig) {
 			animated: true,
 		},
 	})
-
-	// EXIF Data
-	eleventyConfig.addFilter(
-		"getExifData",
-		async function (image, callback) {
-			const inputDir = path.dirname(this.page.inputPath)
-			const imagePath = path.resolve(inputDir, image)
-			const exifData = await ExifReader.load(imagePath)
-			const extractedValues = {
-				cameraBrand: exifData.Model?.description.includes(
-					exifData.Make?.description,
-				)
-					? ""
-					: exifData.Make?.description,
-				cameraModel: exifData.Model?.description || undefined,
-				shutterSpeed: exifData.ExposureTime?.description || undefined,
-				FocalLength: exifData.FocalLength?.description || undefined,
-				fStop: exifData.FNumber?.description.replace("f", "ƒ") || undefined,
-				ISO: exifData.ISOSpeedRatings?.description || undefined,
-				Date:
-					exifData.DateTime?.description
-						.replace(":", "-")
-						.replace(":", "-")
-						.replace(" ", "T") || undefined,
-			}
-			return extractedValues
-		},
-	)
 
 	// Filters
 	eleventyConfig.addPlugin(pluginFilters)

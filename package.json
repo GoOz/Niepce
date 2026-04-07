@@ -32,7 +32,7 @@
 	"homepage": "https://github.com/GoOz/Niepce#readme",
 	"devDependencies": {
 		"@11ty/eleventy": "^3.1.5",
-		"@11ty/eleventy-img": "github:jornmineur/eleventy-img#no-buffer-in-memcache",
+		"@11ty/eleventy-img": "github:GoOz/eleventy-img#no-buffer-in-memcache",
 		"@11ty/eleventy-navigation": "^1.0.5",
 		"@11ty/eleventy-plugin-rss": "^3.0.0",
 		"cross-env": "^10.1.0",

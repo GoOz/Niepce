@@ -69,12 +69,17 @@ permalink: /
 </div>
 {% endif %}
 
-{% if niepce.home.blogpost.enabled %}
+{% if niepce.home.blogposts.enabled %}
 <hr>
 
 <div class="block">
-  <h2 class="centered">Last blog posts</h2>
-  {% set iteration = niepce.home.blogpost.nb_items %}
+  <h2 class="centered blogposts-title">
+    Last blog posts
+    <a class="icon-only" href="/feeds/blogposts.xml" title="RSS feed" aria-label="RSS feed">
+      {% svg "rss", "network-icon" %}
+    </a>
+  </h2>
+  {% set iteration = niepce.home.blogposts.nb_items %}
   {% set posts = collections.blogpost %}
   {% include "get_blogposts.njk" %}
 </div>
