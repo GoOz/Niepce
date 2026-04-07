@@ -1,14 +1,13 @@
 ---
 layout: layouts/base.njk
 ---
-<articile class="article">
+<article class="article">
   <h1 class="article-title">{{ title }}</h1>
 
   <div class="article-content centered">
     {{ content | safe }}
   </div>
 
-  {% set posts = collections.post %}
-  {% include "get_posts.njk" %}
-</articile>
-
+  {% set posts = collections.blogpost %}
+  {% include "get_blogposts.njk" %}
+</article>

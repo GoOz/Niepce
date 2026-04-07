@@ -35,6 +35,7 @@
 		"@11ty/eleventy-img": "github:jornmineur/eleventy-img#no-buffer-in-memcache",
 		"@11ty/eleventy-navigation": "^1.0.5",
 		"@11ty/eleventy-plugin-rss": "^3.0.0",
+		"cross-env": "^10.1.0",
 		"eleventy-plugin-svg-contents": "^0.7.0",
 		"eleventy-plugin-svg-sprite": "^2.4.6",
 		"exifreader": "^4.37.0",

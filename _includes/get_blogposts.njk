@@ -1,0 +1,15 @@
+<ul class="blogposts">
+  {% set loops = iteration if iteration else posts.length %}
+  {% for post in posts %}
+  {% if loop.index0 < loops %}
+  <li class="blogpost">
+    <a href="{{ post.url }}">
+      <h2>{{ post.data.title }}</h2>
+      <time datetime="{{ post.date | htmlDateString }}">
+        {{ post.date | readableDate }}
+      </time>
+    </a>
+  </li>
+  {% endif %}
+  {% endfor %}
+</ul>

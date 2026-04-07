@@ -1,5 +1,5 @@
 <ul class="categories">
-  {% for series in collections.serieslist %}
+  {% asyncAll series in collections.serieslist %}
   {% set postsSeries = posts | filterBySeries(series) %}
   <li class="category">
     <a href="/series/{{ series | slugify }}/">
@@ -14,5 +14,5 @@
       <h2>{{ series }}</h2>
     </a>
   </li>
-  {% endfor %}
+  {% endall %}
 </ul>

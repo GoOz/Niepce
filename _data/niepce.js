@@ -15,9 +15,11 @@ export default {
   },
 
   // SPLASH SCREEN
-  splash: "true",
-  splash_link: "Browse",
-  splash_line: "Take a look at my work…",
+  splash: {
+    enabled: true,
+    link: "Browse",
+    line: "Take a look at my work…",
+  },
 
   // THEME
   theme: "niepce",
@@ -28,8 +30,20 @@ export default {
   ignored_pages: {
     archives: false,
     contact: false,
+    blogposts: false,
   },
-  last_items: 8,
+  home: {
+    last_items: {
+      enabled: true,
+      nb_items: 8,
+    },
+    categories: true,
+    series: true,
+    blogpost: {
+      enabled: true,
+      nb_items: 3
+    }
+  },
   animations: true,
   logo: "",
   exif: true,

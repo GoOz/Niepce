@@ -2,7 +2,6 @@ import { DateTime } from "luxon"
 import path from "path"
 import fs from "node:fs"
 import Image from "@11ty/eleventy-img"
-import niepce from "../_data/niepce.js"
 
 export default function (eleventyConfig) {
 	eleventyConfig.addFilter("readableDate", (date) => {
@@ -23,15 +22,10 @@ export default function (eleventyConfig) {
 		return fs.existsSync(filename)
 	})
 
-	// Returns the keys used in an object
-	eleventyConfig.addFilter("getKeys", (target) => {
-		return Object.keys(target)
-	})
-
     // Returns Tags list
 	eleventyConfig.addFilter("filterTagList", function filterTagList(tags) {
     return (tags || []).filter(
-            (tag) => ["all", "nav", "post", "pages", "featured", "series", "serieslist"].indexOf(tag) === -1,
+            (tag) => ["all", "nav", "post", "pages", "featured", "series", "serieslist, blogpost"].indexOf(tag) === -1,
     )
   })
 
@@ -61,14 +55,13 @@ export default function (eleventyConfig) {
 		const imagePath = path.resolve(inputDir, post.data.photo)
 		const outputDir = path.dirname(post.outputPath)
 		const urlPath = post.url
-		const photo = post.data.photo
 
 		const stats = await Image(imagePath, {
-			widths: [812], // Width for Open Graph image
+			widths: [812], // Width
 			formats: ["jpg"],
 			outputDir: outputDir, // Output directory
 			urlPath: urlPath, // Public URL path
-			filenameFormat: function (hash, photo, width, format) {
+			filenameFormat: function (hash, width, format) {
 				return `${hash}-${width}.${format}`
 			},
 		})
@@ -76,7 +69,7 @@ export default function (eleventyConfig) {
 		return stats.jpeg[0][request] // Returns requested information
 	}
 
-	eleventyConfig.addFilter("getPhotoInfos", getPhotoInfos)
+	eleventyConfig.addAsyncFilter("getPhotoInfos", getPhotoInfos)
 
   eleventyConfig.addFilter("findByFileSlug", (collection = [], slug = "") => {
     return collection.find((post) => post.fileSlug === slug)

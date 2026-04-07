@@ -6,7 +6,7 @@ eleventyNavigation:
   order: 1
 permalink: /
 ---
-{% if niepce.splash === 'true' %}
+{% if niepce.splash.enabled %}
 	{% set featured = collections.featured %}
 	<div class="splash-wrapper">
     <ul class="slideshow">
@@ -16,18 +16,18 @@ permalink: /
       {% endif %}
       {%- endfor -%}
     </ul>
-      <div class="splash-cta">
-        {% if niepce.splash_line %}
-        <h2 class="splash-line">{{ niepce.splash_line }}</h2>
-        {% endif %}
-        {% if niepce.splash_link %}
-        <button class="splash-link">{{ niepce.splash_link }}</button>
-        {% endif %}
-      </div>
-      <button type="button" data-paused="false" class="playpause" aria-label="Pause">
-        {% svg "play", "play-icon" %}
-        {% svg "pause", "pause-icon" %}
-      </button>
+    <div class="splash-cta">
+      {% if niepce.splash.line %}
+      <h2 class="splash-line">{{ niepce.splash.line }}</h2>
+      {% endif %}
+      {% if niepce.splash.link %}
+      <button class="splash-link">{{ niepce.splash.link }}</button>
+      {% endif %}
+    </div>
+    <button type="button" data-paused="false" class="playpause" aria-label="Pause">
+      {% svg "play", "play-icon" %}
+      {% svg "pause", "pause-icon" %}
+    </button>
   </div>
 {% endif %}
 
@@ -35,9 +35,10 @@ permalink: /
   {{ content | safe }}
 </div>
 
+{% if niepce.home.last_items.enabled %}
 <div class="block">
-  <h2 class="centered">Last {{ niepce.last_items }} posts</h2>
-  {% set iteration = niepce.last_items %}
+  <h2 class="centered">Last {{ niepce.home.last_items.nb_items }} posts</h2>
+  {% set iteration = niepce.home.last_items.nb_items %}
   {% set posts = collections.post %}
   {% include "get_posts.njk" %}
   {% if niepce.ignored_pages.archives === false %}
@@ -46,14 +47,19 @@ permalink: /
   </div>
   {% endif %}
 </div>
+{% endif %}
 
+{% if niepce.home.categories %}
 <hr>
 
 <div class="block">
   <h2 class="centered">Categories</h2>
+  {% set posts = collections.post %}
   {% include "get_categories.njk" %}
 </div>
+{% endif %}
 
+{% if niepce.home.series %}
 <hr>
 
 <div class="block">
@@ -61,4 +67,15 @@ permalink: /
   {% set posts = collections.series %}
   {% include "get_series.njk" %}
 </div>
+{% endif %}
 
+{% if niepce.home.blogpost.enabled %}
+<hr>
+
+<div class="block">
+  <h2 class="centered">Last blog posts</h2>
+  {% set iteration = niepce.home.blogpost.nb_items %}
+  {% set posts = collections.blogpost %}
+  {% include "get_blogposts.njk" %}
+</div>
+{% endif %}

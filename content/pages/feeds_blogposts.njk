@@ -1,0 +1,34 @@
+---
+eleventyExcludeFromCollections: true
+layout: layouts/feed.njk
+permalink: /feeds/blogposts.xml
+eleventyImport:
+    collections: ["blogpost"]
+---
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:base="{{ niepce.language }}">
+	<title>{{ niepce.title }}</title>
+	<subtitle>{{ niepce.description }}</subtitle>
+	<link href="{{ permalink | htmlBaseUrl(niepce.url) }}" rel="self" />
+	<link href="{{ niepce.url | addPathPrefixToFullUrl }}" />
+	<updated>{{ collections.blogpost | getNewestCollectionItemDate | dateToRfc3339 }}</updated>
+	<id>{{ niepce.url }}</id>
+	<author>
+		<name>{{ niepce.author.name }}</name>
+		<email>{{ niepce.author.email }}</email>
+	</author>
+	{%- for post in collections.blogpost | reverse %}
+	{% set absolutePostUrl %}{{ post.url | htmlBaseUrl(niepce.url) }}{% endset %}
+	<entry>
+		<title>{{ post.data.title }}</title>
+		<link href="{{ absolutePostUrl }}" />
+		<updated>{{ post.date | dateToRfc3339 }}</updated>
+		<id>{{ absolutePostUrl }}</id>
+		<content type="html">
+			<![CDATA[
+			{{ post.templateContent | transformWithHtmlBase(absolutePostUrl, post.url) | safe }}
+			]]>
+		</content>
+	</entry>
+	{%- endfor %}
+</feed>
