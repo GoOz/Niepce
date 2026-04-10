@@ -3,8 +3,7 @@ layout: layouts/series.njk
 eleventyNavigation:
   key: Colorful
   parent: Series
-eleventyComputed:
-  title: Colorful series
+title: Colorful series
 permalink: /series/colorful/
 seriesName: Colorful
 grid: justified

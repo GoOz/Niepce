@@ -39,12 +39,13 @@ if (splashExit) {
     wrapper.remove()
   })
 }
-  if (nextPost || prevPost) {
-    document.addEventListener("keyup", (e) => {
-      if (prevPost && e.key === "ArrowLeft") prevPost.click()
-      if (nextPost && e.key === "ArrowRight") nextPost.click()
-    })
-  }
+
+if (nextPost || prevPost) {
+  document.addEventListener("keyup", (e) => {
+    if (prevPost && e.key === "ArrowLeft") prevPost.click()
+    if (nextPost && e.key === "ArrowRight") nextPost.click()
+  })
+}
 
 // Utils
 function checkMedia(size) {

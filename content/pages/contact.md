@@ -3,7 +3,6 @@ layout: layouts/contact.njk
 eleventyNavigation:
   key: Contact
   order: 7
-override:tags: ["pages"]
 title: Contact me
 permalink: /contact/
 ---

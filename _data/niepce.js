@@ -24,7 +24,7 @@ export default {
   // THEME
   theme: "niepce",
   theme_variant: "auto", // "light" | "dark" | "auto"
-  grid: "monocolumn", // "justified" | "instagrid" | "masonry" | "monocolumn"
+  grid: "justified", // "justified" | "instagrid" | "masonry" | "monocolumn"
 
   // THEME OPTIONS
   ignored_pages: {
@@ -41,8 +41,8 @@ export default {
     series: true,
     blogposts: {
       enabled: true,
-      nb_items: 3
-    }
+      nb_items: 3,
+    },
   },
   animations: true,
   logo: "",

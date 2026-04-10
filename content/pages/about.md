@@ -3,7 +3,6 @@ layout: layouts/page.njk
 eleventyNavigation:
   key: About
   order: 1
-override:tags: ["pages"]
 title: Hello, I'm the photographer
 permalink: /about/
 ---

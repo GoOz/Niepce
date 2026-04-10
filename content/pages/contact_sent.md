@@ -1,6 +1,5 @@
 ---
 layout: layouts/page.njk
-override:tags: ["pages"]
 title: Thank you for your message
 permalink: /thank-you/
 ---
