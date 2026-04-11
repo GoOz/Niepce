@@ -82,12 +82,12 @@ export default async function (eleventyConfig) {
 
   // Return all the pictures flagged as part of a category
 	eleventyConfig.addCollection("category", (collection) => {
-		return collection.getAll().filter((post) => post.data.category)
+		return collection.getAllSorted().filter((post) => post.data.category)
 	})
 
   // Return all the pictures flagged as part of a series
 	eleventyConfig.addCollection("series", (collection) => {
-		return collection.getAll().filter((post) => post.data.series)
+		return collection.getAllSorted().filter((post) => post.data.series)
 	})
 
   // Return all the categories types

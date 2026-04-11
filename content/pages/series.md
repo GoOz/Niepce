@@ -5,8 +5,6 @@ eleventyNavigation:
   key: Series
   order: 5
 permalink: /series/
-covers:
-  Colorful: portrait-3
 ---
 
 **Choose you series**

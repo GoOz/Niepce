@@ -1,10 +1,12 @@
 <ul class="categories">
   {% for category in collections.categorylist %}
   {% set postsCategory = posts | filterByCategory(category) %}
+  {% set slug = "category_"+category | slugify %}
+  {% set categoryCover = collections.all | findByFileSlug(slug) %}
   <li class="category">
     <a href="/category/{{ category | slugify }}/">
-      {% if covers[category] %}
-        {% set coverPost = postsCategory | findByFileSlug(covers[category]) %}
+      {% if categoryCover.data.cover %}
+        {% set coverPost = postsCategory | findByFileSlug(categoryCover.data.cover) %}
       {% else %}
         {% set coverPost = postsCategory.at(-1) %}
       {% endif %}

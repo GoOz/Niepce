@@ -1,10 +1,12 @@
 <ul class="categories">
   {% for series in collections.serieslist %}
   {% set postsSeries = posts | filterBySeries(series) %}
+  {% set slug = "series_"+series | slugify %}
+  {% set seriesCover = collections.all | findByFileSlug(slug) %}
   <li class="category">
     <a href="/series/{{ series | slugify }}/">
-      {% if covers[series] %}
-        {% set coverPost = postsSeries | findByFileSlug(covers[series])  %}
+      {% if seriesCover.data.cover %}
+        {% set coverPost = postsSeries | findByFileSlug(seriesCover.data.cover)  %}
       {% else %}
         {% set coverPost = postsSeries.at(-1) %}
       {% endif %}

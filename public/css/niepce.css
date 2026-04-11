@@ -1152,6 +1152,10 @@ a.logo {
     justify-content: center;
     margin: 0;
     background-color: var(--splash-overlay);
+		text-transform: uppercase;
+    letter-spacing: var(--size-1);
+		text-shadow: 2px 2px 5px var(--background);
+    text-align: center;
   }
 }
 
