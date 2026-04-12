@@ -12,11 +12,19 @@ const slides = document.querySelectorAll(".slideshow > li")
 const splashExit = document.querySelector(".splash-link")
 const prevPost = document.querySelector(".footer-nav-prev a")
 const nextPost = document.querySelector(".footer-nav-next a")
+const contactForm = document.querySelector(".contact")
+const submitButton = document.querySelector(".contact button[type='submit']")
 
 // Events
 menuButton.addEventListener("click", () => {
 	nav.classList.toggle("open")
 })
+
+contactForm.addEventListener("submit", () => {
+  submitButton.setAttribute("aria-busy", "true")
+  submitButton.setAttribute("disabled", "")
+})
+
 if (slideshowButton) {
 	slideshowButton.addEventListener("click", (e) => {
 		const isPaused = slideshowButton.getAttribute("data-paused") === "true"

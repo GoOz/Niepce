@@ -11,7 +11,9 @@
         {% set coverPost = postsCategory.at(-1) %}
       {% endif %}
       <div class="category-cover">
+        {% if coverPost.data.photo %}
         <img eleventy:ignore src="{{ coverPost | getPhotoInfos('url') }}" alt="">
+        {% endif %}
       </div>
       <h2>{{ category }}</h2>
     </a>

@@ -156,6 +156,15 @@
   }
 }
 
+@keyframes spin {
+  0% {
+      transform: rotate(0deg);
+  }
+  100% {
+      transform: rotate(360deg);
+  }
+}
+
 /*=========================================
 *                  Global                 *
 =========================================*/
@@ -1116,10 +1125,8 @@ a.logo {
 *               Contact form              *
 =========================================*/
 .categories {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: stretch;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(var(--size-14), 1fr));
   gap: var(--size-7);
   list-style: none;
   margin: var(--size-7) auto;
@@ -1128,10 +1135,7 @@ a.logo {
 .category {
   display: block;
   position: relative;
-  flex: 1 1 var(--size-10);
   aspect-ratio: 16 / 9;
-  max-inline-size: 50%;
-  min-inline-size: var(--size-13);
 
   & a[href] {
     color: inherit;
@@ -1222,6 +1226,24 @@ button {
     border-color: var(--button-color);
     background-color: var(--button-color);
     color: var(--dark-background);
+  }
+
+  &[aria-busy] {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--size-2);
+
+    &::after {
+      content: '';
+      width: var(--size-3);
+      height: var(--size-3);
+      border: 2px solid currentColor;
+      border-bottom-color: transparent;
+      border-radius: 50%;
+      display: inline-block;
+      box-sizing: border-box;
+      animation: spin 1s linear infinite;
+    }
   }
 }
 .contact {

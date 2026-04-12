@@ -1,19 +1,24 @@
-<ol reversed class="grid{% if grid %} {{ grid }}{% else %} {{ niepce.grid }}{% endif %}">
-{% set loops = iteration if iteration else posts.length %}
-{% for post in posts | reverse %}
-{% set loading = "eager" if loop.index < 20 else "lazy" %}
-{% if loop.index0 < loops %}
-  <li class="post">
-		<a href="{{ post.url }}" {% if post.data.tw %}class="tw"{% endif %}>
-			{% if post.data.photo %}
-			<div class="post-img"><img eleventy:ignore src="{{ post | getPhotoInfos('url') }}" alt="{{ post.data.photo_alt }}" width="{{ post | getPhotoInfos('width') }}" height="{{ post | getPhotoInfos('height') }}"></div>
-			{% endif %}
-			{% if post.data.tw %}
-			<div class="post-tw"><abbr title="Trigger warning">TW:</abbr> {{ post.data.tw }}</div>
-			{% endif %}
-			<h2 class="post-title">{{ post.data.title }}</h2>
-		</a>
-	</li>
-  {% endif %}
-{% endfor %}
+{% if posts %}
+<ol class="grid{% if grid %} {{ grid }}{% else %} {{ niepce.grid }}{% endif %}">
+  {% set loops = iteration if iteration else posts.length %}
+  {{ posts.length | log }}
+  {% for post in posts | reverse %}
+  {% set loading = "eager" if loop.index < 20 else "lazy" %}
+  {% if loop.index0 < loops %}
+    <li class="post">
+      <a href="{{ post.url }}" {% if post.data.tw %}class="tw"{% endif %}>
+        {% if post.data.photo %}
+        <div class="post-img"><img eleventy:ignore src="{{ post | getPhotoInfos('url') }}" alt="{{ post.data.photo_alt }}" width="{{ post | getPhotoInfos('width') }}" height="{{ post | getPhotoInfos('height') }}"></div>
+        {% endif %}
+        {% if post.data.tw %}
+        <div class="post-tw"><abbr title="Trigger warning">TW:</abbr> {{ post.data.tw }}</div>
+        {% endif %}
+        <h2 class="post-title">{{ post.data.title }}</h2>
+      </a>
+    </li>
+    {% endif %}
+  {% endfor %}
 </ol>
+{% else %}
+  <h2 class="centered">There's nothing to see here yet!</h2>
+{% endif %}
