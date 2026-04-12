@@ -20,10 +20,12 @@ menuButton.addEventListener("click", () => {
 	nav.classList.toggle("open")
 })
 
-contactForm.addEventListener("submit", () => {
-  submitButton.setAttribute("aria-busy", "true")
-  submitButton.setAttribute("disabled", "")
-})
+if (contactForm && submitButton) {
+  contactForm.addEventListener("submit", () => {
+    submitButton.setAttribute("aria-busy", "true")
+    submitButton.setAttribute("disabled", "")
+  })
+}
 
 if (slideshowButton) {
 	slideshowButton.addEventListener("click", (e) => {
