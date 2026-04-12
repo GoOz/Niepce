@@ -1,0 +1,86 @@
+---
+layout: layouts/base.njk
+home: true
+eleventyNavigation:
+  key: Home
+  order: 1
+permalink: /
+---
+{% if niepce.splash.enabled %}
+	{% set featured = collections.featured %}
+	<div class="splash-wrapper">
+    <ul class="slideshow">
+      {%- for post in featured -%}
+      {% if post.data.photo %}
+          <li><img eleventy:ignore src="{{ post | getPhotoInfos('url') }}" alt="{{ post.data.photo_alt }}" sizes="(min-width: 50em) 50vw, 100vw"></li>
+      {% endif %}
+      {%- endfor -%}
+    </ul>
+    <div class="splash-cta">
+      {% if niepce.splash.line %}
+      <h2 class="splash-line">{{ niepce.splash.line }}</h2>
+      {% endif %}
+      {% if niepce.splash.link %}
+      <button class="splash-link">{{ niepce.splash.link }}</button>
+      {% endif %}
+    </div>
+    <button type="button" data-paused="false" class="playpause" aria-label="Pause">
+      {% svg "play", "play-icon" %}
+      {% svg "pause", "pause-icon" %}
+    </button>
+  </div>
+{% endif %}
+
+<div class="article-content">
+  {{ content | safe }}
+</div>
+
+{% if niepce.home.last_items.enabled %}
+<div class="block">
+  <h2 class="centered">Last {{ niepce.home.last_items.nb_items }} posts</h2>
+  {% set iteration = niepce.home.last_items.nb_items %}
+  {% set posts = collections.post %}
+  {% include "get_posts.njk" %}
+  {% if niepce.ignored_pages.archives === false %}
+  <div class="centered">
+    <em>See all photographs in the <a href="/archives/">archives</a></em>
+  </div>
+  {% endif %}
+</div>
+{% endif %}
+
+{% if niepce.home.categories %}
+<hr>
+
+<div class="block">
+  <h2 class="centered">Categories</h2>
+  {% set posts = collections.post %}
+  {% include "get_categories.njk" %}
+</div>
+{% endif %}
+
+{% if niepce.home.series %}
+<hr>
+
+<div class="block">
+  <h2 class="centered">Series</h2>
+  {% set posts = collections.series %}
+  {% include "get_series.njk" %}
+</div>
+{% endif %}
+
+{% if niepce.home.blogposts.enabled %}
+<hr>
+
+<div class="block">
+  <h2 class="centered blogposts-title">
+    Last blog posts
+    <a class="icon-only" href="/feeds/blogposts.xml" title="RSS feed" aria-label="RSS feed">
+      {% svg "rss", "network-icon" %}
+    </a>
+  </h2>
+  {% set iteration = niepce.home.blogposts.nb_items %}
+  {% set posts = collections.blogpost %}
+  {% include "get_blogposts.njk" %}
+</div>
+{% endif %}

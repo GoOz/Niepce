@@ -1,0 +1,22 @@
+<ul class="categories">
+  {% for series in collections.serieslist %}
+  {% set postsSeries = posts | filterBySeries(series) %}
+  {% set slug = "series_"+series | slugify %}
+  {% set seriesCover = collections.all | findByFileSlug(slug) %}
+  <li class="category">
+    <a href="/series/{{ series | slugify }}/">
+      {% if seriesCover.data.cover %}
+        {% set coverPost = postsSeries | findByFileSlug(seriesCover.data.cover)  %}
+      {% else %}
+        {% set coverPost = postsSeries.at(-1) %}
+      {% endif %}
+      <div class="category-cover">
+        {% if coverPost.data.photo %}
+        <img eleventy:ignore src="{{ coverPost | getPhotoInfos('url') }}" alt="">
+        {% endif %}
+      </div>
+      <h2>{{ series }}</h2>
+    </a>
+  </li>
+  {% endfor %}
+</ul>

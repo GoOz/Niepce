@@ -1,0 +1,37 @@
+---
+layout: layouts/base.njk
+---
+<article>
+	<h1 class="article-title">{{ title }}</h1>
+
+	<div class="article-content">
+		{{ content | safe }}
+	</div>
+	{%- if collections.blogpost %}
+	{%- set previousPost = collections.blogpost | getPreviousCollectionItem %}
+	{%- set nextPost = collections.blogpost | getNextCollectionItem %}
+	{%- if nextPost or previousPost %}
+	<hr>
+	<h2 class="centered">Other blog posts</h2>
+	<ul class="blog-nav">
+		{%- if previousPost %}
+		<li class="blog-nav-prev">
+      <a href="{{ previousPost.url }}">
+        {% svg "play", "play-icon" %}
+				<span>{% if previousPost.data.title %}{{ previousPost.data.title }}{% else %}<code>{{ previousPost.url }}</code>{% endif %}</span>
+			</a>
+		</li>
+		{% endif %}
+		{%- if nextPost %}
+		<li class="blog-nav-next">
+			<a href="{{ nextPost.url }}">
+				<span>{% if nextPost.data.title %}{{ nextPost.data.title }}{% else %}<code>{{ nextPost.url }}</code>{% endif %}</span>
+        {% svg "play", "play-icon" %}
+			</a>
+		</li>
+		{% endif %}
+	</ul>
+	{%- endif %}
+	{%- endif %}
+
+</article>

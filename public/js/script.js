@@ -9,13 +9,22 @@ const menuButton = document.querySelector(".menu")
 const slideshowButton = document.querySelector(".playpause")
 const nav = document.querySelector(".nav")
 const slides = document.querySelectorAll(".slideshow > li")
+const splashExit = document.querySelector(".splash-link")
 const prevPost = document.querySelector(".footer-nav-prev a")
 const nextPost = document.querySelector(".footer-nav-next a")
+const contactForm = document.querySelector(".contact")
+const submitButton = document.querySelector(".contact button[type='submit']")
 
 // Events
 menuButton.addEventListener("click", () => {
 	nav.classList.toggle("open")
 })
+
+contactForm.addEventListener("submit", () => {
+  submitButton.setAttribute("aria-busy", "true")
+  submitButton.setAttribute("disabled", "")
+})
+
 if (slideshowButton) {
 	slideshowButton.addEventListener("click", (e) => {
 		const isPaused = slideshowButton.getAttribute("data-paused") === "true"
@@ -30,11 +39,20 @@ if (slideshowButton) {
 	})
 }
 
+if (splashExit) {
+  const page = document.querySelector('.main.splash')
+  const wrapper = document.querySelector('.splash-wrapper')
+  splashExit.addEventListener("click", (e) => {
+    page.classList.remove('splash')
+    wrapper.remove()
+  })
+}
+
 if (nextPost || prevPost) {
-	document.addEventListener("keyup", (e) => {
-		if (prevPost && e.key === "ArrowLeft") prevPost.click()
-		if (nextPost && e.key === "ArrowRight") nextPost.click()
-	})
+  document.addEventListener("keyup", (e) => {
+    if (prevPost && e.key === "ArrowLeft") prevPost.click()
+    if (nextPost && e.key === "ArrowRight") nextPost.click()
+  })
 }
 
 // Utils
