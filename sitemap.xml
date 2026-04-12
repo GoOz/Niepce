@@ -1,119 +1,208 @@
 <?xml version="1.0" encoding="utf-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
-	
-	<url>
-		<loc>https://portfolio.niepce.tld/Niepce/landscape-1/</loc>
-		<lastmod>2023-09-01</lastmod>
-	</url>
-	
-	<url>
-		<loc>https://portfolio.niepce.tld/Niepce/portrait-1/</loc>
-		<lastmod>2023-09-01</lastmod>
-	</url>
-	
-	<url>
-		<loc>https://portfolio.niepce.tld/Niepce/portrait-5/</loc>
-		<lastmod>2023-09-05</lastmod>
-	</url>
-	
-	<url>
-		<loc>https://portfolio.niepce.tld/Niepce/misc-2/</loc>
-		<lastmod>2023-09-08</lastmod>
-	</url>
-	
-	<url>
-		<loc>https://portfolio.niepce.tld/Niepce/landscape-2/</loc>
-		<lastmod>2023-09-09</lastmod>
-	</url>
-	
-	<url>
-		<loc>https://portfolio.niepce.tld/Niepce/misc-3/</loc>
-		<lastmod>2023-09-12</lastmod>
-	</url>
-	
-	<url>
-		<loc>https://portfolio.niepce.tld/Niepce/landscape-4/</loc>
-		<lastmod>2023-09-13</lastmod>
-	</url>
-	
-	<url>
-		<loc>https://portfolio.niepce.tld/Niepce/misc-4/</loc>
-		<lastmod>2023-09-16</lastmod>
-	</url>
-	
-	<url>
-		<loc>https://portfolio.niepce.tld/Niepce/portrait-3/</loc>
-		<lastmod>2023-09-17</lastmod>
-	</url>
-	
-	<url>
-		<loc>https://portfolio.niepce.tld/Niepce/landscape-5/</loc>
-		<lastmod>2023-09-18</lastmod>
-	</url>
-	
-	<url>
-		<loc>https://portfolio.niepce.tld/Niepce/portrait-2-markdown/</loc>
-		<lastmod>2023-09-20</lastmod>
-	</url>
-	
-	<url>
-		<loc>https://portfolio.niepce.tld/Niepce/misc-1/</loc>
-		<lastmod>2023-09-21</lastmod>
-	</url>
-	
-	<url>
-		<loc>https://portfolio.niepce.tld/Niepce/landscape-3/</loc>
-		<lastmod>2023-09-25</lastmod>
-	</url>
-	
-	<url>
-		<loc>https://portfolio.niepce.tld/Niepce/misc-5/</loc>
-		<lastmod>2023-09-28</lastmod>
-	</url>
-	
-	<url>
-		<loc>https://portfolio.niepce.tld/Niepce/portrait-4/</loc>
-		<lastmod>2023-09-28</lastmod>
-	</url>
-	
-	<url>
-		<loc>https://portfolio.niepce.tld/Niepce/about/</loc>
-		<lastmod>2026-03-29</lastmod>
-	</url>
-	
-	<url>
-		<loc>https://portfolio.niepce.tld/Niepce/shop/</loc>
-		<lastmod>2026-03-29</lastmod>
-	</url>
-	
-	<url>
-		<loc>https://portfolio.niepce.tld/Niepce/tags/landscape/</loc>
-		<lastmod>2026-03-29</lastmod>
-	</url>
-	
-	<url>
-		<loc>https://portfolio.niepce.tld/Niepce/tags/colorful/</loc>
-		<lastmod>2026-03-29</lastmod>
-	</url>
-	
-	<url>
-		<loc>https://portfolio.niepce.tld/Niepce/tags/misc/</loc>
-		<lastmod>2026-03-29</lastmod>
-	</url>
-	
-	<url>
-		<loc>https://portfolio.niepce.tld/Niepce/tags/portrait/</loc>
-		<lastmod>2026-03-29</lastmod>
-	</url>
-	
-	<url>
-		<loc>https://portfolio.niepce.tld/Niepce/tags/pages/</loc>
-		<lastmod>2026-03-29</lastmod>
-	</url>
-	
-	<url>
-		<loc>https://portfolio.niepce.tld/Niepce/tags/featured/</loc>
-		<lastmod>2026-03-29</lastmod>
-	</url>
+  	
+      
+      <url>
+        <loc>https://portfolio.niepce.tld/Niepce/landscape-1/</loc>
+        <lastmod>2023-09-01</lastmod>
+      </url>
+    
+  	
+      
+      <url>
+        <loc>https://portfolio.niepce.tld/Niepce/portrait-1/</loc>
+        <lastmod>2023-09-01</lastmod>
+      </url>
+    
+  	
+      
+      <url>
+        <loc>https://portfolio.niepce.tld/Niepce/portrait-5/</loc>
+        <lastmod>2023-09-05</lastmod>
+      </url>
+    
+  	
+      
+      <url>
+        <loc>https://portfolio.niepce.tld/Niepce/misc-2/</loc>
+        <lastmod>2023-09-08</lastmod>
+      </url>
+    
+  	
+      
+      <url>
+        <loc>https://portfolio.niepce.tld/Niepce/landscape-2/</loc>
+        <lastmod>2023-09-09</lastmod>
+      </url>
+    
+  	
+      
+      <url>
+        <loc>https://portfolio.niepce.tld/Niepce/misc-3/</loc>
+        <lastmod>2023-09-12</lastmod>
+      </url>
+    
+  	
+      
+      <url>
+        <loc>https://portfolio.niepce.tld/Niepce/landscape-4/</loc>
+        <lastmod>2023-09-13</lastmod>
+      </url>
+    
+  	
+      
+      <url>
+        <loc>https://portfolio.niepce.tld/Niepce/misc-4/</loc>
+        <lastmod>2023-09-16</lastmod>
+      </url>
+    
+  	
+      
+      <url>
+        <loc>https://portfolio.niepce.tld/Niepce/portrait-3/</loc>
+        <lastmod>2023-09-17</lastmod>
+      </url>
+    
+  	
+      
+      <url>
+        <loc>https://portfolio.niepce.tld/Niepce/landscape-5/</loc>
+        <lastmod>2023-09-18</lastmod>
+      </url>
+    
+  	
+      
+      <url>
+        <loc>https://portfolio.niepce.tld/Niepce/portrait-2-with-markdown-content/</loc>
+        <lastmod>2023-09-20</lastmod>
+      </url>
+    
+  	
+      
+      <url>
+        <loc>https://portfolio.niepce.tld/Niepce/misc-1/</loc>
+        <lastmod>2023-09-21</lastmod>
+      </url>
+    
+  	
+      
+      <url>
+        <loc>https://portfolio.niepce.tld/Niepce/landscape-3/</loc>
+        <lastmod>2023-09-25</lastmod>
+      </url>
+    
+  	
+      
+      <url>
+        <loc>https://portfolio.niepce.tld/Niepce/misc-5/</loc>
+        <lastmod>2023-09-28</lastmod>
+      </url>
+    
+  	
+      
+      <url>
+        <loc>https://portfolio.niepce.tld/Niepce/portrait-4/</loc>
+        <lastmod>2023-09-28</lastmod>
+      </url>
+    
+  	
+      
+      <url>
+        <loc>https://portfolio.niepce.tld/Niepce/each-player-stakes-one-dollar/</loc>
+        <lastmod>2026-04-05</lastmod>
+      </url>
+    
+  	
+      
+      <url>
+        <loc>https://portfolio.niepce.tld/Niepce/the-great-eastern-draws-feet-of-water-with-a-cargo/</loc>
+        <lastmod>2026-04-06</lastmod>
+      </url>
+    
+  	
+      
+      <url>
+        <loc>https://portfolio.niepce.tld/Niepce/the-utah-missionary-was-going-to-hold-a-meeting-on-mormonism-a-good-opportunity-for/</loc>
+        <lastmod>2026-04-07</lastmod>
+      </url>
+    
+  	
+      
+      <url>
+        <loc>https://portfolio.niepce.tld/Niepce/about/</loc>
+        <lastmod>2026-04-12</lastmod>
+      </url>
+    
+  	
+      
+      <url>
+        <loc>https://portfolio.niepce.tld/Niepce/archives/</loc>
+        <lastmod>2026-04-12</lastmod>
+      </url>
+    
+  	
+      
+      <url>
+        <loc>https://portfolio.niepce.tld/Niepce/blog/</loc>
+        <lastmod>2026-04-12</lastmod>
+      </url>
+    
+  	
+      
+      <url>
+        <loc>https://portfolio.niepce.tld/Niepce/categories/</loc>
+        <lastmod>2026-04-12</lastmod>
+      </url>
+    
+  	
+      
+      <url>
+        <loc>https://portfolio.niepce.tld/Niepce/category/landscape/</loc>
+        <lastmod>2026-04-12</lastmod>
+      </url>
+    
+  	
+      
+      <url>
+        <loc>https://portfolio.niepce.tld/Niepce/category/portrait/</loc>
+        <lastmod>2026-04-12</lastmod>
+      </url>
+    
+  	
+      
+      <url>
+        <loc>https://portfolio.niepce.tld/Niepce/contact/</loc>
+        <lastmod>2026-04-12</lastmod>
+      </url>
+    
+  	
+      
+      <url>
+        <loc>https://portfolio.niepce.tld/Niepce/thank-you/</loc>
+        <lastmod>2026-04-12</lastmod>
+      </url>
+    
+  	
+  	
+      
+      <url>
+        <loc>https://portfolio.niepce.tld/Niepce/series/</loc>
+        <lastmod>2026-04-12</lastmod>
+      </url>
+    
+  	
+      
+      <url>
+        <loc>https://portfolio.niepce.tld/Niepce/series/colorful/</loc>
+        <lastmod>2026-04-12</lastmod>
+      </url>
+    
+  	
+      
+      <url>
+        <loc>https://portfolio.niepce.tld/Niepce/shop/</loc>
+        <lastmod>2026-04-12</lastmod>
+      </url>
+    
 </urlset>
 

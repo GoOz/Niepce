@@ -19,7 +19,7 @@
 		<content type="html">
 			<![CDATA[
 			
-			<img src="https://portfolio.niepce.tld/img/v0tl5-1um3-600.jpeg" alt="Portrait 4" />
+			<img eleventy:ignore src="https://portfolio.niepce.tld/portrait-4/v0tl5-1um3-812.jpeg" alt="Portrait 4">
 			
 			<p>Credits: <a href="https://unsplash.com/fr/photos/uomo-che-indossa-una-camicia-bianca-con-scollo-a-v-iFgRcqHznqg">Unsplash</a></p>
 
@@ -35,7 +35,7 @@
 		<content type="html">
 			<![CDATA[
 			
-			<img src="https://portfolio.niepce.tld/img/5B6TiX9YTp-600.jpeg" alt="Misc 5" />
+			<img eleventy:ignore src="https://portfolio.niepce.tld/misc-5/5B6TiX9YTp-812.jpeg" alt="Misc 5">
 			
 			<p>Credits: <a href="https://unsplash.com/fr/photos/un-gros-plan-dun-arriere-plan-colore-dysl7LZ7bSM">Unsplash</a></p>
 
@@ -51,7 +51,7 @@
 		<content type="html">
 			<![CDATA[
 			
-			<img src="https://portfolio.niepce.tld/img/E9cL9TNxJj-600.jpeg" alt="landscape 3" />
+			<img eleventy:ignore src="https://portfolio.niepce.tld/landscape-3/E9cL9TNxJj-812.jpeg" alt="landscape 3">
 			
 			<p>Credit: <a href="https://unsplash.com/fr/photos/trois-bateaux-en-bois-marron-sur-leau-du-lac-bleu-pris-pendant-la-journee-T7K4aEPoGGk">Unsplash</a></p>
 
@@ -67,7 +67,7 @@
 		<content type="html">
 			<![CDATA[
 			
-			<img src="https://portfolio.niepce.tld/img/KNs3C6M5KZ-600.jpeg" alt="Misc 1" />
+			<img eleventy:ignore src="https://portfolio.niepce.tld/misc-1/KNs3C6M5KZ-812.jpeg" alt="Misc 1">
 			
 			<p>Credits: <a href="https://unsplash.com/fr/photos/carlino-coperto-con-una-coperta-sul-copriletto-2Ts5HnA67k8">Unsplash</a></p>
 
@@ -77,13 +77,13 @@
 	
 	<entry>
 		<title>Portrait 2 with markdown content</title>
-		<link href="https://portfolio.niepce.tld/Niepce/portrait-2-markdown/" />
+		<link href="https://portfolio.niepce.tld/Niepce/portrait-2-with-markdown-content/" />
 		<updated>2023-09-20T00:00:00Z</updated>
-		<id>https://portfolio.niepce.tld/Niepce/portrait-2-markdown/</id>
+		<id>https://portfolio.niepce.tld/Niepce/portrait-2-with-markdown-content/</id>
 		<content type="html">
 			<![CDATA[
 			
-			<img src="https://portfolio.niepce.tld/img/vRZlYjjfE5-600.jpeg" alt="Portrait 2" />
+			<img eleventy:ignore src="https://portfolio.niepce.tld/portrait-2-with-markdown-content/vRZlYjjfE5-812.jpeg" alt="Portrait 2">
 			
 			<p>This is a intro paragraph, this is usually used as an excerpt for feeds or opengragh descriptions.<br>
 Credits: <a href="https://unsplash.com/fr/photos/donna-in-piedi-vicino-al-cancello-dacciaio-blu-O3ymvT7Wf9U">Unsplash</a></p>
@@ -399,7 +399,7 @@ This line is part of the same quote.</p>
 		<content type="html">
 			<![CDATA[
 			
-			<img src="https://portfolio.niepce.tld/img/1vNfrMJvBI-600.jpeg" alt="landscape 5" />
+			<img eleventy:ignore src="https://portfolio.niepce.tld/landscape-5/1vNfrMJvBI-812.jpeg" alt="landscape 5">
 			
 			<p>Credits: <a href="https://unsplash.com/fr/photos/specchio-dacqua-circondato-da-alberi-NRQV-hBF10M">Unsplash</a></p>
 
@@ -415,7 +415,7 @@ This line is part of the same quote.</p>
 		<content type="html">
 			<![CDATA[
 			
-			<img src="https://portfolio.niepce.tld/img/y7e5ikfMHE-600.jpeg" alt="Portrait 3" />
+			<img eleventy:ignore src="https://portfolio.niepce.tld/portrait-3/y7e5ikfMHE-812.jpeg" alt="Portrait 3">
 			
 			<p>Credits: <a href="https://unsplash.com/fr/photos/uomo-che-indossa-una-camicia-nera-aoEwuEH7YAs">Unsplash</a></p>
 
@@ -431,7 +431,7 @@ This line is part of the same quote.</p>
 		<content type="html">
 			<![CDATA[
 			
-			<img src="https://portfolio.niepce.tld/img/baWrVbQ8qm-600.jpeg" alt="Misc 4" />
+			<img eleventy:ignore src="https://portfolio.niepce.tld/misc-4/baWrVbQ8qm-812.jpeg" alt="Misc 4">
 			
 			<p>Credits: <a href="https://unsplash.com/fr/photos/un-groupe-de-bougies-allumees-assises-les-unes-a-cote-des-autres-F9oJWM639mU">Unsplash</a></p>
 
@@ -447,7 +447,7 @@ This line is part of the same quote.</p>
 		<content type="html">
 			<![CDATA[
 			
-			<img src="https://portfolio.niepce.tld/img/uo6geui056-600.jpeg" alt="landscape 4" />
+			<img eleventy:ignore src="https://portfolio.niepce.tld/landscape-4/uo6geui056-812.jpeg" alt="landscape 4">
 			
 			<p>Credits: <a href="https://unsplash.com/fr/photos/maison-brune-pres-dun-plan-deau-zAjdgNXsMeg">Unsplash</a></p>
 
@@ -463,7 +463,7 @@ This line is part of the same quote.</p>
 		<content type="html">
 			<![CDATA[
 			
-			<img src="https://portfolio.niepce.tld/img/CRG0YaWT7S-600.jpeg" alt="Misc 3" />
+			<img eleventy:ignore src="https://portfolio.niepce.tld/misc-3/CRG0YaWT7S-812.jpeg" alt="Misc 3">
 			
 			<p>Credits: <a href="https://unsplash.com/fr/photos/figurina-animale-in-legno-marrone-su-tavola-di-legno-marrone-4AmLEKgmBm4">Unsplash</a></p>
 
@@ -479,7 +479,7 @@ This line is part of the same quote.</p>
 		<content type="html">
 			<![CDATA[
 			
-			<img src="https://portfolio.niepce.tld/img/ZqLR8vU_az-600.jpeg" alt="landscape 2" />
+			<img eleventy:ignore src="https://portfolio.niepce.tld/landscape-2/ZqLR8vU_az-812.jpeg" alt="landscape 2">
 			
 			<p>Credits: <a href="https://unsplash.com/fr/photos/ripresa-aerea-della-foresta-2Hzmz15wGik">Unsplash</a></p>
 
@@ -495,7 +495,7 @@ This line is part of the same quote.</p>
 		<content type="html">
 			<![CDATA[
 			
-			<img src="https://portfolio.niepce.tld/img/109FzdNhW1-600.jpeg" alt="Misc 2" />
+			<img eleventy:ignore src="https://portfolio.niepce.tld/misc-2/109FzdNhW1-812.jpeg" alt="Misc 2">
 			
 			<p>Credits: <a href="https://unsplash.com/fr/photos/foto-della-candela-gel-a-bordo-accanto-al-cuscino-u_z0X-yrJIE">Unsplash</a></p>
 
@@ -511,7 +511,7 @@ This line is part of the same quote.</p>
 		<content type="html">
 			<![CDATA[
 			
-			<img src="https://portfolio.niepce.tld/img/15VOpKmBpf-600.jpeg" alt="Portrait 5" />
+			<img eleventy:ignore src="https://portfolio.niepce.tld/portrait-5/15VOpKmBpf-812.jpeg" alt="Portrait 5">
 			
 			<p>Credits: <a href="https://unsplash.com/fr/photos/donna-sorridente-che-indossa-un-top-con-colletto-gessato-bianco-e-nero-QXevDflbl8A">Unsplash</a></p>
 
@@ -527,7 +527,7 @@ This line is part of the same quote.</p>
 		<content type="html">
 			<![CDATA[
 			
-			<img src="https://portfolio.niepce.tld/img/CXcF9DKmzt-600.jpeg" alt="Portrait 1" />
+			<img eleventy:ignore src="https://portfolio.niepce.tld/portrait-1/CXcF9DKmzt-812.jpeg" alt="Portrait 1">
 			
 			<p>Credits: <a href="https://unsplash.com/fr/photos/donna-che-fissa-direttamente-la-fotocamera-vicino-al-muro-rosa-bqe0J0b26RQ">Unsplash</a></p>
 
@@ -543,7 +543,7 @@ This line is part of the same quote.</p>
 		<content type="html">
 			<![CDATA[
 			
-			<img src="https://portfolio.niepce.tld/img/dsBo4o6SzR-600.jpeg" alt="landscape 1" />
+			<img eleventy:ignore src="https://portfolio.niepce.tld/landscape-1/dsBo4o6SzR-812.jpeg" alt="landscape 1">
 			
 			
 			]]>
