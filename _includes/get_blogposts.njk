@@ -1,6 +1,6 @@
 <ul class="blogposts">
   {% set loops = iteration if iteration else posts.length %}
-  {% for post in posts %}
+  {% for post in posts | reverse %}
   {% if loop.index0 < loops %}
   <li class="blogpost">
     <a href="{{ post.url }}">

@@ -1,6 +1,6 @@
 {
 	"name": "niepce",
-	"version": "1.0.0",
+	"version": "1.0.2",
 	"description": "11ty starter kit for a portfolio site",
 	"type": "module",
 	"scripts": {

@@ -30,19 +30,15 @@ Credits: [Unsplash](https://unsplash.com/fr/photos/donna-in-piedi-vicino-al-canc
 
 # Emphasis
 
-Emphasis, aka italics, with _asterisks_ or _underscores_.
+Emphasis, aka italics, with *asterisks* or _underscores_.
 
-Strong emphasis, aka bold, with **asterisks** or **underscores**.
+Strong emphasis, aka bold, with **asterisks**.
 
 Combined emphasis with **asterisks and _underscores_**.
 
 Strikethrough uses two tildes. ~~Scratch this.~~
 
 **This is bold text**
-
-**This is bold text**
-
-_This is italic text_
 
 _This is italic text_
 
@@ -68,7 +64,7 @@ _This is italic text_
 
 * Or minuses
 
-- Or pluses
++ Or pluses
 
 1. Make my changes
    1. Fix bug
@@ -98,15 +94,14 @@ _This is italic text_
 
 [I'm a reference-style link][Arbitrary case-insensitive reference text]
 
-[I'm a relative reference to a repository file](../blob/master/LICENSE)
+[I'm a relative reference to a repository file](../foo/bar.txt)
 
 [You can use numbers for reference-style link definitions][1]
 
 Or leave it empty and use the [link text itself].
 
-URLs and URLs in angle brackets will automatically get turned into links.
-http://www.example.com or <http://www.example.com> and sometimes
-example.com (but not on Github, for example).
+URLs in angle brackets will automatically get turned into links.
+<http://www.example.com>
 
 Some text to show that the reference links can follow later.
 
@@ -153,16 +148,6 @@ raw Markdown line up prettily. You can also use inline Markdown.
 | _Still_  | `renders` | **nicely** |
 | 1        | 2         | 3          |
 
-| First Header | Second Header |
-| ------------ | ------------- |
-| Content Cell | Content Cell  |
-| Content Cell | Content Cell  |
-
-| Command    | Description                                    |
-| ---------- | ---------------------------------------------- |
-| git status | List all new or modified files                 |
-| git diff   | Show file differences that haven't been staged |
-
 | Command      | Description                                        |
 | ------------ | -------------------------------------------------- |
 | `git status` | List all _new or modified_ files                   |
@@ -182,7 +167,7 @@ raw Markdown line up prettily. You can also use inline Markdown.
 
 # Blockquotes
 
-> Blockquotes are very handy in email to emulate reply text.
+> Blockquotes are very handy in email to emulate reply text.  
 > This line is part of the same quote.
 
 Quote break.
@@ -213,7 +198,7 @@ Quote break.
 
 Three or more...
 
----
+---------
 
 Hyphens
 
@@ -221,8 +206,26 @@ Hyphens
 
 Asterisks
 
----
+***
 
-Underscores
+### Admonitions
 
----
+> [!NOTE]
+> Highlights information that users should take into account, even when skimming.
+
+> [!TIP]
+> Optional information to help a user be more successful.
+
+> [!IMPORTANT]
+> Crucial information necessary for users to succeed.
+
+> [!WARNING]
+> Critical content demanding immediate user attention due to potential risks.
+
+> [!CAUTION]
+> Negative potential consequences of an action.
+
+or custom the admonition's title
+
+> [!CAUTION] This is really bad
+> Negative potential consequences of an action.
